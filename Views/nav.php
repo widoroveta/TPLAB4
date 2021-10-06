@@ -52,7 +52,7 @@ if (!isset($_SESSION['loggedUser'])) {
 ?>
 </ul>
 <div class="left-align  brown darken-4 ">
-<a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small material-icons ">menu</i></a>
+<a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small material-icons  black">menu</i></a>
 </div>
 
   
