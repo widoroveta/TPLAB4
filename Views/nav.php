@@ -42,7 +42,8 @@ if (!isset($_SESSION['loggedUser'])) {
 <?php
 } else {
 ?>
-<ul class="right hide-on-med-and-down">
+<br>
+<ul class="center-align">
 <li><a class="waves-effect waves-light btn modal-trigger brown darken-4" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
 </ul>
 
@@ -52,7 +53,7 @@ if (!isset($_SESSION['loggedUser'])) {
 ?>
 </ul>
 <div class="left-align  brown darken-4 ">
-<a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small material-icons  black">menu</i></a>
+<a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small  material-icons blue-grey-text text-lighten-5 ">menu</i></a>
 </div>
 
   
