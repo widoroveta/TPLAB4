@@ -3,7 +3,7 @@
 require_once(VIEWS_PATH.'nav.php');
 ?>
 <body class="deep-orange lighten-4">
-<script>   document.addEventListener('DOMContentLoaded', function() {
+<!-- <script>   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems);
   });
@@ -27,5 +27,5 @@ require_once(VIEWS_PATH.'nav.php');
       <div class="col s6">6-columns (one-half)</div>
       <div class="col s6">6-columns (one-half)</div>
     </div>
-    
+     -->
 </body>
