@@ -2,7 +2,7 @@
 
 require_once(VIEWS_PATH.'nav.php');
 ?>
-<body class="deep-orange lighten-4">
+<body class="grey darken-3">
 <!-- <script>   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems);

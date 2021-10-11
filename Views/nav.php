@@ -15,7 +15,7 @@
   });
 </script>
 
-<ul id="slide-out" class="sidenav">
+<ul id="slide-out" class="sidenav grey darken-1">
 
 
 <?php
@@ -30,11 +30,11 @@ if (!isset($_SESSION['loggedUser'])) {
   </script>
   <br>
   <!-- Botones sin session -->
-  <ul class="center-align ">
+  <ul class="center-align  ">
     <!-- Registrarse -->
-    <li><a class="waves-effect waves-light btn modal-trigger brown darken-4" href="#modal1">Registrarse</i></a></li>
+    <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal1">Registrarse</i></a></li>
     <!-- Loguearse -->
-    <li><a class="waves-effect waves-light btn  modal-trigger brown darken-4" href="#modal2" ?>Iniciar sesion</i></a></li>
+    <li><a class="waves-effect waves-light btn  modal-trigger pink-text text-accent-3 black" href="#modal2" ?>Iniciar sesion</i></a></li>
 
   </ul>
 
@@ -44,7 +44,7 @@ if (!isset($_SESSION['loggedUser'])) {
 ?>
 <br>
 <ul class="center-align">
-<li><a class="waves-effect waves-light btn modal-trigger brown darken-4" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
+<li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
 </ul>
 
 <?php
@@ -52,13 +52,13 @@ if (!isset($_SESSION['loggedUser'])) {
 
 ?>
 </ul>
-<div class="left-align  brown darken-4 ">
+<div class="left-align  grey darken-4 ">
 <a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small  material-icons blue-grey-text text-lighten-5 ">menu</i></a>
 </div>
 
   
  <div id="modal2" class="modal">
-    <div class="modal-content">
+    <div class="modal-content ">
       <form action="<?= FRONT_ROOT . "home/login" ?>" method="POST">
         <div class="input-field col s6">
           <input id="userName" name="userName" type="text" class="validate">
