@@ -1,9 +1,20 @@
 <?php
 
-require_once(VIEWS_PATH.'nav.php');
+require_once(VIEWS_PATH . 'nav.php');
+use DAO\StudentDAO as StudentDAO;
+use Models\Student as Student;
 ?>
+<!-- <script>
+  swal({
+      text:"Usuario no registrado",
+      icon:"error",
+      color:"#21130d"
+     
+      });
+</script> -->
+
 <body class="grey darken-3">
-<!-- <script>   document.addEventListener('DOMContentLoaded', function() {
+  <!-- <script>   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems);
   });
@@ -28,4 +39,9 @@ require_once(VIEWS_PATH.'nav.php');
       <div class="col s6">6-columns (one-half)</div>
     </div>
      -->
+  <?php
+     $n=new StudentDAO();
+     $n->getAll();
+     var_dump($n);
+?>
 </body>
