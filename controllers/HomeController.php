@@ -2,7 +2,7 @@
     namespace Controllers;
     class HomeController{
 
-        public function index(){
+        public function index($message=""){
             require_once(VIEWS_PATH.'home.php');
         }
         public function login ($userName,$password){
@@ -11,6 +11,9 @@
             $_SESSION["loggedUser"]="messi";
             require_once(VIEWS_PATH."home-login.php");
    
+        }
+        public function showHomeLogin($message=""){
+            require_once(VIEWS_PATH."home-login.php");
         }
         public function register(){
           

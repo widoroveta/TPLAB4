@@ -1,6 +1,7 @@
 <?php
-
+require_once(VIEWS_PATH . "header.php");
 require_once(VIEWS_PATH . 'nav.php');
+
 use DAO\StudentDAO as StudentDAO;
 use Models\Student as Student;
 ?>
@@ -40,8 +41,23 @@ use Models\Student as Student;
     </div>
      -->
   <?php
-     $n=new StudentDAO();
-     $n->getAll();
-     var_dump($n);
-?>
+         $n=new StudentDAO();
+         $n->getAll();
+         var_dump($n);
+        ?>
+  <?php
+  if (!empty($message)) { ?>
+    <script>
+      var toastHTML = '<span><?= $message ?></span>';
+      M.toast({
+        html: toastHTML,
+        classes: " red accent-4",
+        displayLength: 5000
+      });
+    </script>
+  <?php
+  }
+
+  ?>
+
 </body>

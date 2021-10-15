@@ -11,8 +11,8 @@ class StudentDAO
   public function retrieveDataFromAPI()
   {
     $url = curl_init();
-    curl_setopt($url, CURLOPT_URL, 'https://utn-students-api.herokuapp.com/api/Student');
-    curl_setopt($url, CURLOPT_HTTPHEADER, array('x-api-key:4f3bceed-50ba-4461-a910-518598664c08'));
+    curl_setopt($url, CURLOPT_URL, API_HOST."/Student");
+    curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
     curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($url);
     $toJson = json_decode($response);
@@ -20,6 +20,7 @@ class StudentDAO
   }
   public function retrieveData(){
     $response=$this->retrieveDataFromAPI();
+   
     foreach($response as $std)
     {
       $student = new Student();
@@ -41,5 +42,17 @@ class StudentDAO
   public function getAll(){
     $this->retrieveData();
    // return $this->retrieveData();
+  }
+  public function searchByEmail($email){
+    $this->retrieveData();
+    foreach($this->studentList as $std)
+    {
+      if($std->getEmail()==$email)
+      {
+        return $std;
+      }
+
+    }
+    return false;
   }
 }

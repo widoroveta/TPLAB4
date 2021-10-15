@@ -59,10 +59,10 @@ if (!isset($_SESSION['loggedUser'])) {
   
  <div id="modal2" class="modal">
     <div class="modal-content ">
-      <form action="<?= FRONT_ROOT . "home/login" ?>" method="POST">
+      <form action="<?= FRONT_ROOT . "StudentMagnament/login" ?>" method="POST">
         <div class="input-field col s6">
-          <input id="userName" name="userName" type="text" class="validate">
-          <label for="userName">Nombre de Usuario</label>
+          <input id="email" name="email" type="text" class="validate">
+          <label for="email">Nombre de Usuario</label>
         </div>
         <div class="input-field col s6">
           <input id="password" name="password" type="password" class="validate">
