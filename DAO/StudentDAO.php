@@ -57,8 +57,8 @@ class StudentDAO extends DAO implements IAPI
   }
   public function getAll()
   {
-    $this->retrieveData();
-    // return $this->retrieveData();
+   $this->retrieveData();
+     return $this->studentList;
   }
   public function searchByEmail($email)
   {

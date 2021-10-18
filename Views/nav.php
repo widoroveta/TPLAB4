@@ -1,4 +1,6 @@
-<script>
+<?php
+require_once(VIEWS_PATH."header.php");
+?><script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
@@ -42,16 +44,20 @@
 
 
   <?php
-  } else {
+  } else { if($_SESSION['loggedUser']!='admin'){
   ?>
+ 
     <div class='user-view'>
-  
-<span class="name  deep-purple-text text-darken-4"><?=$_SESSION['loggedUser']->getFirstName();?>  <?=$_SESSION['loggedUser']->getLastName();?></span>
-<span class="career deep-purple-text text-darken-4"><?=$_SESSION['loggedUser']->getCareer()->getDescription();?></span>
-<span class="deep-purple-text text-darken-4"></span>
-<span class="deep-purple-text text-darken-4"></span>
-     
+
+      <span class="name  deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getFirstName(); ?> <?= $_SESSION['loggedUser']->getLastName(); ?></span>
+      <span class="career deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getCareer()->getDescription(); ?></span>
+      <span class="deep-purple-text text-darken-4"></span>
+      <span class="deep-purple-text text-darken-4"></span>
+
     </div>
+  <?php
+  }
+  ?>
     <br>
     <ul class="center-align">
       <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>

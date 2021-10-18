@@ -7,14 +7,14 @@ use Models\Career as Career;
 
 class CareerDAO extends DAO implements IAPI
 {
-     
+
     private $careerList;
-    public static function getInstance() {
-        if(self::$instance == null)
-        {
+    public static function getInstance()
+    {
+        if (self::$instance == null) {
             self::$instance = new CareerDAO();
         }
-            
+
         return self::$instance;
     }
     public function retrieveDataFromAPI()
@@ -40,7 +40,6 @@ class CareerDAO extends DAO implements IAPI
                 $career->setActive($c->active);
                 array_push($this->careerList, $career);
             }
-           
         }
     }
     public function getAll()
@@ -50,17 +49,27 @@ class CareerDAO extends DAO implements IAPI
     }
     public function searchById($id)
     {
-      $this->retrieveData();
+        $this->retrieveData();
         if ($this->careerList != null) {
             foreach ($this->careerList as $c) {
 
-                if($c->getCareerId()==$id)
-                {
-                  
+                if ($c->getCareerId() == $id) {
+
                     return $c;
                 }
             }
         }
     }
+    public function getCareerById($id)
+    {
+        if ($this->careerList != null) {
+            foreach ($this->careerList as $c) {
 
+                if ($c->getCareerId() == $id) {
+
+                    return $c;
+                }
+            }
+        }
+    }
 }

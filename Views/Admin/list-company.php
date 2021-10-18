@@ -1,0 +1,21 @@
+<?php
+require_once(VIEWS_PATH."Admin/nav-admin.php");
+?>
+<body class="grey darken-3">
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">filter_drama</i>
+      First
+      <span class="new badge">4</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">place</i>
+      Second
+      <span class="badge">1</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+</ul>
+</body>

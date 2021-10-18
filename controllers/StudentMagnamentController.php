@@ -39,7 +39,8 @@ class StudentMagnamentController
         } else {
                 if($email=="admin")
         {
-            header("location:".FRONT_ROOT."admin/showHomeAdmin");
+            $_SESSION['loggedUser']='admin';
+            header("location:".FRONT_ROOT."Admin/showListCompany");
         }else{
             $message = "Usuario no encontrado";
             header("location:" . FRONT_ROOT . "home/index?varMessage=$message");
