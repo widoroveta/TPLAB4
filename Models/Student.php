@@ -1,6 +1,6 @@
 <?php
 namespace Models;
-
+use Models\Career as Career;
 class Student{
     private $studentId;
     private $career;
@@ -37,22 +37,7 @@ class Student{
     /**
      * Get the value of career
      */ 
-    public function getCareer()
-    {
-        return $this->career;
-    }
-
-    /**
-     * Set the value of career
-     *
-     * @return  self
-     */ 
-    public function setCareer($career)
-    {
-        $this->career = $career;
-
-        return $this;
-    }
+   
 
     /**
      * Get the value of firstName
@@ -230,6 +215,26 @@ class Student{
     public function setActive($active)
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of career
+     */ 
+    public function getCareer()
+    {
+        return $this->career;
+    }
+
+    /**
+     * Set the value of career
+     *
+     * @return  self
+     */ 
+    public function setCareer($career)
+    {
+        $this->career = $career;
 
         return $this;
     }

@@ -3,29 +3,46 @@
 namespace DAO;
 
 use Models\Student;
+use DAO\CareerDAO as CareerDAO;
+use Interfaces\IAPI;
+use Models\Career as Career;
 
-class StudentDAO
+class StudentDAO extends DAO implements IAPI
 {
-  private $studentList=array();
+  private $studentList = array();
 
+  public function __construct()
+  {
+  }
+
+  public static function getInstance()
+  {
+    if (self::$instance == null) {
+      self::$instance = new StudentDAO();
+    }
+
+    return self::$instance;
+  }
   public function retrieveDataFromAPI()
   {
     $url = curl_init();
-    curl_setopt($url, CURLOPT_URL, API_HOST."/Student");
+    curl_setopt($url, CURLOPT_URL, API_HOST . "/Student");
     curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
     curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
     $response = curl_exec($url);
     $toJson = json_decode($response);
     return $toJson;
   }
-  public function retrieveData(){
-    $response=$this->retrieveDataFromAPI();
-   
-    foreach($response as $std)
-    {
+  public function retrieveData()
+  {
+
+    $response = $this->retrieveDataFromAPI();
+
+    foreach ($response as $std) {
       $student = new Student();
       $student->setStudentId($std->studentId);
       $student->setCareer($std->careerId);
+
       $student->setFirstName($std->firstName);
       $student->setLastName($std->lastName);
       $student->setDni($std->dni);
@@ -35,23 +52,21 @@ class StudentDAO
       $student->setEmail($std->email);
       $student->setBirthDate($std->birthDate);
       $student->setActive($std->active);
-      array_push($this->studentList,$student);
+      array_push($this->studentList, $student);
     }
-     
   }
-  public function getAll(){
+  public function getAll()
+  {
     $this->retrieveData();
-   // return $this->retrieveData();
+    // return $this->retrieveData();
   }
-  public function searchByEmail($email){
+  public function searchByEmail($email)
+  {
     $this->retrieveData();
-    foreach($this->studentList as $std)
-    {
-      if($std->getEmail()==$email)
-      {
+    foreach ($this->studentList as $std) {
+      if ($std->getEmail() == $email) {
         return $std;
       }
-
     }
     return false;
   }

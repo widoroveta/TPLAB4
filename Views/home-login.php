@@ -3,11 +3,12 @@
 require_once("header.php");
 require("nav.php");
 ?>
+
 <body class="grey darken-3">
 <?php
   if (!empty($message)) { ?>
     <script>
-      var toastHTML = '<span><?= $message ?></span>';
+      var toastHTML = '<span><i class="tiny material-icons"> check</i><?= $message ?></span>';
       M.toast({
         html: toastHTML,
         classes: "green accent-3",
