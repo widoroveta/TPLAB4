@@ -25,7 +25,7 @@ class StudentMagnamentController
 
             if ($std->getActive()) {
 
-                $message = "Usario encontrado";
+                $message = "Usuario encontrado";
                 $std->setCareer($this->careerDAO->searchById($std->getCareer()));
                 $_SESSION["loggedUser"] = $std;
 

@@ -48,7 +48,7 @@ require_once(VIEWS_PATH."header.php");
   ?>
  
     <div class='user-view'>
-
+    
       <span class="name  deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getFirstName(); ?> <?= $_SESSION['loggedUser']->getLastName(); ?></span>
       <span class="career deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getCareer()->getDescription(); ?></span>
       <span class="deep-purple-text text-darken-4"></span>
