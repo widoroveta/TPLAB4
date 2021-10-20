@@ -10,7 +10,7 @@ use Models\Career as Career;
 class StudentDAO extends DAO implements IAPI
 {
   private $studentList = array();
-
+    protected  static $instance = null;
   public function __construct()
   {
   }

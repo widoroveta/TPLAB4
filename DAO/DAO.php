@@ -9,6 +9,18 @@ abstract class  DAO
     }
     protected static $instance = null;
     public abstract static function getInstance();
+    public  function add(){
+
+    }
+    public function delete(){
+
+    }
+    public function saveData(){
+
+    }
+
+
+
 }
 ?>
 

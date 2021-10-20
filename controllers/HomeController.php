@@ -6,9 +6,7 @@
             require_once(VIEWS_PATH.'home.php');
         }
         
-        public function showHomeLogin($message=""){
-            require_once(VIEWS_PATH."home-login.php");
-        }
+
         public function register(){
           
         }

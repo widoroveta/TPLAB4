@@ -47,12 +47,16 @@ require_once(VIEWS_PATH."header.php");
   } else { if($_SESSION['loggedUser']!='admin'){
   ?>
  
-    <div class='user-view'>
-    
-      <span class="name  deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getFirstName(); ?> <?= $_SESSION['loggedUser']->getLastName(); ?></span>
-      <span class="career deep-purple-text text-darken-4"><?= $_SESSION['loggedUser']->getCareer()->getDescription(); ?></span>
-      <span class="deep-purple-text text-darken-4"></span>
-      <span class="deep-purple-text text-darken-4"></span>
+    <div class='user-view '>
+    <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
+      <span class="name  grey-text text-lighten-5"><strong><h4><?= $_SESSION['loggedUser']->getFirstName(); ?> <?= $_SESSION['loggedUser']->getLastName(); ?></h4></strong></span>
+      <span class="Email grey-text text-lighten-5"><strong><h6><?= $_SESSION['loggedUser']->getEmail(); ?></h6></strong></span>
+
+      <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $_SESSION['loggedUser']->getCareer()->getDescription(); ?></strong></span>
+      <br>
+      <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******".substr($_SESSION['loggedUser']->getDni(),7,10) ?></strong></span>
+      <br>
+      <span class="Email grey-text text-lighten-5"><strong><?= $_SESSION['loggedUser']->getPhoneNumber(); ?></strong></span>
 
     </div>
   <?php

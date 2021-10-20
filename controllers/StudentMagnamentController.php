@@ -15,10 +15,8 @@ class StudentMagnamentController
     private $careerDAO;
     public function login($email, $password)
     {
-     
-
         $this->studentDAO = StudentDAO::getInstance();
-        $this->careerDAO= new CareerDAO();
+        $this->careerDAO= CareerDAO::getInstance();
         $std = $this->verifyEmail($email);
 
         if ($std != null) {
@@ -29,7 +27,7 @@ class StudentMagnamentController
                 $std->setCareer($this->careerDAO->searchById($std->getCareer()));
                 $_SESSION["loggedUser"] = $std;
 
-                header("location:" . FRONT_ROOT . "home/showHomeLogin?varMessage=$message");
+                $this->showHomeStudent($message);
             } else {
 
                 $message = "Usuario no activo";
@@ -56,5 +54,9 @@ class StudentMagnamentController
             return $std;
         }
         return null;
+    }
+    public function showHomeStudent($message=""){
+        require_once (VIEWS_PATH. "Student/Validate-student.php");
+        require_once(VIEWS_PATH."Student/home-student.php");
     }
 }
