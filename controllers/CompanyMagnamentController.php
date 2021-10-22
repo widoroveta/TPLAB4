@@ -22,8 +22,5 @@ class CompanyMagnamentController
      $companyDAO->add($company);
     header("location:".FRONT_ROOT."Admin/showAddCompany");
     }
-    public function listCompany(){
-        $this->companyDAO=CompanyDAO::getInstance();
-        return $this->companyDAO->getAll();
-    }
+
 }

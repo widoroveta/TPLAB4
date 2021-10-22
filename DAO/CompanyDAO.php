@@ -154,6 +154,15 @@ class CompanyDAO
             }
         }
     }
+    public function searchByName($name){
+        $this->retrieveData();
+        foreach ($this->companyList as $company) {
+            if($company->getNameCompany()==$name)
+            {
+                return $company;
+            }
+        }
+    }
     public function saveData()
     {
         $arrayToEncode = array();
