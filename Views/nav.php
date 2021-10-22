@@ -22,9 +22,9 @@ require_once(VIEWS_PATH."header.php");
 
   <?php
 
+$userLogged=$_SESSION['loggedUser'];
 
-
-  if (!isset($_SESSION['loggedUser'])) {
+  if (!isset($userLogged)) {
   ?>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -44,19 +44,19 @@ require_once(VIEWS_PATH."header.php");
 
 
   <?php
-  } else { if($_SESSION['loggedUser']!='admin'){
+  } else { if($userLogged!='admin'){
   ?>
  
     <div class='user-view '>
     <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
-      <span class="name  grey-text text-lighten-5"><strong><h4><?= $_SESSION['loggedUser']->getFirstName(); ?> <?= $_SESSION['loggedUser']->getLastName(); ?></h4></strong></span>
-      <span class="Email grey-text text-lighten-5"><strong><h6><?= $_SESSION['loggedUser']->getEmail(); ?></h6></strong></span>
+      <span class="name  grey-text text-lighten-5"><strong><h4><?= $userLogged->getFirstName(); ?> <?= $userLogged->getLastName(); ?></h4></strong></span>
+      <span class="Email grey-text text-lighten-5"><strong><h6><?= $userLogged->getEmail(); ?></h6></strong></span>
 
-      <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $_SESSION['loggedUser']->getCareer()->getDescription(); ?></strong></span>
+      <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $userLogged->getCareer()->getDescription(); ?></strong></span>
       <br>
-      <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******".substr($_SESSION['loggedUser']->getDni(),7,10) ?></strong></span>
+      <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******".substr($userLogged->getDni(),7,10) ?></strong></span>
       <br>
-      <span class="Email grey-text text-lighten-5"><strong><?= $_SESSION['loggedUser']->getPhoneNumber(); ?></strong></span>
+      <span class="Email grey-text text-lighten-5"><strong><?= $userLogged->getPhoneNumber(); ?></strong></span>
 
     </div>
   <?php
@@ -67,15 +67,6 @@ require_once(VIEWS_PATH."header.php");
       <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
     </ul>
 
-  <?php
-  }
-  if (isset($_SESSION['admin'])) {
-  ?>
-
-    <br>
-    <ul class="center-align">
-      <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
-    </ul>
 
   <?php
   }
@@ -101,8 +92,9 @@ require_once(VIEWS_PATH."header.php");
   </div>
   <div class="modal-footer">
     <button type="submit" class="modal-close waves-effect waves-green btn-flat">Iniciar sesion</button>
+      </form>
   </div>
-  </form>
+
 </div>
 
 <!-- Ventana de registro -->
@@ -154,5 +146,4 @@ require_once(VIEWS_PATH."header.php");
   <div class="modal-footer">
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
-</div>
 </div>

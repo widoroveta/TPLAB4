@@ -7,7 +7,7 @@ use DAO\CareerDAO as CareerDAO;
 use Interfaces\IAPI;
 use Models\Career as Career;
 
-class StudentDAO extends DAO implements IAPI
+class StudentDAO
 {
   private $studentList = array();
     protected  static $instance = null;
@@ -23,7 +23,7 @@ class StudentDAO extends DAO implements IAPI
 
     return self::$instance;
   }
-  public function retrieveDataFromAPI()
+  private function retrieveDataFromAPI()
   {
     $url = curl_init();
     curl_setopt($url, CURLOPT_URL, API_HOST . "/Student");

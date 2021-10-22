@@ -3,7 +3,7 @@
 namespace Models;
 class Company
 {
-    private static $referencesCompany = 0;
+
     private $companyId;
     private $nameCompany;
     private $city;
@@ -15,8 +15,7 @@ class Company
 
     public function __construct()
     {
-        $this->referencesCompany++;
-        $this->companyId = $this->referencesCompany;
+
     }
 
     /**
@@ -35,7 +34,7 @@ class Company
         $this->cuit = $cuit;
     }
 
-    private $cuit;
+
 
     /**
      * @return mixed

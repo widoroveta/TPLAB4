@@ -8,7 +8,7 @@ use Models\JobPosition as JobPosition;
 use DAO\CareerDAO as CareerDAO;
 
 
-class JobPositionDAO extends DAO implements IAPI{
+class JobPositionDAO {
     protected static $instance = null;
     private $jobPositionList=array();
     public function __construct()
@@ -41,7 +41,7 @@ class JobPositionDAO extends DAO implements IAPI{
 
         return self::$instance;
     }
-    public function retrieveDataFromAPI()
+    private function retrieveDataFromAPI()
     {
         $url = curl_init();
         curl_setopt($url, CURLOPT_URL, API_HOST . "/JobPosition");

@@ -19,6 +19,7 @@ class StudentMagnamentController
         $this->careerDAO= CareerDAO::getInstance();
         $std = $this->verifyEmail($email);
 
+
         if ($std != null) {
 
             if ($std->getActive()) {

@@ -5,9 +5,9 @@ namespace DAO;
 use Interfaces\IAPI;
 use Models\Career as Career;
 
-class CareerDAO extends DAO implements IAPI
+class CareerDAO
 {
-
+protected static  $instance=null;
     private $careerList;
     public static function getInstance()
     {

@@ -2,9 +2,9 @@
 
 namespace DAO;
 
-use Models\Company;
+use Models\Company as Company;
 
-class CompanyDAO extends DAO
+class CompanyDAO
 {
     private $companyList;
     protected static $instance = null;
@@ -18,52 +18,101 @@ class CompanyDAO extends DAO
     public static function getInstance()
     {
         if (self::$instance == null) {
+
             self::$instance = new CompanyDAO();
         }
+
         return self::$instance;
     }
-
+   private function higherId(){
+    $idMax=0;
+        foreach ($this->companyList as $c)
+        {
+            if($c->getCompanyId()>$idMax)
+            $idMax=$c->getCompanyId();
+        }
+        return $idMax;
+    }
     public function add($company)
-    {
+    { $c=0;
         $this->retrieveData();
+
         if ($company instanceof Company && $company != null) {
+           if(!empty($this->companyList)) {
+
+               $c=$this->higherId();
+
+               $company->setCompanyId(++$c);
+           }else{
+               $company->setCompanyId(0);
+           }
             array_push($this->companyList, $company);
         }
         $this->saveData();
     }
 
-    public function retrieveData()
+    private function retrieveData()
     {
         $this->companyList = array();
-        $jsonPath = $this->getJsonFilePath();
-        $jsonContent = file_get_contents($jsonPath);
-        $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
-        foreach ($arrayToDecode as $arrayValue) {
-            $company = new Company();
-            $company->setCompanyId($arrayValue['companyId']);
-            $company->setNameCompany($arrayValue['nameCompany']);
-            $company->setCity($arrayValue['city']);
-            $company->setAddress($arrayValue['adress']);
-            $company->setSize($arrayValue['size']);
-            $company->setEmail($arrayValue['email']);
-            $company->setPhoneNumber($arrayValue['phoneNumber']);
-            $company->setCuit($arrayValue['cuit']);
-            array_push($this->companyList, $company);
-        }
+        $jsonPath=$this->fileName;
+        if(file_exists($jsonPath)) {
+            $jsonContent = file_get_contents($jsonPath);
+            $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
+           if(is_array($arrayToDecode) ) {
+               foreach ($arrayToDecode as $arrayValue) {
+                   $company = new Company();
+                   $company->setCompanyId($arrayValue['companyId']);
+                   $company->setNameCompany($arrayValue['nameCompany']);
+                   $company->setCity($arrayValue['city']);
+                   $company->setAddress($arrayValue['address']);
+                   $company->setSize($arrayValue['size']);
+                   $company->setEmail($arrayValue['email']);
+                   $company->setPhoneNumber($arrayValue['phoneNumber']);
+                   $company->setCuit($arrayValue['cuit']);
+                   array_push($this->companyList, $company);
+               }
+           }else{
+               array_push($this->companyList,$company);
+           }
 
+        }
+    }
+    public function delete($id){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        echo $key;
+        unset($this->companyList[$key]);
+        $this->saveData();
+    }
+    public function modifyName($id,$name){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setNameCompany($name);
+        $this->companyList[$key]=$company;
+        $this->saveData();
 
     }
-
+    public function searchById($id){
+        $this->retrieveData();
+        foreach ($this->companyList as $company) {
+            if($company->getCompanyId()==$id)
+            {
+                return $company;
+            }
+        }
+    }
     public function saveData()
     {
         $arrayToEncode = array();
-        $jsonPath = $this->getJsonFilePath();
+        $jsonPath = $this->fileName;
 
         foreach ($this->companyList as $company) {
             $arrayValue['companyId'] = $company->getCompanyId();
             $arrayValue['nameCompany'] = $company->getNameCompany();
             $arrayValue['city'] = $company->getCity();
-            $arrayValue['adress'] = $company->getAdress();
+            $arrayValue['address'] = $company->getAddress();
             $arrayValue['size'] = $company->getSize();
             $arrayValue['email'] = $company->getEmail();
             $arrayValue['phoneNumber'] = $company->getPhoneNumber();
@@ -75,20 +124,13 @@ class CompanyDAO extends DAO
         file_put_contents($jsonPath, $jsonContent);
 
     }
-
-
-
-
-    function getJsonFilePath()
-    {
-        $initialPath = "Data/Company.json";
-
-        if (file_exists($initialPath)) {
-            $jsonFilePath = $initialPath;
-        } else {
-            $jsonFilePath = "../" . $initialPath;
-        }
-
-        return $jsonFilePath;
+    public  function  getAll(){
+        $this->retrieveData();
+        return $this->companyList;
     }
+
+
+
+
+
 }
