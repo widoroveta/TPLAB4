@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/nav-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/nav-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyMagnamentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,7 @@
       <workItem from="1634843252418" duration="16913000" />
       <workItem from="1634894549478" duration="6200000" />
       <workItem from="1634924737916" duration="824000" />
-      <workItem from="1634933069755" duration="2742000" />
+      <workItem from="1634933069755" duration="5708000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634925536567</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="seach company student">
+      <created>1634935989723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634935989724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +159,8 @@
     <MESSAGE value="delete finished" />
     <MESSAGE value="menu modify 2.0" />
     <MESSAGE value="admin abm finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin abm finished" />
+    <MESSAGE value="seach company student" />
+    <option name="LAST_COMMIT_MESSAGE" value="seach company student" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
