@@ -21,9 +21,9 @@ require_once(VIEWS_PATH."header.php");
 
 
   <?php
-
-$userLogged=$_SESSION['loggedUser'];
-
+if(isset($_SESSION['loggedUser'])) {
+    $userLogged = $_SESSION['loggedUser'];
+}
   if (!isset($userLogged)) {
   ?>
     <script>

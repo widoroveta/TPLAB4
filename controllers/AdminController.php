@@ -39,10 +39,25 @@ public function deleteCompany($id)
     $companyDAO->delete($id);
     $this->showListCompany();
 }
-public function modifyName($id){
+public function modifyName($id,$name){
         $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifyName($id,$name);
+        $this->showListCompany();
+}
+public  function  modifyCity($id,$city)
+{
+    $companyDAO=CompanyDAO::getInstance();
+    $companyDAO->modifyCity($id,$city);
+    $this->showListCompany();
 
 }
+    public  function  modifyAddress($id,$address)
+    {
+        $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifyAddress($id,$address);
+        $this->showListCompany();
+
+    }
  private function validateAdmin()
  {
      require_once(VIEWS_PATH."Admin/Validate-admin.php");

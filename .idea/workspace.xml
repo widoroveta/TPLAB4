@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="delete finished">
-      <change afterPath="$PROJECT_DIR$/Views/Admin/modifyViewCompany.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/footer.php" afterDir="false" />
+    <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CareerDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CareerDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/DAO.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interfaces/IAPI.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/modifyViewCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/modifyViewCompany.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyMagnamentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +67,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -132,8 +117,17 @@
       <workItem from="1634756194686" duration="1935000" />
       <workItem from="1634762068916" duration="6883000" />
       <workItem from="1634772977994" duration="6481000" />
-      <workItem from="1634843252418" duration="16267000" />
+      <workItem from="1634843252418" duration="16913000" />
+      <workItem from="1634894549478" duration="6039000" />
     </task>
+    <task id="LOCAL-00001" summary="delete finished">
+      <created>1634862406373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634862406373</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

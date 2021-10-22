@@ -94,6 +94,24 @@ class CompanyDAO
         $this->saveData();
 
     }
+    public function modifyCity($id,$city){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setCity($city);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }
+    public function modifyAddress($id,$address){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setAddress($address);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }
     public function searchById($id){
         $this->retrieveData();
         foreach ($this->companyList as $company) {
