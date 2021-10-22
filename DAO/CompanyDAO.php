@@ -112,6 +112,39 @@ class CompanyDAO
         $this->saveData();
 
     }
+    public function modifySize($id,$size){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setSize($size);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }public function modifyEmail($id,$email){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setEmail($email);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }public function modifyPhoneNumber($id,$phoneNumber){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setPhoneNumber($phoneNumber);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }public function modifyCuit($id,$cuit){
+        $this->retrieveData();
+        $company=$this->searchById($id);
+        $key=array_search($company,$this->companyList);
+        $company->setCuit($cuit);
+        $this->companyList[$key]=$company;
+        $this->saveData();
+
+    }
     public function searchById($id){
         $this->retrieveData();
         foreach ($this->companyList as $company) {

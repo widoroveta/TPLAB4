@@ -51,6 +51,34 @@ public  function  modifyCity($id,$city)
     $this->showListCompany();
 
 }
+    public  function  modifySize($id,$size)
+    {
+        $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifySize($id,$size);
+        $this->showListCompany();
+
+    }
+    public  function  modifyEmail($id,$email)
+    {
+        $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifyEmail($id,$email);
+        $this->showListCompany();
+
+    }
+    public  function  modifyPhoneNumber($id,$phoneNumber)
+    {
+        $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifyPhoneNumber($id,$phoneNumber);
+        $this->showListCompany();
+
+    }
+    public  function  modifyCuit($id,$cuit)
+    {
+        $companyDAO=CompanyDAO::getInstance();
+        $companyDAO->modifyCuit($id,$cuit);
+        $this->showListCompany();
+
+    }
     public  function  modifyAddress($id,$address)
     {
         $companyDAO=CompanyDAO::getInstance();
