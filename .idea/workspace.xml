@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/company.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/JobOffer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/nav-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/nav-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/css/materialize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +51,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Data/Company.json" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="89238300-6afb-4702-8f9b-4e92013b23c9" name="server" />
@@ -60,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/ext/php_xdebug-3.0.4-8.0-vs16-x86_64.dll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -73,6 +85,9 @@
     <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TPFinal\Data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\TPFinal\Views" />
     </key>
@@ -119,7 +134,12 @@
       <workItem from="1634843252418" duration="16913000" />
       <workItem from="1634894549478" duration="6200000" />
       <workItem from="1634924737916" duration="824000" />
-      <workItem from="1634933069755" duration="5708000" />
+      <workItem from="1634933069755" duration="6389000" />
+      <workItem from="1634945005824" duration="2152000" />
+      <workItem from="1635153982531" duration="2680000" />
+      <workItem from="1635195981857" duration="1443000" />
+      <workItem from="1635240108630" duration="5961000" />
+      <workItem from="1635286310413" duration="6235000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -149,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634935989724</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="home pretty">
+      <created>1634938934221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634938934225</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +187,8 @@
     <MESSAGE value="menu modify 2.0" />
     <MESSAGE value="admin abm finished" />
     <MESSAGE value="seach company student" />
-    <option name="LAST_COMMIT_MESSAGE" value="seach company student" />
+    <MESSAGE value="home pretty" />
+    <option name="LAST_COMMIT_MESSAGE" value="home pretty" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

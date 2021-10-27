@@ -1,9 +1,8 @@
 <footer class="page-footer grey darken-4" style=" position: absolute;
   bottom: 0;
   width: 100%;
-  height: 40px;">
-
-
+  height: 25px;
+">
         <div class=" grey darken-4">
             <h5 class="white-text center align">TP Final Lab4-Metodologia de Sistemas</h5>
 

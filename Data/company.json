@@ -1,0 +1,62 @@
+[
+    {
+        "companyId": 0,
+        "nameCompany": "Claro",
+        "city": "Mar Del Plata",
+        "address": "San Luis 1771",
+        "size": "big",
+        "email": "claro@mail.com",
+        "phoneNumber": "08001230611",
+        "cuit": "33687309109"
+    },
+    {
+        "companyId": 1,
+        "nameCompany": "Cencosud",
+        "city": "Buenos Aires",
+        "address": "Parana 3617",
+        "size": "big",
+        "email": "cencosud@mail.com",
+        "phoneNumber": "0810- 9999- 627",
+        "cuit": "30-59036076-3"
+    },
+    {
+        "companyId": 2,
+        "nameCompany": "Venex",
+        "city": "Cordoba",
+        "address": "F\u00e9lix Fr\u00edas 1203",
+        "size": "medium",
+        "email": "venex@mail.com",
+        "phoneNumber": "0810-555-8892",
+        "cuit": "30-71547320-4"
+    },
+    {
+        "companyId": 3,
+        "nameCompany": "Petit Abril",
+        "city": "Mar Del Plata",
+        "address": "Bouchard 3469",
+        "size": "small",
+        "email": "petit@mail.com",
+        "phoneNumber": "2235168888",
+        "cuit": "20-36382901-6"
+    },
+    {
+        "companyId": 4,
+        "nameCompany": "Globant MDQ",
+        "city": "Mar Del Plata",
+        "address": "Av. Col\u00f3n 1102",
+        "size": "big",
+        "email": "globantmdq@mail.com",
+        "phoneNumber": "0223 451-1777",
+        "cuit": "30-70840691-7"
+    },
+    {
+        "companyId": 5,
+        "nameCompany": "Prosegur",
+        "city": "Mar Del Plata",
+        "address": "Alvear 4862",
+        "size": "big",
+        "email": "prosegur@mail.com",
+        "phoneNumber": "0223 480-2151",
+        "cuit": "30-57517012-5"
+    }
+]

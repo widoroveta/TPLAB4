@@ -10,6 +10,7 @@ use DAO\JobPositionDAO as JobPositionDAO;
 ?>
 
 
+
 <body class="grey darken-3">
 <div class="row">
     <div class="col s6">

@@ -5,10 +5,10 @@ use Models\Company as Company;
 require_once(VIEWS_PATH."Admin/nav-admin.php");
 
 ?>
-<body class="grey darken-3">
+<body class="grey darken-3" >
 <div class="row">
     <div class="col s12 m4 l8">
-    <table class="striped lime lighten-3">
+    <table class="highlight black cyan-text text-accent-4">
         <thead>
         <tr>
 
@@ -52,3 +52,4 @@ require_once(VIEWS_PATH."Admin/nav-admin.php");
     </div>
 </div>
 </body>
+

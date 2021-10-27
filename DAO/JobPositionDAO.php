@@ -55,5 +55,14 @@ class JobPositionDAO {
         return $toJson;
 
     }
+    public function searchById($id)
+    {
+        $this->retrieveData();
+        foreach ($this->jobPositionList as $jobPosition) {
+            if ($jobPosition->getJobPositionId() == $id) {
+                return $jobPosition;
+            }
+        }
+    }
 }
 

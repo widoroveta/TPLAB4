@@ -76,4 +76,8 @@ class StudentMagnamentController
         $companyList = $this->companyDAO->getAll();
         require_once(VIEWS_PATH . "Student/list-company.php");
     }
+    public function showJobOfferList(){
+
+        require_once (VIEWS_PATH."student/list-jobOffer.php");
+    }
 }

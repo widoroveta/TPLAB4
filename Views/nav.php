@@ -6,7 +6,9 @@ require_once(VIEWS_PATH . "header.php");
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
     });
-
+    $( document ).ready(function() {
+        $('#modal1').modal('toggle')
+    });
     // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
     // var collapsibleElem = document.querySelector('.collapsible');
     // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
@@ -32,6 +34,7 @@ require_once(VIEWS_PATH . "header.php");
                 var elems = document.querySelectorAll('.modal');
                 var instances = M.Modal.init(elems);
             });
+
         </script>
     <br>
         <!-- Botones sin session -->

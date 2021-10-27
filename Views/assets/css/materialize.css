@@ -4739,7 +4739,7 @@ small {
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   padding: 24px;
   margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
+  border-radius: 25px;
   background-color: #fff;
 }
 
@@ -4751,7 +4751,8 @@ small {
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
-  border-radius: 2px;
+  border-radius: 25px;
+
 }
 
 .card .card-title {
