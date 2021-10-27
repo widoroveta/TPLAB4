@@ -6,7 +6,7 @@ require_once(VIEWS_PATH . "header.php");
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
     });
-    $( document ).ready(function() {
+    $(document).ready(function () {
         $('#modal1').modal('toggle')
     });
     // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
@@ -101,53 +101,69 @@ require_once(VIEWS_PATH . "header.php");
     </div>
     <div class="modal-footer">
         <button type="submit" class="modal-close waves-effect waves-green btn-flat">Iniciar sesion</button>
-        </form>
+    </form>
     </div>
-
 </div>
+
 
 <!-- Ventana de registro -->
 <div id="modal1" class="modal">
     <div class="modal-content">
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
+
+            <div id="msg"></div>
+
+
+            <div id="error" class="card-panel  ocultar red" role="alert">
+                Las Contraseñas no coinciden, vuelve a intentar !
+            </div>
+            <div id="ok" class="card-panel ocultar green" role="alert">
+                Las Contraseñas coinciden
+            </div>
+
+            <form id="miformulario">
+                <div class="form-group">
+                    <label for="usuario">Email</label>
+                    <input type="text" class="form-control" id="Email">
+                </div>
+                <div class="form-group">
+                    <label for="pass1">Contraseña</label>
+                    <input type="password" class="form-control" id="pass1" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass2">Vuelve a escribir la Contraseña</label>
+                    <input type="password" onblur="verificarPasswords(); return false" class="form-control" id="pass2"
+                           required>
                 </div>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <!-- <div class="row">
-            <div class="col s12">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-              </div>
-            </div>
-          </div> -->
+                <button type="submit" id="login" class="btn btn-primary">Login</button>
             </form>
+
+            <script>
+                function verificarPasswords() {
+
+                    // Ontenemos los valores de los campos de contraseñas
+                    pass1 = document.getElementById('pass1');
+                    pass2 = document.getElementById('pass2');
+
+                    // Verificamos si las constraseñas no coinciden
+                    if (pass1.value != pass2.value) {
+
+                        document.getElementById("error").classList.add("mostrar");
+                        document.getElementById("login").style.visibility = "hidden";
+
+                    } else {
+                        document.getElementById("error").classList.remove("mostrar");
+                        document.getElementById("ok").classList.remove("ocultar");
+                        document.getElementById("login").disabled = true;
+
+                    }
+
+                }
+
+            </script>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+
+
 </div>

@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/company.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/JobOffer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/nav-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/nav-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/assets/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/css/materialize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +126,9 @@
       <workItem from="1635153982531" duration="2680000" />
       <workItem from="1635195981857" duration="1443000" />
       <workItem from="1635240108630" duration="5961000" />
-      <workItem from="1635286310413" duration="6235000" />
+      <workItem from="1635286310413" duration="7684000" />
+      <workItem from="1635326731325" duration="1050000" />
+      <workItem from="1635365920627" duration="4933000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -176,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634938934225</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="job offer problem">
+      <created>1635292926853</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635292926853</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +184,8 @@
     <MESSAGE value="admin abm finished" />
     <MESSAGE value="seach company student" />
     <MESSAGE value="home pretty" />
-    <option name="LAST_COMMIT_MESSAGE" value="home pretty" />
+    <MESSAGE value="job offer problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="job offer problem" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

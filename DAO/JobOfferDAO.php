@@ -87,11 +87,11 @@ class JobOfferDAO
     {
         $arrayToEncode = array();
         $jsonPath = $this->fileName;
-        var_dump($this->jobOfferList);
+
         foreach ($this->jobOfferList as $jobOffer) {
             $arrayValue['jobOfferId'] = $jobOffer->getJobOfferId();
-            $arrayValue['jobPostion'] = $jobOffer->getJobPosition();
-            $arrayValue['company'] = $jobOffer->getCompany();
+            $arrayValue['jobPostion'] = (object)$jobOffer->getJobPosition();
+            $arrayValue['company'] = (object) $jobOffer->getCompany();
 
             array_push($arrayToEncode, $arrayValue);
         }
