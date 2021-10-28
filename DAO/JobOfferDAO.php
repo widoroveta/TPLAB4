@@ -27,27 +27,27 @@ class JobOfferDAO
         return self::$instance;
     }
 
-    public function add($jobOffer)
-    {
-        $c = 0;
-        //  $this->retrieveData();
-
-        if ($jobOffer instanceof JobOffer && $jobOffer != null) {
-            if (!empty($this->JobOfferList)) {
-
-                $c = $this->higherId();
-
-                $jobOffer->setJobOfferId(++$c);
-            } else {
-
-                $jobOffer->setJobOfferId(0);
-            }
-
-            array_push($this->jobOfferList, $jobOffer);
-        }
-
-        $this->saveData();
-    }
+//    public function add($jobOffer)
+//    {
+//        $c = 0;
+//        //  $this->retrieveData();
+//
+//        if ($jobOffer instanceof JobOffer && $jobOffer != null) {
+//            if (!empty($this->JobOfferList)) {
+//
+//                $c = $this->higherId();
+//
+//                $jobOffer->setJobOfferId(++$c);
+//            } else {
+//
+//                $jobOffer->setJobOfferId(0);
+//            }
+//
+//            array_push($this->jobOfferList, $jobOffer);
+//        }
+//
+//        $this->saveData();
+//    }
 
     private function higherId()
     {

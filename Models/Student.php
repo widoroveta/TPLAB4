@@ -10,7 +10,7 @@ class Student{
     private $fileNumber;
     private $gender;
     private $birthDate;
-    private $email;
+  protected $email;
     private $phoneNumber;
     private $active;
 

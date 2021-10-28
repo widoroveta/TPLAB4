@@ -1,5 +1,8 @@
 <?php
     namespace Controllers;
+    use DAO\StudentDAO;
+    use DAO\UserDAO;
+  use  Models\User as User;
     class HomeController{
 
         public function index($message=""){
@@ -8,8 +11,20 @@
         }
         
 
-        public function register(){
-          
+        public function register($email,$pass2){
+                $studentDAO=StudentDAO::getInstance();
+                $userDAO=UserDAO::getInstance();
+                $student=$studentDAO->searchByEmail($email);
+                if($student!=null)
+                {
+                    $user=new User();
+                    $user->setStudent($student);
+                    $user->setPassword($pass2);
+                    $userDAO->add($user);
+
+                }else{
+                    $this->index("No eres un estudiante de la UTN");
+                }
         }
         public function logout(){
       

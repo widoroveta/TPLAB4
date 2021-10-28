@@ -101,7 +101,7 @@ require_once(VIEWS_PATH . "header.php");
     </div>
     <div class="modal-footer">
         <button type="submit" class="modal-close waves-effect waves-green btn-flat">Iniciar sesion</button>
-    </form>
+        </form>
     </div>
 </div>
 
@@ -114,29 +114,30 @@ require_once(VIEWS_PATH . "header.php");
             <div id="msg"></div>
 
 
-            <div id="error" class="card-panel  ocultar red" role="alert">
+            <div id="error" style="display: none;" class="card-panel   red" role="alert">
                 Las Contraseñas no coinciden, vuelve a intentar !
             </div>
-            <div id="ok" class="card-panel ocultar green" role="alert">
+            <div id="ok" style="display: none;" class="card-panel  green" role="alert">
                 Las Contraseñas coinciden
             </div>
 
-            <form id="miformulario">
+            <form action="<?=FRONT_ROOT."home/register"?>" method="post" id="miformulario">
                 <div class="form-group">
                     <label for="usuario">Email</label>
-                    <input type="text" class="form-control" id="Email">
+                    <input type="text" name="email" class="form-control" id="Email">
                 </div>
                 <div class="form-group">
                     <label for="pass1">Contraseña</label>
-                    <input type="password" class="form-control" id="pass1" required>
+                    <input type="password" onchange="verificarPasswords(); return false" class="form-control" id="pass1"
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="pass2">Vuelve a escribir la Contraseña</label>
-                    <input type="password" onblur="verificarPasswords(); return false" class="form-control" id="pass2"
+                    <input type="password" name="pass2" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2"
                            required>
                 </div>
 
-                <button type="submit" id="login" class="btn btn-primary">Login</button>
+                <button type="submit" id="login" class="btn btn-primary">Registrarse</button>
             </form>
 
             <script>
@@ -145,25 +146,28 @@ require_once(VIEWS_PATH . "header.php");
                     // Ontenemos los valores de los campos de contraseñas
                     pass1 = document.getElementById('pass1');
                     pass2 = document.getElementById('pass2');
+                    if (Boolean(pass2)) {
+                        if (pass1.value != pass2.value) {
+                            document.getElementById("error").style.display = "block";
+                            document.getElementById("ok").style.display = 'none';
+                            document.getElementById("login").style.display="none"
+                            document.getElementById("login").type = 'button';
 
-                    // Verificamos si las constraseñas no coinciden
-                    if (pass1.value != pass2.value) {
+                        } else {
+                            document.getElementById("error").style.display = "none";
+                            document.getElementById("ok").style.display = 'block';
+                            document.getElementById("login").disable = false;
+                            document.getElementById("login").type = 'submit';
 
-                        document.getElementById("error").classList.add("mostrar");
-                        document.getElementById("login").style.visibility = "hidden";
-
-                    } else {
-                        document.getElementById("error").classList.remove("mostrar");
-                        document.getElementById("ok").classList.remove("ocultar");
-                        document.getElementById("login").disabled = true;
+                        }
 
                     }
-
                 }
 
             </script>
         </div>
     </div>
 
-
+    <!--    var toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';-->
+    <!--    M.toast({html: toastHTML});-->
 </div>

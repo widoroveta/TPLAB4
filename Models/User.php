@@ -47,6 +47,7 @@ class User
     /**
      * @return mixed
      */
+
     public function getPassword()
     {
         return $this->password;
