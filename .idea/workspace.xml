@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Config/QueryType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +78,7 @@
       <recent name="C:\xampp\htdocs\TPFinal\Data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TPFinal\DAO" />
       <recent name="C:\xampp\htdocs\TPFinal\Views" />
     </key>
   </component>
@@ -134,7 +133,7 @@
       <workItem from="1635326731325" duration="1050000" />
       <workItem from="1635365920627" duration="6605000" />
       <workItem from="1635412713125" duration="4894000" />
-      <workItem from="1635450204735" duration="2741000" />
+      <workItem from="1635450204735" duration="6424000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -185,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635377514319</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="change framework">
+      <created>1635453253331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635453253331</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +205,8 @@
     <MESSAGE value="home pretty" />
     <MESSAGE value="job offer problem" />
     <MESSAGE value="gracias dylan" />
-    <option name="LAST_COMMIT_MESSAGE" value="gracias dylan" />
+    <MESSAGE value="change framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="change framework" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

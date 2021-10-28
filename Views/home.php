@@ -28,7 +28,23 @@ use DAO\JobPositionDAO as JobPositionDAO;
 
 
 <?php
-if (!empty($message)) { ?>
+if (!empty($message)) {
+if($message=="Usuario registrado"){
+
+    ?>
+    <script>
+        var toastHTML = '<span><i class="tiny material-icons">close</i>  <?= $message ?></span>';
+        M.toast({
+            html: toastHTML,
+            classes: " green accent-3",
+            displayLength: 5000
+        });
+    </script>
+        <?php
+        }
+else{
+?>
+
     <script>
         var toastHTML = '<span><i class="tiny material-icons">close</i>  <?= $message ?></span>';
         M.toast({
@@ -39,7 +55,7 @@ if (!empty($message)) { ?>
     </script>
     <?php
 }
-
+    }
 ?>
 
 </body>

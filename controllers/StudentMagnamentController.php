@@ -5,6 +5,7 @@ namespace Controllers;
 use DAO\CareerDAO as CareerDAO;
 use DAO\CompanyDAO;
 use DAO\StudentDAO as StudentDAO;
+use DAO\UserDAO;
 use Models\Career as Career;
 use Models\Student as Student;
 
@@ -14,9 +15,10 @@ class StudentMagnamentController
 
     private $studentDAO;
     private $careerDAO;
-
+    private $userDAO;
     public function login($email, $password)
     {
+        $this->userDAO=UserDAO::getInstance();
         $this->studentDAO = StudentDAO::getInstance();
         $this->careerDAO = CareerDAO::getInstance();
         $std = $this->verifyEmail($email);
@@ -28,6 +30,8 @@ class StudentMagnamentController
 
                 $message = "Usuario encontrado";
                 $std->setCareer($this->careerDAO->searchById($std->getCareer()));
+                $user=new User();
+                $userDAO->add($user);
                 $_SESSION["loggedUser"] = $std;
 
                 $this->showHomeStudent($message);

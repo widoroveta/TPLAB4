@@ -124,16 +124,16 @@ require_once(VIEWS_PATH . "header.php");
             <form action="<?=FRONT_ROOT."home/register"?>" method="post" id="miformulario">
                 <div class="form-group">
                     <label for="usuario">Email</label>
-                    <input type="text" name="email" class="form-control" id="Email">
+                    <input type="text" value="" placeholder="Example@gmail.com" name="email" class="form-control" id="Email">
                 </div>
                 <div class="form-group">
                     <label for="pass1">Contraseña</label>
-                    <input type="password" onchange="verificarPasswords(); return false" class="form-control" id="pass1"
+                    <input type="password" value="" placeholder="123456" onchange="verificarPasswords(); return false" class="form-control" id="pass1"
                            required>
                 </div>
                 <div class="form-group">
                     <label for="pass2">Vuelve a escribir la Contraseña</label>
-                    <input type="password" name="pass2" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2"
+                    <input type="password" name="pass2" placeholder="123456" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2"
                            required>
                 </div>
 
@@ -150,13 +150,13 @@ require_once(VIEWS_PATH . "header.php");
                         if (pass1.value != pass2.value) {
                             document.getElementById("error").style.display = "block";
                             document.getElementById("ok").style.display = 'none';
-                            document.getElementById("login").style.display="none"
-                            document.getElementById("login").type = 'button';
+                            document.getElementsById("Login").style.display="none";
+
 
                         } else {
                             document.getElementById("error").style.display = "none";
                             document.getElementById("ok").style.display = 'block';
-                            document.getElementById("login").disable = false;
+                            document.getElementsById("Login").style.display="block";
                             document.getElementById("login").type = 'submit';
 
                         }

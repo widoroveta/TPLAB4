@@ -27,13 +27,12 @@ class UserDAO
     }
     public function add($user)
     {
-        $sqlQuery = "INSERT INTO users (studentId,`password`) VALUES(:studentId,:pasword)";
-        $parameters['id'] = $user->getUserId();
+        $sqlQuery = "INSERT INTO users (studentId,`password`) VALUES(:studentId,:password)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
         try {
-            $this->conecction = Connection::getInstance();
-            return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters);
+            $this->conecction = Connection::GetInstance();
+            return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters,0);
         } catch (PDOException $ex) {
             throw $ex;
         }
