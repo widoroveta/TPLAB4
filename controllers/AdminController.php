@@ -15,7 +15,7 @@ class AdminController
 
     public function showListCompany()
     {
-        $this->validateAdmin();
+    $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyList = $companyDAO->getAll();
 
@@ -122,19 +122,19 @@ class AdminController
         $companyList = $companyDAO->getAll();
         require_once(VIEWS_PATH . "admin/add-jobOffer.php");
     }
-    public  function addJobOffer($company,$jobPosition){
+    public  function addJobOffer($company,$jobPosition,$requirements){
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobPositionDAO=JobPositionDAO::getInstance();
         $careerDAO=CareerDAO::getInstance();
         $companyDAO=CompanyDAO::getInstance();
-
         $jp=$jobPositionDAO->searchById($jobPosition);
-
         $cm=$companyDAO->searchById($company);
         $jobOffer=new JobOffer();
+        $jobOffer->setRequirements($requirements);
         $jobOffer->setCompany($cm);
         $jobOffer->setJobPosition($jp);
         $jobOfferDAO->add($jobOffer);
+
        $this->showAddJobOffer();
     }
 

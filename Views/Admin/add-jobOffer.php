@@ -41,6 +41,11 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <label>Posiciones de Trabajo</label>
         </div>
 
+            <div class="input-field col s5 offset-s4">
+                <input type="text" id="requirements" name="requirements"  >
+                <label for="requirements">Requirimientos</label>
+            </div>
+
         <button class="btn waves-effect waves-light col s1 offset-s8 red darken-4 z-depth-4" type="submit" name="action">Enviar
             <i class="material-icons right">send</i>
         </button>

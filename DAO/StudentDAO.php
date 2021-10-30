@@ -70,4 +70,14 @@ class StudentDAO
     }
     return false;
   }
+    public function searchById($id)
+    {
+        $this->retrieveData();
+        foreach ($this->studentList as $std) {
+            if ($std->getStudentId() == $id) {
+                return $std;
+            }
+        }
+        return false;
+    }
 }

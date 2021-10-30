@@ -3,74 +3,36 @@ require_once(VIEWS_PATH."nav.php");
 require_once (VIEWS_PATH."student/nav-student.php");
 ?><body class="grey darken-3">
 <div class="row">
-    <div class="col s3 m6 l3">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
+    <?php
+    foreach ($jobOfferList as $jobOffer){
+    ?>
+
+
+        <div class="col s3 ">
+            <div class="card ">
+                <div class="card-content card-content  z-depth-4 black purple-text text-accent-2">
+                    <span class="card-title"><b><?="#".$jobOffer->getJobOfferId(). $jobOffer->getCompany()->getNameCompany() ?></b></span>
+                    <ul>
+                        <li><b>Description:</b> <?= $jobOffer->getJobPosition()->getDescription()?></li>
+                        <li><b>Careera:</b> <?=$jobOffer->getJobPosition()->getCareer()->getDescription() ?></li>
+                        <li><b>Requerimientos:</b><?= $jobOffer->getRequirements()?></li>
+
+                    </ul>
+                </div>
+                                    <div class="card-action">
+                                        purple darken-4
+
+                                        <a class="btn-floating btn-large waves-effect waves-light  purple darken-4"><i class="material-icons">add</i></a>
+
+                                    </div>
             </div>
         </div>
+
+        <?php
+        }
+        ?>
+
     </div>
 
-    <div class="col s3 ">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="col s3 ">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s3 ">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s3 ">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-</div>
 </body>

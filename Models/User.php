@@ -7,10 +7,55 @@ class User
     private $userId;
     private $student;
     private $password;
+    private $admin;
+    private $email;
 
-    public function __construct()
+    /**
+     * @return mixed
+     */
+    public function getEmail()
     {
+        return $this->email;
     }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @param $userId
+     * @param $student
+     * @param $password
+     * @param $admin
+     */
+    public function __construct($userId='', $student='', $password='', $admin=false,$email='')
+    {
+        $this->userId = $userId;
+        $this->student = $student;
+        $this->password = $password;
+        $this->admin = $admin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param mixed $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
+
 
     /**
      * @return mixed

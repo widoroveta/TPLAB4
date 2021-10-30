@@ -168,6 +168,5 @@ require_once(VIEWS_PATH . "header.php");
         </div>
     </div>
 
-    <!--    var toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Undo</button>';-->
-    <!--    M.toast({html: toastHTML});-->
+
 </div>

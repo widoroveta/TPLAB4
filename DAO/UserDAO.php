@@ -27,14 +27,80 @@ class UserDAO
     }
     public function add($user)
     {
+       if(!$this->searchByStudentId($user->getStudent()->getStudentId())){
         $sqlQuery = "INSERT INTO users (studentId,`password`) VALUES(:studentId,:password)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
+        $parameters['admin']=$user->getActive();
+        $parameters['email']=$user->getEmail();
         try {
             $this->conecction = Connection::GetInstance();
             return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters,0);
         } catch (PDOException $ex) {
             throw $ex;
         }
+       }else{
+           return null;
+       }
+
+    }
+    public function searchByStudentId($id){
+
+        $sqlQuery="select * from users where (studentId = :studentId)";
+        $parameters['studentId'] = $id;
+
+        try {
+            $this->conecction = Connection::GetInstance();
+           $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
+         //  var_dump($resultSet);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+        if(!empty($resultSet))
+        {
+            $user = $this->mapout($resultSet);
+        }
+        else
+        {
+            $user = false;
+        }
+
+        return $user;
+    }
+    public function searchByEmail($email){
+        $sqlQuery="select * from users where (email = :email)";
+        $parameters['email'] = $email;
+
+        try {
+            $this->conecction = Connection::GetInstance();
+            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
+
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+        if(!empty($resultSet))
+        {
+            $user = $this->mapout($resultSet);
+        }
+        else
+        {
+            $user = false;
+        }
+
+        return $user;
+    }
+
+    public function mapout ($value)
+    {
+        $studentDAO=StudentDAO::getInstance();
+        $studentDAO->getAll();
+        $value = is_array($value) ? $value : [];
+
+        $resp = array_map(function($p){
+            $studentDAO=StudentDAO::getInstance();
+            return new User($p['id'], $studentDAO->searchById($p['studentId']), $p['password'],$p['admin'],$p['email']);
+        }, $value);
+
+        return count($resp) > 1 ? $resp : $resp['0'];
     }
 }
