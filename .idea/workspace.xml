@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/Appointment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/JobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/JobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/Validate-Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/Validate-Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +26,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/Company_Rework" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -148,6 +145,11 @@
       <workItem from="1635540433507" duration="2627000" />
       <workItem from="1635543998052" duration="3235000" />
       <workItem from="1635617094613" duration="3597000" />
+      <workItem from="1635632333832" duration="1378000" />
+      <workItem from="1635686069602" duration="490000" />
+      <workItem from="1635695393724" duration="11000" />
+      <workItem from="1635711442039" duration="28000" />
+      <workItem from="1635716704696" duration="3116000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -212,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635460785284</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="joboffer finished">
+      <created>1635632586750</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635632586750</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +237,8 @@
     <MESSAGE value="gracias dylan" />
     <MESSAGE value="change framework" />
     <MESSAGE value="login-register" />
-    <option name="LAST_COMMIT_MESSAGE" value="login-register" />
+    <MESSAGE value="joboffer finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="joboffer finished" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

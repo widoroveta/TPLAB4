@@ -52,7 +52,7 @@ class UserDAO
         try {
             $this->conecction = Connection::GetInstance();
            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
-         //  var_dump($resultSet);
+
         } catch (PDOException $ex) {
             throw $ex;
         }

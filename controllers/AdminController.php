@@ -15,7 +15,7 @@ class AdminController
 
     public function showListCompany()
     {
-    $this->validateAdmin();
+  //  $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyList = $companyDAO->getAll();
 
@@ -34,7 +34,7 @@ class AdminController
 
     public function showAddCompany()
     {
-        $this->validateAdmin();
+      //  $this->validateAdmin();
         require_once(VIEWS_PATH . "Admin/add-company.php");
     }
 

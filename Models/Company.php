@@ -13,10 +13,28 @@ class Company
     private $phoneNumber;
     private $cuit;
 
-    public function __construct()
+    /**
+     * @param $companyId
+     * @param $nameCompany
+     * @param $city
+     * @param $address
+     * @param $size
+     * @param $email
+     * @param $phoneNumber
+     * @param $cuit
+     */
+    public function __construct($companyId="", $nameCompany="", $city="", $address="", $size="", $email="", $phoneNumber="", $cuit="")
     {
-
+        $this->companyId = $companyId;
+        $this->nameCompany = $nameCompany;
+        $this->city = $city;
+        $this->address = $address;
+        $this->size = $size;
+        $this->email = $email;
+        $this->phoneNumber = $phoneNumber;
+        $this->cuit = $cuit;
     }
+
 
     /**
      * @return mixed
