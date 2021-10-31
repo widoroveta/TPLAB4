@@ -176,18 +176,25 @@ class CompanyDAO
     {
 
 
-        $sqlquery = "SELECT * FROM company WHERE (companyId = :companyId)";
+        $sqlQuery = "SELECT * FROM company WHERE (companyId = :companyId)";
         $parameters["companyId"] = $id;
         try {
+            $this->conecction = Connection::GetInstance();
+            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
 
-
-            $this->connection = Connection::GetInstance();
-            $resultSet = $this->connection->Execute($sqlquery, $parameters);
-
-            return $companiesList[0];
         } catch (PDOException $ex) {
             throw $ex;
         }
+        if(!empty($resultSet))
+        {
+            $company = $this->mapout($resultSet);
+        }
+        else
+        {
+            $company = false;
+        }
+
+        return $company;
     }
 
     function searchByName($name)

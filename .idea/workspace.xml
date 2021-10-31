@@ -7,9 +7,6 @@
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +146,7 @@
       <workItem from="1635686069602" duration="490000" />
       <workItem from="1635695393724" duration="11000" />
       <workItem from="1635711442039" duration="28000" />
-      <workItem from="1635716704696" duration="3116000" />
+      <workItem from="1635716704696" duration="4543000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -221,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635632586750</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="company dao fix">
+      <created>1635722590179</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635722590180</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +242,8 @@
     <MESSAGE value="change framework" />
     <MESSAGE value="login-register" />
     <MESSAGE value="joboffer finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="joboffer finished" />
+    <MESSAGE value="company dao fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="company dao fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
