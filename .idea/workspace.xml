@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/JobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/JobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +54,9 @@
     <include_path>
       <path value="$PROJECT_DIR$" />
     </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1zjzUcjZwn3ON4yMf0Efo2pRmbn" />
   <component name="ProjectViewState">
@@ -154,7 +154,9 @@
       <workItem from="1635711442039" duration="28000" />
       <workItem from="1635716704696" duration="5434000" />
       <workItem from="1635758722901" duration="4819000" />
-      <workItem from="1635787833823" duration="260000" />
+      <workItem from="1635787833823" duration="1539000" />
+      <workItem from="1635794554742" duration="654000" />
+      <workItem from="1635800380517" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -240,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635723965373</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="company dao fix3">
+      <created>1635788203498</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1635788203498</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +268,8 @@
     <MESSAGE value="joboffer finished" />
     <MESSAGE value="company dao fix" />
     <MESSAGE value="company dao fix2" />
-    <option name="LAST_COMMIT_MESSAGE" value="company dao fix2" />
+    <MESSAGE value="company dao fix3" />
+    <option name="LAST_COMMIT_MESSAGE" value="company dao fix3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

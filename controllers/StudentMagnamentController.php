@@ -108,7 +108,8 @@ class StudentMagnamentController
         $jobOfferList=$jobOfferDAO->getAll();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
-    public function showAddAppointment(){
+    public function showAddAppointment($id,$file=''){
+        $studentId=$_SESSION['loggedUser']->getStudentId();
         require_once (VIEWS_PATH.'student/add-appointment.php');
     }
 }

@@ -47,7 +47,7 @@ class JobOfferDAO
 
     public function getAll()
     {
-        $sqlQuery = "SELECT * FROM joboffer";
+        $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId;";
         try {
             $this->connection = Connection::getInstance();
 
@@ -89,7 +89,7 @@ class JobOfferDAO
         $resp = array_map(function ($p) {
             $companyDAO = CompanyDAO::getInstance();
             $jobPositionDAO = JobPositionDAO::getInstance();
-            return new JobOffer($p['id'], $jobPositionDAO->searchById($p['jobPositionId']), $companyDAO->searchById($p['companyId']), $p['requirements']);
+            return new JobOffer($p['id'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'],$p['nameCompany'],$p['city'],$p['address'],$p['size'],$p['email'],$p['phoneNumber'],$p['cuit']), $p['requirements']);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];
