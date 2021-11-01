@@ -16,20 +16,12 @@ class JobOffer {
         return $this->requirements;
     }
 
-    /**
-     * @param mixed|string $requirements
-     */
+
     public function setRequirements($requirements)
     {
         $this->requirements = $requirements;
     }
 
-    /**
-     * @param $jobOfferId
-     * @param $jobPosition
-     * @param $company
-     * @param $requirements
-     */
     public function __construct($jobOfferId='', $jobPosition='', $company='', $requirements='')
     {
         $this->jobOfferId = $jobOfferId;
@@ -46,9 +38,7 @@ class JobOffer {
         return $this->jobOfferId;
     }
 
-    /**
-     * @param mixed $jobOfferId
-     */
+
     public function setJobOfferId($jobOfferId)
     {
         $this->jobOfferId = $jobOfferId;

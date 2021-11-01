@@ -5,6 +5,7 @@ namespace Models;
 class Appointment
 {
     private $apointmentId;
+    private $student;
     private $jobOffer;
     private $cv;
     private $message;

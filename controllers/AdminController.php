@@ -34,7 +34,7 @@ class AdminController
 
     public function showAddCompany()
     {
-      //  $this->validateAdmin();
+       $this->validateAdmin();
         require_once(VIEWS_PATH . "Admin/add-company.php");
     }
 

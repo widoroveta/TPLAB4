@@ -52,7 +52,7 @@ class CompanyDAO
 
     public function Delete($id)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `status` = false WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET `status` = false WHERE (companyId = :id)";
         try {
 
             $parameters["id"] = $id;
@@ -67,10 +67,11 @@ class CompanyDAO
 
     public function modifyName($id, $name)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `name` = :name WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company  SET nameCompany = :name WHERE (companyId = :id)";
+        $parameters["name"] = $name;
+        $parameters["id"] = $id;
         try {
-            $parameters["name"] = $name;
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 
@@ -82,10 +83,11 @@ class CompanyDAO
 
     public function modifyCity($id, $city)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `city` = :city WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET city = :city WHERE (companyId = :id)";
+        $parameters["city"] = $city;
+        $parameters["id"] = $id;
         try {
-            $parameters["city"] = $city;
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 
@@ -98,10 +100,11 @@ class CompanyDAO
 
     public function modifyAddress($id, $address)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `address` = :address WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET address = :address WHERE (companyId = :id)";
+        $parameters["address"] = $address;
+        $parameters["id"] = $id;
         try {
-            $parameters["address"] = $address;
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 
@@ -113,10 +116,11 @@ class CompanyDAO
 
     public function modifySize($id, $size)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `size` = :size WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET size = :size WHERE (companyId = :id)";
+        $parameters["size"] = $size;
+        $parameters["id"] = $id;
         try {
-            $parameters["size"] = $size;
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 
@@ -128,11 +132,10 @@ class CompanyDAO
 
     public function modifyEmail($id, $email)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `email` = :email WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET email = :email WHERE (companyId = :id)";
+        $parameters["email"] = $email;
+        $parameters["id"] = $id;
         try {
-            $parameters["email"] = $email;
-            $parameters["id"] = $id;
-
             $this->connection = Connection::GetInstance();
 
             return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
@@ -143,10 +146,11 @@ class CompanyDAO
 
     public function modifyPhoneNumber($id, $phoneNumber)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `phoneNumber` = :phoneNumber WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET phoneNumber = :phoneNumber WHERE (companyId = :id)";
+        $parameters["phoneNumber"] = $phoneNumber;
+        $parameters["id"] = $id;
+
         try {
-            $parameters["phoneNumber"] = $phoneNumber;
-            $parameters["id"] = $id;
 
             $this->connection = Connection::GetInstance();
 
@@ -159,9 +163,10 @@ class CompanyDAO
     public function modifyCuit($id, $cuit)
     {
         $sqlquery = "UPDATE " . $this->companyList . " SET `cuit` = :cuit WHERE `companyId` = :id";
+        $parameters["cuit"] = $cuit;
+        $parameters["id"] = $id;
         try {
-            $parameters["cuit"] = $cuit;
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 
@@ -202,30 +207,24 @@ class CompanyDAO
         $companiesList = array();
 
         $sqlquery = "SELECT * FROM " . $this->companyList . " WHERE nameCompany = :name";
+        $parameters["name"] = $name;
         try {
-            echo var_dump($sqlquery);
+            $this->conecction = Connection::GetInstance();
+            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
 
-            $parameters["name"] = $name;
-            $this->connection = Connection::GetInstance();
-            $resultSet = $this->connection->Execute($sqlquery, $parameters);
-            echo var_dump($resultSet);
-            foreach ($resultSet as $row) {
-                $company = new Company();
-                $company->setCompanyId($row['companyId']);
-                $company->setNameCompany($row['nameCompany']);
-                $company->setCity($row['city']);
-                $company->setAddress($row['address']);
-                $company->setSize($row['size']);
-                $company->setEmail($row['email']);
-                $company->setPhoneNumber($row['phoneNumber']);
-                $company->setCuit($row['cuit']);
-
-                array_push($companiesList, $company);
-            }
-            return $companiesList[0];
         } catch (PDOException $ex) {
             throw $ex;
         }
+        if(!empty($resultSet))
+        {
+            $company = $this->mapout($resultSet);
+        }
+        else
+        {
+            $company = false;
+        }
+
+        return $company;
     }
 
     public function getAll()
