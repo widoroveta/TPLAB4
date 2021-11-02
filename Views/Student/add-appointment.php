@@ -1,13 +1,16 @@
 <?php
 require_once(VIEWS_PATH . "nav.php");
 //require_once(VIEWS_PATH . "student/nav-student.php");
+//var_dump($_FILES);
+//echo '<pre>';
+//var_dump($_POST);
+//echo  '</pre>';
+//var_dump($_FILES);
 
-var_dump($file);
-echo $file['name'];
 ?>
 <body class="grey darken-3">
 <div class="row">
-    <form action="<?=FRONT_ROOT.'StudentMagnament/showAddAppointment'?>" enctype="multipart/form-data" method="post">
+    <form action="<?=FRONT_ROOT.'StudentMagnament/addAppointment'?>" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="jobOfferId" value="<?=$id?>">
         <input type="hidden" name="studentId" value="<?=$studentId?>">
         <div class="row">
@@ -20,7 +23,7 @@ echo $file['name'];
                 <div class="file-field input-field col s12 ">
                     <div class="btn pink">
                         <span>File</span>
-                        <input name="file" type="file">
+                        <input name="file" class="form-control-file" type="file">
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">

@@ -108,8 +108,35 @@ class StudentMagnamentController
         $jobOfferList=$jobOfferDAO->getAll();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
-    public function showAddAppointment($id,$file=''){
+    public function showAddAppointment($id){
+
         $studentId=$_SESSION['loggedUser']->getStudentId();
         require_once (VIEWS_PATH.'student/add-appointment.php');
+    }
+    public function showListAppointment(){
+
+        require_once (VIEWS_PATH."student/list-Appointment.php");
+    }
+
+    public function uploadFile($file)
+    {
+        try {
+
+            $fileName = $file["name"];
+            $tempFileName = $file["tmp_name"];
+            $type = $file["type"];
+            $filePath = UPLOADS_PATH.basename($fileName);
+            $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+            move_uploaded_file($tempFileName,$filePath);
+        }
+        catch (\Exception $ex)
+        {
+            throw $ex;
+        }
+    }
+    public  function  addAppointment(){
+        $file=$_FILES['file'];
+        $this->uploadFile($file);
+
     }
 }

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf2b84a-16f3-4f85-ad47-46b5efa91c3d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/add-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/add-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/nav-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/nav-student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +158,7 @@
       <workItem from="1635787833823" duration="1539000" />
       <workItem from="1635794554742" duration="654000" />
       <workItem from="1635800380517" duration="3907000" />
+      <workItem from="1635844872402" duration="5741000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
