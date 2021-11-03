@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use DAO\UserDAO;
 use Models\JobOffer as JobOffer;
 use DAO\CareerDAO;
 use DAO\CompanyDAO;
@@ -9,6 +10,7 @@ use DAO\JobOfferDAO;
 use DAO\JobPositionDAO;
 use DAO\StudentDAO;
 use Models\JobPosition;
+use Models\User;
 
 class AdminController
 {
@@ -36,9 +38,20 @@ class AdminController
         $this->validateAdmin();
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
-        $careerDAO->getCareerByValidation();
+        $careerDAO->getAll();
         $studentList = $studentDAO->searchByValidation();
-        require_once(VIEWS_PATH . "Admin/list-student.php");
+        require_once(VIEWS_PATH . "Admin/register-user.php");
+    }
+
+    public function addNewUser($idModal, $pass2){
+        $studentDAO = StudentDAO::getInstance();
+        $student = $studentDAO->searchById($idModal);
+        $user = new User();
+        $user->setStudent($student);
+        $user->setPassword($pass2);
+        $userDAO = UserDAO::getInstance();
+        $userDAO->add($user);
+        $this->showValidateStudent();
     }
 
     public function showAddCompany()

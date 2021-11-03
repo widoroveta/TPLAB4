@@ -82,11 +82,13 @@ class StudentDAO
     }
     public function searchByValidation() //Buscar usuarios activos
     {
-        $this->retrieveData();
-        foreach ($this->studentList as $std) {
-            if ($std->getActive() == $activate) {
-                return $std;
+        $arrayList = $this->getAll();
+        foreach ($arrayList as $std) {
+            if (!$std->getActive()) {
+                $key=array_search($std,$arrayList);
+                unset($arrayList[$key]);
             }
         }
+        return $arrayList;
     }
 }

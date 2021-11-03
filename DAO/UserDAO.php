@@ -31,8 +31,8 @@ class UserDAO
         $sqlQuery = "INSERT INTO users (studentId,`password`) VALUES(:studentId,:password)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
-        $parameters['admin']=$user->getActive();
-        $parameters['email']=$user->getEmail();
+        //$parameters['admin']=$user->getActive();
+        //$parameters['email']=$user->getEmail();
         try {
             $this->conecction = Connection::GetInstance();
             return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters,0);

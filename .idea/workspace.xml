@@ -8,8 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/CareerDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CareerDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,6 +160,7 @@
       <workItem from="1635794554742" duration="654000" />
       <workItem from="1635800380517" duration="3907000" />
       <workItem from="1635844872402" duration="5741000" />
+      <workItem from="1635948398605" duration="13363000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>

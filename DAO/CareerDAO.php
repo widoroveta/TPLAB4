@@ -77,7 +77,7 @@ protected static  $instance=null;
         if ($this->careerList != null) {
             foreach ($this->careerList as $c) {
 
-                if ($c->getActive() == $activate) {
+                if ($c->getActive() == 1) {
 
                     return $c;
                 }
