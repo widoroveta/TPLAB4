@@ -5,6 +5,10 @@ require_once (VIEWS_PATH."student/nav-student.php");
 // while (false !== ($file = readdir($handler))) {
     foreach($fileList as $file){
     ?>
+<?php
+
+
+?>
 <body class="grey darken-3">
 <div class="row">
     <div class="col s6">
