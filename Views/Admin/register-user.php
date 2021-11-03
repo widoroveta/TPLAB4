@@ -1,0 +1,154 @@
+<body class="grey darken-3">
+<?php
+require_once(VIEWS_PATH . "Admin/nav-admin.php");
+
+?>
+<script>  document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });</script>
+<table class="highlight">
+    <thead>
+    <tr>
+
+        <th>Nombre</th>
+        <th>ID</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Genero</th>
+        <th>Carrera</th>
+        <th>Email</th>
+        <th>Cumpleaño</th>
+        <th>Numero de telefono</th>
+        <th>Activo</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <?php
+    function activateColor($activate)
+    {
+        if ($activate) {
+            return '<i class="material-icons green-text">check</i>';
+        } else {
+            return '<i class="material-icons red-text">cancel</i>';
+        }
+    }
+/*<?php
+$var = 'CAcaAAAAAAAAAAAA';
+$id = '34';
+?>
+    <script>
+        <?php
+        echo "var jsvar ='$var.$id';";
+        ?>
+        alert(jsvar);
+    </script>
+
+    <?php
+    $var_PHP = "<script> document.writeln(jsvar); </script>"; // igualar el valor de la variable JavaScript a PHP
+
+    echo $var_PHP   // muestra el resultado
+
+    ?>*/
+
+    foreach ($studentList as $std) {
+        $std->setCareer($careerDAO->getCareerById($std->getCareer()));
+        $id=$std->getStudentId();
+        ?>
+        <tr>
+            <td><?= $std->getFirstName() ?></td>
+            <td><input name="id" type="text"  value="<?=$id?>"></td>
+            <td><?= $std->getLastName() ?></td>
+            <td><?= $std->getDni() ?></td>
+            <td><?= $std->getGender() ?></td>
+            <td><?= $std->getCareer()->getDescription() ?></td>
+            <td><?= $std->getEmail() ?></td>
+            <td><?= $std->getBirthDate() ?></td>
+            <td><?= $std->getPhoneNumber() ?></td>
+            <td><?= activateColor($std->getActive()) ?></td>
+            <td>
+                <button data-target="modal-register" value="<?=$id?>" name="button" onclick="getVar(<?=$id?>)" class="btn modal-trigger">Dar de Alta</button>
+            </td>
+            <script>
+                var jsvar;
+
+                function getVar(id)
+                {
+                    jsvar = id;
+                    alert(jsvar);
+                    document.getElementById("idModal").value=jsvar;
+                }
+            </script>
+            <?php
+            $php = "<script> document.writeln(jsvar); </script>"; // igualar el valor de la variable JavaScript a PHP
+            ?>
+        </tr>
+
+        <?php
+    }
+    ?>
+    </tbody>
+</table>
+</body>
+<div id="modal-register" class="modal">
+    <div class="modal-content">
+        <div class="row">
+
+            <div id="msg"></div>
+
+
+            <div id="error" style="display: none;" class="card-panel   red" role="alert">
+                Las Contraseñas no coinciden, vuelve a intentar !
+            </div>
+            <div id="ok" style="display: none;" class="card-panel  green" role="alert">
+                Las Contraseñas coinciden
+            </div>
+     <form action="<?= FRONT_ROOT.'admin/addNewUser'?>">
+
+         <input type="hidden" value="" name="idModal" id="idModal">
+         <div class="form-group">
+             <label for="pass1">Contraseña</label>
+             <input type="password" value="" placeholder="123456" onchange="verificarPasswords(); return false" class="form-control" id="pass1"
+                    required>
+         </div>
+         <div class="form-group">
+             <label for="pass2">Vuelve a escribir la Contraseña</label>
+             <input type="password" name="pass2" placeholder="123456" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2"
+                    required>
+         </div>
+
+         <button type="submit" id="login" class="btn btn-primary">Registrarse</button>
+     </form>
+            <script>
+                function verificarPasswords() {
+
+                    // Ontenemos los valores de los campos de contraseñas
+                    pass1 = document.getElementById('pass1');
+                    pass2 = document.getElementById('pass2');
+                    if (Boolean(pass2)) {
+                        if (pass1.value != pass2.value) {
+                            document.getElementById("error").style.display = "block";
+                            document.getElementById("ok").style.display = 'none';
+                            document.getElementsById("Login").style.display="none";
+
+
+                        } else {
+                            document.getElementById("error").style.display = "none";
+                            document.getElementById("ok").style.display = 'block';
+                            document.getElementsById("Login").style.display="block";
+                            document.getElementById("login").type = 'submit';
+
+                        }
+
+                    }
+                }
+
+            </script>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
