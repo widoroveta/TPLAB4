@@ -13,7 +13,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
         <th>Genero</th>
         <th>Carrera</th>
         <th>Email</th>
-        <th>Cumpleaño</th>
+        <th>Cumpleaños</th>
         <th>Numero de telefono</th>
         <th>Activo</th>
     </tr>

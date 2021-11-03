@@ -31,6 +31,15 @@ class AdminController
         $studentList = $studentDAO->getAll();
         require_once(VIEWS_PATH . "Admin/list-student.php");
     }
+    public function showValidateStudent()
+    {
+        $this->validateAdmin();
+        $studentDAO = StudentDAO::getInstance();
+        $careerDAO = CareerDAO::getInstance();
+        $careerDAO->getCareerByValidation();
+        $studentList = $studentDAO->searchByValidation();
+        require_once(VIEWS_PATH . "Admin/list-student.php");
+    }
 
     public function showAddCompany()
     {

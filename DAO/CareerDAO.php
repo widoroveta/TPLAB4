@@ -72,4 +72,16 @@ protected static  $instance=null;
             }
         }
     }
+    public function getCareerByValidation()
+    {
+        if ($this->careerList != null) {
+            foreach ($this->careerList as $c) {
+
+                if ($c->getActive() == $activate) {
+
+                    return $c;
+                }
+            }
+        }
+    }
 }

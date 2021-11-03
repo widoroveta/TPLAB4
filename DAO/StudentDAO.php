@@ -80,4 +80,13 @@ class StudentDAO
         }
         return false;
     }
+    public function searchByValidation() //Buscar usuarios activos
+    {
+        $this->retrieveData();
+        foreach ($this->studentList as $std) {
+            if ($std->getActive() == $activate) {
+                return $std;
+            }
+        }
+    }
 }

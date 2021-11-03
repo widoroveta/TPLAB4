@@ -10,7 +10,7 @@ require_once(VIEWS_PATH."nav.php");
         <a href="<?=FRONT_ROOT.'Admin/showAddCompany'?>" class="breadcrumb z-depth-5  purple-text text-accent-3">Agregar Empresa</a>
         <a href="<?=FRONT_ROOT."Admin/showListStudent"?>"  class="breadcrumb z-depth-5  purple-text text-accent-3">Lista los alumnos </a>
         <a href="<?=FRONT_ROOT."Admin/showAddJobOffer"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Agregar Ofertas de Trabajo </a>
-        <a href="#"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Dar de alta usuario </a>
+        <a href="<?=FRONT_ROOT."Admin/showValidateStudent"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Dar de alta usuario </a>
 
       </div>
     </div>
