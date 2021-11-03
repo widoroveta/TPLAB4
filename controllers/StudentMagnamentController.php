@@ -2,11 +2,13 @@
 
 namespace Controllers;
 
+use DAO\AppointmentDAO;
 use DAO\CareerDAO as CareerDAO;
 use DAO\CompanyDAO;
 use DAO\JobOfferDAO;
 use DAO\StudentDAO as StudentDAO;
 use DAO\UserDAO;
+use Models\Appointment;
 use Models\Career as Career;
 use Models\Student as Student;
 use Models\User as User;
@@ -114,29 +116,49 @@ class StudentMagnamentController
         require_once (VIEWS_PATH.'student/add-appointment.php');
     }
     public function showListAppointment(){
+        $appointment=AppointmentDAO::getInstance();
+        $fileList=$appointment->getAll();
 
         require_once (VIEWS_PATH."student/list-Appointment.php");
     }
 
-    public function uploadFile($file)
+    public function uploadFile($file,$jobOfferId,$studentId,$message)
     {
         try {
-
+            $appointmentDAO=AppointmentDAO::getInstance();
+            
             $fileName = $file["name"];
             $tempFileName = $file["tmp_name"];
             $type = $file["type"];
             $filePath = UPLOADS_PATH.basename($fileName);
             $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             move_uploaded_file($tempFileName,$filePath);
+            $a=new Appointment($jobOfferId,$studentId,$filePath,$message);
+            $appointmentDAO->add($a);
         }
         catch (\Exception $ex)
         {
             throw $ex;
         }
     }
-    public  function  addAppointment(){
+    public  function  addAppointment($jobOfferId,$studentId,$message){
         $file=$_FILES['file'];
-        $this->uploadFile($file);
-
+        // $this->uploadFile($file,$jobOfferId,$studentId,$message);
+        try {
+            $appointmentDAO=AppointmentDAO::getInstance();
+            
+            $fileName = $file["name"];
+            $tempFileName = $file["tmp_name"];
+            $type = $file["type"];
+            $filePath = UPLOADS_PATH.basename($fileName);
+            $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+            move_uploaded_file($tempFileName,$filePath);
+            $a=new Appointment($jobOfferId,$studentId,$filePath,$message);
+            $appointmentDAO->add($a);
+        }
+        catch (\Exception $ex)
+        {
+            throw $ex;
+        }
     }
 }

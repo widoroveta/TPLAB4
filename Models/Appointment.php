@@ -11,18 +11,26 @@ class Appointment
     private $message;
 
     /**
+     * @param $student
+     * @param $jobOffer
+     * @param $cv
+     * @param $message
+     */
+    public function __construct($student='', $jobOffer='', $cv='', $message='')
+    {
+        $this->student = $student;
+        $this->jobOffer = $jobOffer;
+        $this->cv = $cv;
+        $this->message = $message;
+    }
+
+    /**
      * @param $apointmentId
      * @param $jobOffer
      * @param $cv
      * @param $message
      */
-    public function __construct($apointmentId='', $jobOffer='', $cv='', $message='')
-    {
-        $this->apointmentId = $apointmentId;
-        $this->jobOffer = $jobOffer;
-        $this->cv = $cv;
-        $this->message = $message;
-    }
+    
 
 
     /**
@@ -90,4 +98,24 @@ class Appointment
     }
 
 
+
+    /**
+     * Get the value of student
+     */ 
+    public function getStudent()
+    {
+        return $this->student;
+    }
+
+    /**
+     * Set the value of student
+     *
+     * @return  self
+     */ 
+    public function setStudent($student)
+    {
+        $this->student = $student;
+
+        return $this;
+    }
 }

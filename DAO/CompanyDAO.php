@@ -204,9 +204,9 @@ class CompanyDAO
 
     function searchByName($name)
     {
-        $companiesList = array();
+    
 
-        $sqlquery = "SELECT * FROM " . $this->companyList . " WHERE nameCompany = :name";
+        $sqlQuery = "SELECT * FROM " . $this->companyList . " WHERE nameCompany = :name";
         $parameters["name"] = $name;
         try {
             $this->conecction = Connection::GetInstance();

@@ -79,15 +79,13 @@ class JobOfferDAO
 
     public function mapout($value)
     {
-        $companyDAO = CompanyDAO::getInstance();
-        $companyDAO->getAll();
+       
         $jobPositionDAO = JobPositionDAO::getInstance();
-//    $jobPositionDAO->getAll();
 
         $value = is_array($value) ? $value : [];
 
         $resp = array_map(function ($p) {
-            $companyDAO = CompanyDAO::getInstance();
+          
             $jobPositionDAO = JobPositionDAO::getInstance();
             return new JobOffer($p['id'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'],$p['nameCompany'],$p['city'],$p['address'],$p['size'],$p['email'],$p['phoneNumber'],$p['cuit']), $p['requirements']);
         }, $value);
