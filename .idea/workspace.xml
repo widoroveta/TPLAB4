@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="alta de usuario func">
-      <change afterPath="$PROJECT_DIR$/Uploads/Wlorant CV.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_11_2021_18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_11_2021_18_13__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_11_2021_21_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_11_2021_21_21__Changes_.xml" afterDir="false" />
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pre entrega final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636023449556</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pre entrega final">
+      <created>1636066829894</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1636066829894</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +323,8 @@
     <MESSAGE value="alta de usuario func" />
     <MESSAGE value="apointment list in student" />
     <MESSAGE value="pre entrega" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre entrega" />
+    <MESSAGE value="pre entrega final" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre entrega final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

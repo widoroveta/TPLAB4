@@ -61,6 +61,8 @@ require_once(VIEWS_PATH . "header.php");
 
             <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $userLogged->getCareer()->getDescription(); ?></strong></span>
             <br>
+            <span class="caree grey-text text-lighten-5"><strong>Genero: <?= $userLogged->getGender(); ?></strong></span>
+            <br>
             <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******" . substr($userLogged->getDni(), 7, 10) ?></strong></span>
             <br>
             <span class="Email grey-text text-lighten-5"><strong><?= $userLogged->getPhoneNumber(); ?></strong></span>
@@ -88,9 +90,9 @@ require_once(VIEWS_PATH . "header.php");
 
 
 <div id="modal2" class="modal">
+    <form action="<?= FRONT_ROOT . "StudentMagnament/login" ?>" method="POST">
     <div class="modal-content ">
-        <form action="<?= FRONT_ROOT . "StudentMagnament/login" ?>" method="POST">
-            <div class="input-field col s6">
+                    <div class="input-field col s6">
                 <input id="email" name="email" type="text" class="validate">
                 <label for="email">Nombre de Usuario</label>
             </div>
@@ -101,8 +103,8 @@ require_once(VIEWS_PATH . "header.php");
     </div>
     <div class="modal-footer">
         <button type="submit" class="modal-close waves-effect waves-green btn-flat">Iniciar sesion</button>
-        </form>
     </div>
+    </form>
 </div>
 
 
