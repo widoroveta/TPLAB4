@@ -52,7 +52,7 @@ class CompanyDAO
 
     public function Delete($id)
     {
-        $sqlquery = "UPDATE company SET `status` = false WHERE (companyId = :id)";
+        $sqlquery = "DELETE FROM company WHERE (companyId = :id)";
         try {
 
             $parameters["id"] = $id;
@@ -205,7 +205,7 @@ class CompanyDAO
     {
     
 
-        $sqlQuery = "SELECT * FROM " . $this->companyList . " WHERE nameCompany = :name";
+        $sqlQuery = "SELECT * FROM company WHERE(nameCompany = :name)";
         $parameters["name"] = $name;
         try {
             $this->conecction = Connection::GetInstance();

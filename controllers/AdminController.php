@@ -28,6 +28,7 @@ public  function showShowListJobOffer(){
         $this->validateAdmin();
     $jobOfferDAO=JobOfferDAO::getInstance();
     $jobOfferList=$jobOfferDAO->getAll();
+    $jobOfferList=$jobOfferList!=null ? $jobOfferList : array();
     require_once(VIEWS_PATH . "admin/list-jobOffer.php");
 }
     public function showListStudent()
@@ -37,6 +38,7 @@ public  function showShowListJobOffer(){
         $careerDAO = CareerDAO::getInstance();
         $careerDAO->getAll();
         $studentList = $studentDAO->getAll();
+        $studentList=$studentList!=null ? $studentList : array();
         require_once(VIEWS_PATH . "Admin/list-student.php");
     }
     public function showValidateStudent()
@@ -193,6 +195,7 @@ public  function showShowListJobOffer(){
         $this->validateAdmin();
         $appointment=AppointmentDAO::getInstance();
         $fileList=$appointment-> getAll();
+        $fileList=$fileList!=null ? $fileList : array();
 
         require_once (VIEWS_PATH."admin/list-Appointment.php");
     }

@@ -22,12 +22,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
                     </ul>
                 </div>
-                <div class="card-action z-depth-4 black purple-text text-accent-2">
 
-
-                    <a  href="<?=FRONT_ROOT."StudentMagnament/showAddAppointment?varId=$id"?>" class="btn-floating btn-large waves-effect waves-light  purple darken-4  "><i class="material-icons">add</i></a>
-
-                </div>
             </div>
         </div>
 
@@ -36,6 +31,5 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
     ?>
 
 </div>
-
 
 </body>

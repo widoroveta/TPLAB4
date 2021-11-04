@@ -36,9 +36,6 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
                             <li><b>Cuit: </b><?= $company->getCuit() ?></li>
                         </ul>
                     </div>
-                    <div class="collection">
-                        <a href="#!" class="collection-item">Alvin</a>
-                    </div>
                 </div>
             </div>
 
@@ -60,7 +57,10 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
                     </ul>
                 </div>
                 <div class="card-action z-depth-4 black purple-text text-accent-2 ">
-                    <a href="<?= FRONT_ROOT . "StudentMagnament/showListCompany?varName=null" ?>" class="red-text text-accent-4">volver</a>
+                    <?php
+                    $varName='';
+                    ?>
+                    <a href="<?= FRONT_ROOT . "StudentMagnament/showListCompany?varName=$varName" ?>" class="red-text text-accent-4">volver</a>
 
                 </div>
             </div>
@@ -70,10 +70,5 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
     }
 
     ?>
-    </tbody>
-
-    </table>
-</div>
-</div>
-</body>
+    </body>
 

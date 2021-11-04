@@ -17,7 +17,7 @@ Create TABLE  if not exists  JobOffer(
     companyId int not null,
     jobPositionId int not null,
     requirements varchar(120),
-   constraint fk_companyId FOREIGN KEY  (companyId) REFERENCES Company (id),
+   constraint fk_companyId FOREIGN KEY  (companyId) REFERENCES Company (id) ON DELETE ON CASCADE,
     constraint pk_id primary key (id)
 );
 create TABLE  if not exists Users(

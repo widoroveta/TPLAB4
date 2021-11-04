@@ -103,6 +103,9 @@ class StudentMagnamentController
         if (!empty($name)) {
             $companySelected = $this->companyDAO->searchByName($name);
         }
+        else{
+            unset($companySelected);
+        }
 
         $companyList = $this->companyDAO->getAll();
         require_once(VIEWS_PATH . "Student/list-company.php");
@@ -121,7 +124,7 @@ $this->validateSession();
         $studentId=$_SESSION['loggedUser']->getStudentId();
         require_once (VIEWS_PATH.'student/add-appointment.php');
     }
-    public function showListAppointment(){
+    public function showListAppointment($message=''){
         $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
         $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
@@ -143,8 +146,10 @@ $this->validateSession();
             $filePath = UPLOADS_PATH.basename($fileName);
             $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             move_uploaded_file($tempFileName,$filePath);
-            $a=new Appointment($jobOfferId,$studentId,$filePath,$message);
+            $a=new Appointment($studentId,$jobOfferId,$filePath,$message);
             $appointmentDAO->add($a);
+            $message='Postulacion realizada con exito.';
+            header('location:'.FRONT_ROOT."StudentMagnament/showListAppointment?varMessage=$message");
         }
         catch (\Exception $ex)
         {
