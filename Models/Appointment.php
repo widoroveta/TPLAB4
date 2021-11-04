@@ -4,7 +4,7 @@ namespace Models;
 
 class Appointment
 {
-    private $apointmentId;
+    private $appointmentId;
     private $student;
     private $jobOffer;
     private $cv;
@@ -36,7 +36,7 @@ class Appointment
     /**
      * @return mixed
      */
-    public function getApointmentId()
+    public function getAppointmentId()
     {
         return $this->apointmentId;
     }
@@ -44,7 +44,7 @@ class Appointment
     /**
      * @param mixed $apointmentId
      */
-    public function setApointmentId($apointmentId)
+    public function setAppointmentId($apointmentId)
     {
         $this->apointmentId = $apointmentId;
     }

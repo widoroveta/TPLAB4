@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use DAO\AppointmentDAO;
 use DAO\UserDAO;
 use Models\JobOffer as JobOffer;
 use DAO\CareerDAO;
@@ -17,13 +18,18 @@ class AdminController
 
     public function showListCompany()
     {
-  //  $this->validateAdmin();
+   $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyList = $companyDAO->getAll();
-
+        $companyList=$companyList!=null ? $companyList : array();
         require_once(VIEWS_PATH . "Admin/list-company.php");
     }
-
+public  function showShowListJobOffer(){
+        $this->validateAdmin();
+    $jobOfferDAO=JobOfferDAO::getInstance();
+    $jobOfferList=$jobOfferDAO->getAll();
+    require_once(VIEWS_PATH . "admin/list-jobOffer.php");
+}
     public function showListStudent()
     {
         $this->validateAdmin();
@@ -39,11 +45,22 @@ class AdminController
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
         $careerDAO->getAll();
+        $userDAO=UserDAO::getInstance();
         $studentList = $studentDAO->searchByValidation();
+        foreach ($studentList as $std)
+        {
+            if($userDAO->searchByStudentId($std->getStudentId()))
+            {
+                $key=array_search($std,$studentList);
+                unset($studentList[$key]);
+            }
+
+        }
         require_once(VIEWS_PATH . "Admin/register-user.php");
     }
 
     public function addNewUser($idModal, $pass2){
+        $this->validateAdmin();
         $studentDAO = StudentDAO::getInstance();
         $student = $studentDAO->searchById($idModal);
         $user = new User();
@@ -62,6 +79,7 @@ class AdminController
 
     public function showPanelModifyCompany($id)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $company = $companyDAO->searchById($id);
         require_once(VIEWS_PATH . "Admin/modifyViewCompany.php");
@@ -69,6 +87,7 @@ class AdminController
 
     public function deleteCompany($id)
     {
+        $this->validateAdmin();
         $this->validateAdmin();;
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->delete($id);
@@ -77,6 +96,7 @@ class AdminController
 
     public function modifyName($id, $name)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyName($id, $name);
         $this->showListCompany();
@@ -84,6 +104,7 @@ class AdminController
 
     public function modifyCity($id, $city)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyCity($id, $city);
         $this->showListCompany();
@@ -92,6 +113,7 @@ class AdminController
 
     public function modifySize($id, $size)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifySize($id, $size);
         $this->showListCompany();
@@ -100,6 +122,7 @@ class AdminController
 
     public function modifyEmail($id, $email)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyEmail($id, $email);
         $this->showListCompany();
@@ -108,6 +131,7 @@ class AdminController
 
     public function modifyPhoneNumber($id, $phoneNumber)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyPhoneNumber($id, $phoneNumber);
         $this->showListCompany();
@@ -116,6 +140,7 @@ class AdminController
 
     public function modifyCuit($id, $cuit)
     {
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyCuit($id, $cuit);
         $this->showListCompany();
@@ -124,6 +149,8 @@ class AdminController
 
     public function modifyAddress($id, $address)
     {
+
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyAddress($id, $address);
         $this->showListCompany();
@@ -132,11 +159,13 @@ class AdminController
 
     private function validateAdmin()
     {
+
         require_once(VIEWS_PATH . "Admin/Validate-admin.php");
     }
 
     public function showAddJobOffer()
     {
+        $this->validateAdmin();
         $this->validateAdmin();
         $jobPositionDAO = JobPositionDAO::getInstance();
         $jobPositionList = $jobPositionDAO->getAll();
@@ -145,6 +174,7 @@ class AdminController
         require_once(VIEWS_PATH . "admin/add-jobOffer.php");
     }
     public  function addJobOffer($company,$jobPosition,$requirements){
+        $this->validateAdmin();
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobPositionDAO=JobPositionDAO::getInstance();
         $careerDAO=CareerDAO::getInstance();
@@ -158,6 +188,13 @@ class AdminController
         $jobOfferDAO->add($jobOffer);
 
        $this->showAddJobOffer();
+    }
+    public function showShowListAppoinment(){
+        $this->validateAdmin();
+        $appointment=AppointmentDAO::getInstance();
+        $fileList=$appointment-> getAll();
+
+        require_once (VIEWS_PATH."admin/list-Appointment.php");
     }
 
 }

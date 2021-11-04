@@ -52,7 +52,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <td><?= $std->getPhoneNumber() ?></td>
             <td><?= activateColor($std->getActive()) ?></td>
             <td>
-                <button data-target="modal-register" value="<?=$id?>" name="button" onclick="getVar(<?=$id?>)" class="btn modal-trigger">Dar de Alta</button>
+                <button data-target="modal-register" value="<?=$id?>" name="button" onclick="getVar(<?=$id?>)" class="btn modal-trigger">Registrar</button>
             </td>
             <script>
                 var jsvar;

@@ -130,6 +130,7 @@ $this->validateSession();
 
 
     public  function  addAppointment($jobOfferId,$studentId,$message){
+        $this->validateSession();
         $file=$_FILES['file'];
 
         try {

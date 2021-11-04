@@ -1,8 +1,7 @@
 <?php
 require_once(VIEWS_PATH . "nav.php");
 require_once(VIEWS_PATH . "student/nav-student.php");
-// $handler=opendir(UPLOADS_PATH);
-// while (false !== ($file = readdir($handler))) {
+
 ?>
 <body class="grey darken-3">
 <div class="row">

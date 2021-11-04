@@ -36,10 +36,9 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
                             <li><b>Cuit: </b><?= $company->getCuit() ?></li>
                         </ul>
                     </div>
-                    <!--                    <div class="card-action">-->
-                    <!--                        <a href="#">This is a link</a>-->
-                    <!--                        <a href="#">This is a link</a>-->
-                    <!--                    </div>-->
+                    <div class="collection">
+                        <a href="#!" class="collection-item">Alvin</a>
+                    </div>
                 </div>
             </div>
 

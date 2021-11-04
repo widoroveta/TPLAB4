@@ -73,6 +73,7 @@ class AppointmentDAO
 
         return $finalResult;
     }
+
     public  function getAppointmentsBy($id)
     {
         $sqlQuery="SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where (a.studentId= :studentId)";
