@@ -34,23 +34,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             return '<i class="material-icons red-text">cancel</i>';
         }
     }
-/*<?php
-$var = 'CAcaAAAAAAAAAAAA';
-$id = '34';
-?>
-    <script>
-        <?php
-        echo "var jsvar ='$var.$id';";
-        ?>
-        alert(jsvar);
-    </script>
 
-    <?php
-    $var_PHP = "<script> document.writeln(jsvar); </script>"; // igualar el valor de la variable JavaScript a PHP
-
-    echo $var_PHP   // muestra el resultado
-
-    ?>*/
 
     foreach ($studentList as $std) {
         $std->setCareer($careerDAO->getCareerById($std->getCareer()));
@@ -76,7 +60,7 @@ $id = '34';
                 function getVar(id)
                 {
                     jsvar = id;
-                    alert(jsvar);
+                   //alert(jsvar);
                     document.getElementById("idModal").value=jsvar;
                 }
             </script>
@@ -95,7 +79,7 @@ $id = '34';
     <div class="modal-content">
         <div class="row">
 
-            <div id="msg"></div>
+            <div id="msg">
 
 
             <div id="error" style="display: none;" class="card-panel   red" role="alert">
@@ -103,8 +87,8 @@ $id = '34';
             </div>
             <div id="ok" style="display: none;" class="card-panel  green" role="alert">
                 Las Contraseñas coinciden
-            </div>
-     <form action="<?= FRONT_ROOT.'admin/addNewUser'?>">
+            </div></div>
+     <form action="<?= FRONT_ROOT.'admin/addNewUser'?>" method="post">
 
          <input type="hidden" value="" name="idModal" id="idModal">
          <div class="form-group">
@@ -148,7 +132,5 @@ $id = '34';
         </div>
 
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+
 </div>

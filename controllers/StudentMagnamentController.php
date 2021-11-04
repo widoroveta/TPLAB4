@@ -82,17 +82,21 @@ class StudentMagnamentController
         }
         return null;
     }
-
+    public  function validateSession()
+    {
+        require_once(VIEWS_PATH . "Student/Validate-student.php");
+    }
     public
     function showHomeStudent($message = "")
     {
-        require_once(VIEWS_PATH . "Student/Validate-student.php");
+     $this->validateSession();
         require_once(VIEWS_PATH . "Student/home-student.php");
     }
 
     public
     function showListCompany($name = '')
     {
+        $this->validateSession();
         $this->companyDAO = CompanyDAO::getInstance();
 
         if (!empty($name)) {
@@ -106,44 +110,28 @@ class StudentMagnamentController
     public
     function showJobOfferList()
     {
+        $this->validateSession();
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobOfferList=$jobOfferDAO->getAll();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
     public function showAddAppointment($id){
-
+$this->validateSession();
         $studentId=$_SESSION['loggedUser']->getStudentId();
         require_once (VIEWS_PATH.'student/add-appointment.php');
     }
     public function showListAppointment(){
+        $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
-        $fileList=$appointment->getAll();
+        $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
 
         require_once (VIEWS_PATH."student/list-Appointment.php");
     }
 
-    public function uploadFile($file,$jobOfferId,$studentId,$message)
-    {
-        try {
-            $appointmentDAO=AppointmentDAO::getInstance();
-            
-            $fileName = $file["name"];
-            $tempFileName = $file["tmp_name"];
-            $type = $file["type"];
-            $filePath = UPLOADS_PATH.basename($fileName);
-            $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-            move_uploaded_file($tempFileName,$filePath);
-            $a=new Appointment($jobOfferId,$studentId,$filePath,$message);
-            $appointmentDAO->add($a);
-        }
-        catch (\Exception $ex)
-        {
-            throw $ex;
-        }
-    }
+
     public  function  addAppointment($jobOfferId,$studentId,$message){
         $file=$_FILES['file'];
-        // $this->uploadFile($file,$jobOfferId,$studentId,$message);
+
         try {
             $appointmentDAO=AppointmentDAO::getInstance();
             
