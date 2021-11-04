@@ -90,6 +90,7 @@ class StudentMagnamentController
     function showHomeStudent($message = "")
     {
      $this->validateSession();
+     $student=$_SESSION['loggedUser'];
         require_once(VIEWS_PATH . "Student/home-student.php");
     }
 

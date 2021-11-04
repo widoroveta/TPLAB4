@@ -162,11 +162,10 @@ class CompanyDAO
 
     public function modifyCuit($id, $cuit)
     {
-        $sqlquery = "UPDATE " . $this->companyList . " SET `cuit` = :cuit WHERE `companyId` = :id";
+        $sqlquery = "UPDATE company SET cuit = :cuit WHERE `companyId` = :id";
         $parameters["cuit"] = $cuit;
         $parameters["id"] = $id;
         try {
-
 
             $this->connection = Connection::GetInstance();
 
