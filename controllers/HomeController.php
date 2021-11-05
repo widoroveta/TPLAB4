@@ -27,7 +27,7 @@ class HomeController
                 $user = new User();
                 $user->setStudent($student);
                 $user->setPassword($pass2);
-                $user->setAdmin(false);
+                $user->setAdmin(0);
                 $validateUser = $userDAO->add($user);
                 if ($validateUser) {
                     $this->index("Usuario registrado");

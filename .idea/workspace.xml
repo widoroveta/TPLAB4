@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pre entrega final">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_16_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_16_39__Changes_.xml" afterDir="false" />
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="abm job offer">
+      <change afterPath="$PROJECT_DIR$/Views/Admin/add-admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/register-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/register-user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/add-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/add-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -96,7 +95,12 @@
       <recent name="C:\xampp\htdocs\TPFinal\Views" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Web Page.Unnamed">
+  <component name="RunManager" selected="Database Script.schema.sql">
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/Config/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="Server" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -112,9 +116,11 @@
       <item itemvalue="PHP Built-in Web Server.Server" />
       <item itemvalue="PHP Script.server" />
       <item itemvalue="PHP Web Page.Unnamed" />
+      <item itemvalue="Database Script.schema.sql" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.schema.sql" />
         <item itemvalue="PHP Script.server" />
       </list>
     </recent_temporary>
@@ -167,7 +173,8 @@
       <workItem from="1635948398605" duration="13669000" />
       <workItem from="1636017644781" duration="5852000" />
       <workItem from="1636047634535" duration="3453000" />
-      <workItem from="1636134806768" duration="5662000" />
+      <workItem from="1636134806768" duration="5712000" />
+      <workItem from="1636148566441" duration="4173000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -288,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636066829894</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="abm job offer">
+      <created>1636140545666</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1636140545667</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +350,8 @@
     <MESSAGE value="apointment list in student" />
     <MESSAGE value="pre entrega" />
     <MESSAGE value="pre entrega final" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre entrega final" />
+    <MESSAGE value="abm job offer" />
+    <option name="LAST_COMMIT_MESSAGE" value="abm job offer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

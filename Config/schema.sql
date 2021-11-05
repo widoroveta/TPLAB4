@@ -37,3 +37,10 @@ create TABLE  if not exists appointment(
     constraint PK_Id primary key (id),
     constraint fk_jobOfferId foreign key (jobOfferId) references JobOffer (id)
 );
+create table if not exists record(
+  id int not null auto_increment,
+  dateAppointment varchar (45),
+    appointmentId int not null,
+    constraint fk_appointment foreign key (appointmentId) references appointment (id)
+
+);

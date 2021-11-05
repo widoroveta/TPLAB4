@@ -28,11 +28,11 @@ class UserDAO
     public function add($user)
     {
        if(!$this->searchByStudentId($user->getStudent()->getStudentId())){
-        $sqlQuery = "INSERT INTO users (studentId,`password`) VALUES(:studentId,:password)";
+        $sqlQuery = "INSERT INTO users (studentId,`password`,admin,email) VALUES(:studentId,:password,:admin,:email)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
-        //$parameters['admin']=$user->getActive();
-        //$parameters['email']=$user->getEmail();
+        $parameters['admin']=$user->getAdmin();
+        $parameters['email']=$user->getEmail();
         try {
             $this->conecction = Connection::GetInstance();
             return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters,0);

@@ -8,6 +8,7 @@ require_once(VIEWS_PATH . "nav.php");
 //var_dump($_FILES);
 
 ?>
+// TODO add style at the form
 <body class="grey darken-3">
 <div class="row">
     <form action="<?=FRONT_ROOT.'StudentMagnament/addAppointment'?>" enctype="multipart/form-data" method="POST">

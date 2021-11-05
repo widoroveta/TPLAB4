@@ -151,8 +151,12 @@ $this->validateSession();
             $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             move_uploaded_file($tempFileName,$filePath);
             $a=new Appointment($studentId,$jobOfferId,$filePath,$message);
-            $appointmentDAO->add($a);
-            $message='Postulacion realizada con exito.';
+           $appointment= $appointmentDAO->add($a);
+           if($appointment) {
+               $message = 'Postulacion realizada con exito.';
+           }else{
+               $message='Postulacion con error revise si ya tiene una postulacion';
+           }
             header('location:'.FRONT_ROOT."StudentMagnament/showListAppointment?varMessage=$message");
         }
         catch (\Exception $ex)

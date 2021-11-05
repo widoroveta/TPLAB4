@@ -29,11 +29,11 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
                     <p class="col s 8"><?= $file->getCv(); ?></p>
                 </a>
             </div>
-            <div class="card-panel col s 12 grey">
+            <div class="card-panel  white-text  col s 12 grey">
                 Mensaje:
                 <?=$file->getMessage()?>
             </div>
-            <div class="card-panel light-blue darken-4 col s12 ">
+            <div class="card-panel white-text   light-blue darken-4 col s12 ">
                 Requerimiento: <?= $file->getJobOffer()->getRequirements()?>
             </div>
 

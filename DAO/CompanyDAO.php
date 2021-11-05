@@ -29,7 +29,7 @@ class CompanyDAO
     }
 
 
-
+ // TODO add validation unique cuit
     public function add($company)
     {
         $sqlQuery = "INSERT INTO company (companyId,nameCompany,city,address,size,email,phoneNumber,cuit) VALUES (:companyId,:nameCompany,:city,:address,:size,:email,:phoneNumber,:cuit)";
@@ -159,7 +159,7 @@ class CompanyDAO
             throw $ex;
         }
     }
-
+// TODO same validation at the add
     public function modifyCuit($id, $cuit)
     {
         $sqlquery = "UPDATE company SET cuit = :cuit WHERE `companyId` = :id";

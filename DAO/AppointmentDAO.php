@@ -30,18 +30,21 @@ class AppointmentDAO
 
     public  function add($appointment)
     {
-        $sqlQuery = "INSERT INTO appointment (studentId,jobOfferId,cv,message) VALUES (:studentId,:jobOfferId,:cv,:message)";
-        $parameters['studentId'] = $appointment->getStudent();
-        $parameters['jobOfferId'] = $appointment->getJobOffer();
-        $parameters['cv'] = $appointment->getCv();
-        $parameters['message'] = $appointment->getMessage();
-        try {
-         $this->conecction=Connection::GetInstance();
-            return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
-        } catch (PDOException $ex) {
-            throw $ex;
+        if(!$this->validationByStudent($appointment->getStudent())) {
+            $sqlQuery = "INSERT INTO appointment (studentId,jobOfferId,cv,message) VALUES (:studentId,:jobOfferId,:cv,:message)  ";
+            $parameters['studentId'] = $appointment->getStudent();
+            $parameters['jobOfferId'] = $appointment->getJobOffer();
+            $parameters['cv'] = $appointment->getCv();
+            $parameters['message'] = $appointment->getMessage();
+            try {
+                $this->conecction = Connection::GetInstance();
+                return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
+            } catch (PDOException $ex) {
+                throw $ex;
+            }
+        }else {
+            return null;
         }
-        return null;
     }
     public function getAll(){
         $sqlQuery="SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId";
@@ -105,6 +108,21 @@ class AppointmentDAO
         }
 
         return $finalResult;
+    }
+
+
+    public  function validationByStudent($id)
+    {
+        $sqlQuery="select id from appointment where (studentId = :studentId);";
+        $parameters['studentId']=$id;
+        try{
+            $conecction=Connection::getInstance();
+            return $conecction->execute($sqlQuery,$parameters);
+        }
+        catch(\PDOException $exception )
+        {
+            throw  $exception;
+        }
     }
 
 

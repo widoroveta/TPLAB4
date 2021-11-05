@@ -28,7 +28,7 @@ if (!empty($message)) { ?>
             <div class="card-panel white-text black ">
                Compania: <?= $file->getJobOffer()->getCompany()->getNameCompany() ?>
             </div>
-            <div class="card-panel  col s12 teal darken-4  ">
+            <div class="card-panel  white-text   col s12 teal darken-4  ">
                 Requerimiento: <?= $file->getJobOffer()->getJobPosition()->getDescription()?>
             </div>
             <div class=" card-panel white col s12 ">
@@ -38,11 +38,11 @@ if (!empty($message)) { ?>
                     <p class="col s 8"><?= $file->getCv(); ?></p>
                 </a>
             </div>
-            <div class="card-panel col s 12 grey">
+            <div class="card-panel white-text   col s 12 grey">
                 Mensaje:
                 <?=$file->getMessage()?>
             </div>
-            <div class="card-panel light-blue darken-4 col s12 ">
+            <div class="card-panel white-text   light-blue darken-4 col s12 ">
                 Requerimiento: <?= $file->getJobOffer()->getRequirements()?>
             </div>
 

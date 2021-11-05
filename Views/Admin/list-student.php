@@ -1,3 +1,4 @@
+// TODO hacer busqueda de usuario por email y mostrar solo los activos
 <body class="grey darken-3">
 <?php
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
