@@ -99,15 +99,18 @@ class StudentMagnamentController
     {
         $this->validateSession();
         $this->companyDAO = CompanyDAO::getInstance();
+       if($name!=''){
+        $aux=$this->companyDAO->searchByName($name);
 
-        if (!empty($name)) {
-            $companySelected = $this->companyDAO->searchByName($name);
+        if ($aux!=null) {
+            $companySelected = $aux;
+        }else{
+                unset($companySelected);
+            }
         }
-        else{
-            unset($companySelected);
-        }
+        $c=$this->companyDAO->getAll();
+        $companyList = $c!=null?$c:array() ;
 
-        $companyList = $this->companyDAO->getAll();
         require_once(VIEWS_PATH . "Student/list-company.php");
     }
 
@@ -117,6 +120,7 @@ class StudentMagnamentController
         $this->validateSession();
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobOfferList=$jobOfferDAO->getAll();
+        $jobOfferList=$jobOfferList!=null?$jobOfferList:array();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
     public function showAddAppointment($id){
@@ -128,7 +132,7 @@ $this->validateSession();
         $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
         $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
-
+        $fileList=$fileList!=null?$fileList:array();
         require_once (VIEWS_PATH."student/list-Appointment.php");
     }
 

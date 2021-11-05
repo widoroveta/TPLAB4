@@ -93,11 +93,11 @@ require_once(VIEWS_PATH . "header.php");
     <form action="<?= FRONT_ROOT . "StudentMagnament/login" ?>" method="POST">
     <div class="modal-content ">
                     <div class="input-field col s6">
-                <input id="email" name="email" type="text" class="validate">
+                <input id="email" name="email" type="text" class="validate" required>
                 <label for="email">Nombre de Usuario</label>
             </div>
             <div class="input-field col s6">
-                <input id="password" name="password" type="password" class="validate">
+                <input id="password" name="password" type="password" class="validate" required>
                 <label for="password">Contraseña</label>
             </div>
     </div>

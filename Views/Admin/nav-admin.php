@@ -11,8 +11,8 @@ require_once(VIEWS_PATH."nav.php");
         <a href="<?=FRONT_ROOT."Admin/showListStudent"?>"  class="breadcrumb z-depth-5  purple-text text-accent-3">Lista los alumnos </a>
         <a href="<?=FRONT_ROOT."Admin/showAddJobOffer"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Agregar Ofertas de Trabajo </a>
         <a href="<?=FRONT_ROOT."Admin/showValidateStudent"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Dar de alta usuario </a>
-        <a href="<?=FRONT_ROOT."Admin/showShowListAppoinment"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Ver todas las postulaciones </a>
-        <a href="<?=FRONT_ROOT."Admin/showShowListJobOffer"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Ver puestos de trabajo </a>
+        <a href="<?=FRONT_ROOT."Admin/showListAppoinment"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Ver todas las postulaciones </a>
+        <a href="<?=FRONT_ROOT."Admin/showListJobOffer"?>"  class="breadcrumb z-depth-5  pink-text  purple-text text-accent-3">Ver puestos de trabajo </a>
 
       </div>
     </div>

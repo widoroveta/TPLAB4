@@ -3,8 +3,25 @@
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
 ?>
+<div class="row">
+    <div>
+        <div class="card-panel">
+            <form action="" class="cols 6">
+                <input type="text" class="col s4" placeholder="Selecciona por email">
 
-<table class="highlight">
+
+                <button type="submit" class=" btn waves-effect waves-light purple accent-4"><i
+                            class="small  material-icons ">search</i></button>
+
+            </form>
+            <form action="" class="col s2 push-s1">
+                <label> <input type="checkbox" class="filled-in"/>
+                    <span>solo activos</span></label>
+            </form>
+        </div>
+    </div>
+</div>
+<table class="highlight white-text">
     <thead>
     <tr>
         <th>Nombre</th>

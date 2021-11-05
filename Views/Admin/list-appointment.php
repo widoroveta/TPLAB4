@@ -18,7 +18,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
             <div class="card-panel  col s12 lime lighten-2 ">
                 Estudiante : <?= $file->getStudent()->getFirstName();?>  <?= $file->getStudent()->getLastName();?>
             </div>
-            <div class="card-panel  col s12 teal darken-4  ">
+            <div class="card-panel   white-text  col s12 teal darken-4  ">
               Puesto de trabajo: <?= $file->getJobOffer()->getJobPosition()->getDescription()?>
             </div>
 

@@ -24,7 +24,7 @@ class AdminController
         $companyList=$companyList!=null ? $companyList : array();
         require_once(VIEWS_PATH . "Admin/list-company.php");
     }
-public  function showShowListJobOffer(){
+public  function showListJobOffer(){
         $this->validateAdmin();
     $jobOfferDAO=JobOfferDAO::getInstance();
     $jobOfferList=$jobOfferDAO->getAll();
@@ -191,7 +191,7 @@ public  function showShowListJobOffer(){
 
        $this->showAddJobOffer();
     }
-    public function showShowListAppoinment(){
+    public function showListAppoinment(){
         $this->validateAdmin();
         $appointment=AppointmentDAO::getInstance();
         $fileList=$appointment-> getAll();
@@ -199,5 +199,7 @@ public  function showShowListJobOffer(){
 
         require_once (VIEWS_PATH."admin/list-Appointment.php");
     }
+    public function showModifyJobOffer(){
 
+    }
 }

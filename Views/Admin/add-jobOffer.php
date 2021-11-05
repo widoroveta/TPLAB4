@@ -12,9 +12,10 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
 ?>
 <body class="grey darken-3">
+<div class="row">
 <form action="<?=FRONT_ROOT."admin/addJobOffer"?>" method="post">
-    <div class="row">
-        <div class="input-field col s5 offset-s4">
+    <div class="card-panel col s5 push-s4" style="padding: 50px">
+        <div class="input-field ">
             <select name="company">
                 <option value="" disabled selected>Seleccione una</option>
                 <?php
@@ -27,7 +28,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             </select>
             <label>Empresas</label>
         </div>
-        <div class="input-field col s5 offset-s4">
+        <div class="input-field ">
             <select name="jobPosition">
                 <option value="" disabled selected>Seleccione una</option>
                 <?php
@@ -41,15 +42,16 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <label>Posiciones de Trabajo</label>
         </div>
 
-            <div class="input-field col s5 offset-s4">
+            <div class="input-field ">
                 <input type="text" id="requirements" name="requirements"  >
                 <label for="requirements">Requirimientos</label>
             </div>
 
-        <button class="btn waves-effect waves-light col s1 offset-s8 red darken-4 z-depth-4" type="submit" name="action">Enviar
+        <button class="right align btn waves-effect waves-light  offset-s8 red darken-4 z-depth-4" type="submit" name="action">Enviar
             <i class="material-icons right">send</i>
         </button>
-    </div>
 
+    </div>
 </form>
+</div>
 </body>

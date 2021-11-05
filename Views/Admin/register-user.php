@@ -7,7 +7,7 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);
     });</script>
-<table class="highlight">
+<table class="highlight white-text">
     <thead>
     <tr>
 

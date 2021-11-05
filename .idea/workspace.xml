@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pre entrega final">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_16_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_16_39__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/register-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/register-user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +167,7 @@
       <workItem from="1635948398605" duration="13669000" />
       <workItem from="1636017644781" duration="5852000" />
       <workItem from="1636047634535" duration="3453000" />
+      <workItem from="1636134806768" duration="5662000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
