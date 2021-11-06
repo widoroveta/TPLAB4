@@ -9,6 +9,40 @@ class Appointment
     private $jobOffer;
     private $cv;
     private $message;
+    private $date;
+    private $active;
+
+    /**
+     * @return mixed|string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed|string $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param mixed|string $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    }
 
     /**
      * @param $student
@@ -16,12 +50,14 @@ class Appointment
      * @param $cv
      * @param $message
      */
-    public function __construct($student='', $jobOffer='', $cv='', $message='')
+    public function __construct($student='', $jobOffer='', $cv='', $message='',$date='',$active='')
     {
         $this->student = $student;
         $this->jobOffer = $jobOffer;
         $this->cv = $cv;
         $this->message = $message;
+        $this->date=$date;
+        $this->active=$active;
     }
 
     /**

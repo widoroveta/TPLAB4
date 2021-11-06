@@ -30,12 +30,18 @@ class AppointmentDAO
 
     public  function add($appointment)
     {
+
         if(!$this->validationByStudent($appointment->getStudent())) {
-            $sqlQuery = "INSERT INTO appointment (studentId,jobOfferId,cv,message) VALUES (:studentId,:jobOfferId,:cv,:message)  ";
+            ini_set("date.timezone", "America/Argentina/Buenos_Aires");
+            date_default_timezone_set("America/Argentina/Buenos_Aires");
+            $date= date("d-m-Y-(g:i)");
+            $sqlQuery = "INSERT INTO appointment (studentId,jobOfferId,cv,message,dateAppointment,active) VALUES (:studentId,:jobOfferId,:cv,:message,:dateAppointment,:active)  ";
             $parameters['studentId'] = $appointment->getStudent();
             $parameters['jobOfferId'] = $appointment->getJobOffer();
             $parameters['cv'] = $appointment->getCv();
             $parameters['message'] = $appointment->getMessage();
+            $parameters['dateAppointment']=$date;
+            $parameters['active']=true;
             try {
                 $this->conecction = Connection::GetInstance();
                 return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
@@ -136,7 +142,7 @@ class AppointmentDAO
         $resp = array_map(function ($p) {
             $studentDAO=StudentDAO::getInstance();
             $jobPositionDAO = JobPositionDAO::getInstance();
-            return new Appointment($studentDAO->searchById($p['studentId']),new JobOffer($p['jobOfferId'],$jobPositionDAO->searchById($p['jobPositionId']),new Company($p['companyId'],$p['nameCompany'],$p['city'],$p['address'],$p['size'],$p['email'],$p['phoneNumber'],$p['cuit']),$p['requirements']),$p['cv'],$p['message']);
+            return new Appointment($studentDAO->searchById($p['studentId']),new JobOffer($p['jobOfferId'],$jobPositionDAO->searchById($p['jobPositionId']),new Company($p['companyId'],$p['nameCompany'],$p['city'],$p['address'],$p['size'],$p['email'],$p['phoneNumber'],$p['cuit']),$p['requirements']),$p['cv'],$p['message'],$p['dateAppointment'],$p['active']);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];

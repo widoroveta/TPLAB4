@@ -14,7 +14,7 @@ use Models\User as User;
 
 <body class="grey darken-3">
 <div class="row">
-    <div class="section col s12 blue lighten-1">
+    <div class="section col s12 brown lighten-4">
         <img src="https://mdp.utn.edu.ar/wp-content/uploads/2021/02/UTN_IsoLogoBcoNeg.png" alt="">
 
     </div>
@@ -68,5 +68,8 @@ if (!empty($message)) {
     }
     }
 }
+?>
+<?php
+
 ?>
 </body>
