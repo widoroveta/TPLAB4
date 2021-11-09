@@ -68,7 +68,7 @@ class StudentDAO
         return $std;
       }
     }
-    return false;
+    return null;
   }
     public function searchById($id)
     {

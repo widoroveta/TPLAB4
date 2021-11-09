@@ -40,3 +40,5 @@ create TABLE  if not exists appointment(
     constraint fk_jobOfferId foreign key (jobOfferId) references JobOffer (id)
 );
 
+delimiter //
+create procedure  addAppointent(in studentId int,in jobOfferId int,in cv varchar())

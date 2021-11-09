@@ -1,4 +1,4 @@
-// TODO hacer busqueda de usuario por email y mostrar solo los activos
+
 <body class="grey darken-3">
 <?php
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
@@ -7,17 +7,19 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
 <div class="row">
     <div>
         <div class="card-panel">
-            <form action="" class="cols 6">
-                <input type="text" class="col s4" placeholder="Selecciona por email">
+            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" method="post" id='form-email'class="cols 6">
+                <input type="text" class="col s4" name="email" placeholder="Selecciona por email">
 
 
                 <button type="submit" class=" btn waves-effect waves-light purple accent-4"><i
                             class="small  material-icons ">search</i></button>
 
             </form>
-            <form action="" class="col s2 push-s1">
-                <label> <input type="checkbox" class="filled-in"/>
+
+            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" id='form-check' method='post' class="col s2 push-s1">
+                <label> <input name="check" type="checkbox" class="filled-in"/>
                     <span>solo activos</span></label>
+                <button type="submit white" style="border:none;"><i class="tiny material-icons blue-text">refresh</i></button>
             </form>
         </div>
     </div>

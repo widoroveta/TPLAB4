@@ -18,27 +18,43 @@ class AdminController
 
     public function showListCompany()
     {
-   $this->validateAdmin();
+        $this->validateAdmin();
         $companyDAO = CompanyDAO::getInstance();
         $companyList = $companyDAO->getAll();
-        $companyList=$companyList!=null ? $companyList : array();
+        $companyList = $companyList != null ? $companyList : array();
         require_once(VIEWS_PATH . "Admin/list-company.php");
     }
-public  function showListJobOffer(){
+    public  function showListJobOffer()
+    {
         $this->validateAdmin();
-    $jobOfferDAO=JobOfferDAO::getInstance();
-    $jobOfferList=$jobOfferDAO->getAll();
-    $jobOfferList=$jobOfferList!=null ? $jobOfferList : array();
-    require_once(VIEWS_PATH . "admin/list-jobOffer.php");
-}
-    public function showListStudent()
+        $jobOfferDAO = JobOfferDAO::getInstance();
+        $jobOfferList = $jobOfferDAO->getAll();
+        $jobOfferList = $jobOfferList != null ? $jobOfferList : array();
+        require_once(VIEWS_PATH . "admin/list-jobOffer.php");
+    }
+    public function showListStudent($check = false, $email = null)
     {
         $this->validateAdmin();
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
         $careerDAO->getAll();
-        $studentList = $studentDAO->getAll();
-        $studentList=$studentList!=null ? $studentList : array();
+        $studentList = array();
+        
+        if($email==null){
+            
+        if (!$check ) {
+            $studentList = $studentDAO->getAll();
+        } else {
+            $studentList = $studentDAO->searchByValidation();
+        }
+    }else{
+        $email=$studentDAO->searchByEmail($email);
+        $studentList=array();
+            array_push($studentList,$email);//TODO
+        }
+        
+    
+        $studentList = $studentList != null ? $studentList : array();
         require_once(VIEWS_PATH . "Admin/list-student.php");
     }
     public function showValidateStudent()
@@ -47,21 +63,22 @@ public  function showListJobOffer(){
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
         $careerDAO->getAll();
-        $userDAO=UserDAO::getInstance();
+        $userDAO = UserDAO::getInstance();
         $studentList = $studentDAO->searchByValidation();
-        foreach ($studentList as $std)
-        {
-            if($userDAO->searchByStudentId($std->getStudentId()))
-            {
-                $key=array_search($std,$studentList);
-                unset($studentList[$key]);
-            }
+        // foreach ($studentList as $std)
+        // {
+        //     if($userDAO->searchByStudentId($std->getStudentId()))
+        //     {
+        //         $key=array_search($std,$studentList);
+        //         unset($studentList[$key]);
+        //     }
 
-        }
+        // }
         require_once(VIEWS_PATH . "Admin/register-user.php");
     }
 
-    public function addNewUser($idModal, $pass2){
+    public function addNewUser($idModal, $pass2)
+    {
         $this->validateAdmin();
         $studentDAO = StudentDAO::getInstance();
         $student = $studentDAO->searchById($idModal);
@@ -75,7 +92,7 @@ public  function showListJobOffer(){
 
     public function showAddCompany()
     {
-       $this->validateAdmin();
+        $this->validateAdmin();
         require_once(VIEWS_PATH . "Admin/add-company.php");
     }
 
@@ -110,7 +127,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyCity($id, $city);
         $this->showListCompany();
-
     }
 
     public function modifySize($id, $size)
@@ -119,7 +135,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifySize($id, $size);
         $this->showListCompany();
-
     }
 
     public function modifyEmail($id, $email)
@@ -128,7 +143,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyEmail($id, $email);
         $this->showListCompany();
-
     }
 
     public function modifyPhoneNumber($id, $phoneNumber)
@@ -137,7 +151,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyPhoneNumber($id, $phoneNumber);
         $this->showListCompany();
-
     }
 
     public function modifyCuit($id, $cuit)
@@ -146,7 +159,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyCuit($id, $cuit);
         $this->showListCompany();
-
     }
 
     public function modifyAddress($id, $address)
@@ -156,7 +168,6 @@ public  function showListJobOffer(){
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->modifyAddress($id, $address);
         $this->showListCompany();
-
     }
 
     private function validateAdmin()
@@ -175,31 +186,33 @@ public  function showListJobOffer(){
         $companyList = $companyDAO->getAll();
         require_once(VIEWS_PATH . "admin/add-jobOffer.php");
     }
-    public  function addJobOffer($company,$jobPosition,$requirements){
+    public  function addJobOffer($company, $jobPosition, $requirements)
+    {
         $this->validateAdmin();
-        $jobOfferDAO=JobOfferDAO::getInstance();
-        $jobPositionDAO=JobPositionDAO::getInstance();
-        $careerDAO=CareerDAO::getInstance();
-        $companyDAO=CompanyDAO::getInstance();
-        $jp=$jobPositionDAO->searchById($jobPosition);
-        $cm=$companyDAO->searchById($company);
-        $jobOffer=new JobOffer();
+        $jobOfferDAO = JobOfferDAO::getInstance();
+        $jobPositionDAO = JobPositionDAO::getInstance();
+        $careerDAO = CareerDAO::getInstance();
+        $companyDAO = CompanyDAO::getInstance();
+        $jp = $jobPositionDAO->searchById($jobPosition);
+        $cm = $companyDAO->searchById($company);
+        $jobOffer = new JobOffer();
         $jobOffer->setRequirements($requirements);
         $jobOffer->setCompany($cm);
         $jobOffer->setJobPosition($jp);
         $jobOfferDAO->add($jobOffer);
 
-       $this->showAddJobOffer();
+        $this->showAddJobOffer();
     }
-    public function showListAppoinment(){
+    public function showListAppoinment()
+    {
         $this->validateAdmin();
-        $appointment=AppointmentDAO::getInstance();
-        $fileList=$appointment-> getAll();
-        $fileList=$fileList!=null ? $fileList : array();
+        $appointment = AppointmentDAO::getInstance();
+        $fileList = $appointment->getAll();
+        $fileList = $fileList != null ? $fileList : array();
 
-        require_once (VIEWS_PATH."admin/list-Appointment.php");
+        require_once(VIEWS_PATH . "admin/list-Appointment.php");
     }
-    public function showModifyJobOffer(){
-
+    public function showModifyJobOffer()
+    {
     }
 }
