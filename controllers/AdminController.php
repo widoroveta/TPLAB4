@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Cassandra\FutureRows;
 use DAO\AppointmentDAO;
 use DAO\UserDAO;
 use Models\JobOffer as JobOffer;
@@ -204,7 +205,33 @@ class AdminController
 
         require_once(VIEWS_PATH . "admin/list-Appointment.php");
     }
-    public function showModifyJobOffer()
+    public function showModifyJobOffer($id)
     {
+        $this->validateAdmin();
+        $companyDAO=CompanyDAO::getInstance();
+        $companyList=$companyDAO->getAll();
+        $jobPositionDAO=JobPositionDAO::getInstance();
+        $jobPositionList=$jobPositionDAO->getAll();
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $jobOffer=$jobOfferDAO->searchById($id);
+        require_once (VIEWS_PATH."admin/modifyViewJobOffer.php");
+    }
+    public function modifyCompany($id,$company){
+        $this->validateAdmin();
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $jobOfferDAO->modifyCompany($id,$company);
+        $this->showListJobOffer();
+    }
+    public function modifyRequirements($id,$requirements){
+        $this->validateAdmin();
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $jobOfferDAO->modifyRequirements($id,$requirements);
+        $this->showListJobOffer();
+    }
+    public function modifyJobPosition($id,$jobPosition){
+        $this->validateAdmin();
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $jobOfferDAO->modifyJobPosition($id,$jobPosition);
+        $this->showListJobOffer();
     }
 }

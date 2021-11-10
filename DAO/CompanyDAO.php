@@ -72,7 +72,6 @@ class CompanyDAO
         $parameters["id"] = $id;
         try {
 
-
             $this->connection = Connection::GetInstance();
 
             return $this->connection->ExecuteNonQuery($sqlquery, $parameters);

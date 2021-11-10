@@ -47,7 +47,7 @@ class JobOfferDAO
 
     public function getAll()
     {
-        $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId;";
+        $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId ;";
         try {
             $this->connection = Connection::getInstance();
 
@@ -92,4 +92,85 @@ class JobOfferDAO
 
         return count($resp) > 1 ? $resp : $resp['0'];
     }
+    public function delete($id)
+    {
+        $sqlquery = "DELETE FROM jobOffer WHERE (id = :id)";
+        try {
+
+            $parameters["id"] = $id;
+
+            $this->connection = Connection::GetInstance();
+
+            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+    }
+    public function modifyRequirements($id, $requirements)
+    {
+        $sqlquery = "UPDATE jobOffer   SET requirements = :requirements WHERE (id = :id)";
+        $parameters["requirements"] = $requirements;
+        $parameters["id"] = $id;
+        try {
+
+
+            $this->connection = Connection::GetInstance();
+
+            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+    }
+    public function modifyCompany($id, $companyId)
+    {
+        $sqlquery = "UPDATE jobOffer  SET companyId = :companyId WHERE (id = :id)";
+        $parameters["companyId"] = $companyId;
+        $parameters["id"] = $id;
+        try {
+
+
+            $this->connection = Connection::GetInstance();
+
+            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+    } public function modifyJobPosition($id, $jobPositionId)
+{
+    $sqlquery = "UPDATE jobOffer  SET jobPositionId = :jobPositionId WHERE (id = :id)";
+    $parameters["jobPositionId"] = $jobPositionId;
+    $parameters["id"] = $id;
+    try {
+
+
+        $this->connection = Connection::GetInstance();
+
+        return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+    } catch (PDOException $ex) {
+        throw $ex;
+    }
+}
+public  function  searchById($id)
+{
+    $sqlQuery='select * from joboffer j left join company c on j.companyId =c.companyId  where (id= :id)';
+    $parameters['id']=$id;
+    try {
+        $this->conecction = Connection::GetInstance();
+        $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
+
+    } catch (PDOException $ex) {
+        throw $ex;
+    }
+    if(!empty($resultSet))
+    {
+        $jobOffer = $this->mapout($resultSet);
+    }
+    else
+    {
+        $jobOffer = false;
+    }
+
+    return $jobOffer;
+
+}
 }
