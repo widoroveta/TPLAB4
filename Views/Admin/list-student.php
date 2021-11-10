@@ -4,10 +4,12 @@
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
 ?>
+
 <div class="row">
     <div>
         <div class="card-panel">
-            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" method="post" id='form-email'class="cols 6">
+            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" name='form1' method="post" id='form-email' class="cols 6">
+                  <input type='hidden' name="check" value="false">
                 <input type="text" class="col s4" name="email" placeholder="Selecciona por email">
 
 
@@ -16,10 +18,10 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
             </form>
 
-            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" id='form-check' method='post' class="col s2 push-s1">
+            <form action="<?=FRONT_ROOT."admin/showListStudent"?>" name="form2" id='form-check' method='post' class="col s2 push-s1">
                 <label> <input name="check" type="checkbox" class="filled-in"/>
                     <span>solo activos</span></label>
-                <button type="submit white" style="border:none;"><i class="tiny material-icons blue-text">refresh</i></button>
+                <button type="submit" class="withe" style="border:none;"><i class="tiny material-icons blue-text">refresh</i></button>
             </form>
         </div>
     </div>

@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="6/11/2021">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_12_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_12__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_27_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_11_2021_19_27__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/register-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/register-user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +174,7 @@
       <workItem from="1636489872890" duration="1066000" />
       <workItem from="1636492466359" duration="28000" />
       <workItem from="1636495744579" duration="1589000" />
+      <workItem from="1636501971622" duration="3272000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>

@@ -152,13 +152,13 @@ require_once(VIEWS_PATH . "header.php");
                         if (pass1.value != pass2.value) {
                             document.getElementById("error").style.display = "block";
                             document.getElementById("ok").style.display = 'none';
-                            document.getElementsById("Login").style.display="none";
+                            document.getElementById("Login").style.display='none';
 
 
                         } else {
                             document.getElementById("error").style.display = "none";
                             document.getElementById("ok").style.display = 'block';
-                            document.getElementsById("Login").style.display="block";
+                            document.getElementById("Login").style.display="block";
                             document.getElementById("login").type = 'submit';
 
                         }

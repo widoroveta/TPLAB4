@@ -32,17 +32,16 @@ class AdminController
         $jobOfferList = $jobOfferList != null ? $jobOfferList : array();
         require_once(VIEWS_PATH . "admin/list-jobOffer.php");
     }
-    public function showListStudent($check = false, $email = null)
+    public function showListStudent($check = '', $email='')
     {
         $this->validateAdmin();
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
         $careerDAO->getAll();
         $studentList = array();
-        
-        if($email==null){
-            
-        if (!$check ) {
+
+        if($email==''){
+            if ($check!='on' ) {
             $studentList = $studentDAO->getAll();
         } else {
             $studentList = $studentDAO->searchByValidation();
@@ -51,6 +50,7 @@ class AdminController
         $email=$studentDAO->searchByEmail($email);
         $studentList=array();
             array_push($studentList,$email);//TODO
+
         }
         
     
@@ -65,15 +65,7 @@ class AdminController
         $careerDAO->getAll();
         $userDAO = UserDAO::getInstance();
         $studentList = $studentDAO->searchByValidation();
-        // foreach ($studentList as $std)
-        // {
-        //     if($userDAO->searchByStudentId($std->getStudentId()))
-        //     {
-        //         $key=array_search($std,$studentList);
-        //         unset($studentList[$key]);
-        //     }
 
-        // }
         require_once(VIEWS_PATH . "Admin/register-user.php");
     }
 

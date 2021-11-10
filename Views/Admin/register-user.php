@@ -82,10 +82,10 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <div id="msg">
 
 
-            <div id="error" style="display: none;" class="card-panel   red" role="alert">
+            <div id="error1" style="display: none;" class="card-panel   red" role="alert">
                 Las Contraseñas no coinciden, vuelve a intentar !
             </div>
-            <div id="ok" style="display: none;" class="card-panel  green" role="alert">
+            <div id="ok1" style="display: none;" class="card-panel  green" role="alert">
                 Las Contraseñas coinciden
             </div></div>
      <form action="<?= FRONT_ROOT.'admin/addNewUser'?>" method="post">
@@ -93,35 +93,35 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
          <input type="hidden" value="" name="idModal" id="idModal">
          <div class="form-group">
              <label for="pass1">Contraseña</label>
-             <input type="password" value="" placeholder="123456" onchange="verificarPasswords(); return false" class="form-control" id="pass1"
+             <input type="password" value="" placeholder="123456" onchange="verificarPasswords2(); return false" class="form-control" id="pass3"
                     required>
          </div>
          <div class="form-group">
              <label for="pass2">Vuelve a escribir la Contraseña</label>
-             <input type="password" name="pass2" placeholder="123456" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2"
+             <input type="password" name="pass" placeholder="123456" value="" onchange="verificarPasswords2(); return false" class="form-control" id="pass4"
                     required>
          </div>
 
-         <button type="submit" id="login" class="btn btn-primary">Registrarse</button>
+         <button type="submit" id="login1" class="btn btn-primary">Registrarse</button>
      </form>
             <script>
-                function verificarPasswords() {
+                function verificarPasswords2() {
 
                     // Ontenemos los valores de los campos de contraseñas
-                    pass1 = document.getElementById('pass1');
-                    pass2 = document.getElementById('pass2');
-                    if (Boolean(pass2)) {
-                        if (pass1.value != pass2.value) {
-                            document.getElementById("error").style.display = "block";
-                            document.getElementById("ok").style.display = 'none';
-                            document.getElementsById("Login").style.display="none";
+                    pass3 = document.getElementById('pass3');
+                    pass4 = document.getElementById('pass4');
+                    if (Boolean(pass4)) {
+                        if (pass3.value != pass4.value) {
+                            document.getElementById("error1").style.display = "block";
+                            document.getElementById("ok1").style.display = 'none';
+                            document.getElementById("Login1").style.display="none";
 
 
                         } else {
-                            document.getElementById("error").style.display = "none";
-                            document.getElementById("ok").style.display = 'block';
-                            document.getElementsById("Login").style.display="block";
-                            document.getElementById("login").type = 'submit';
+                            document.getElementById("error1").style.display = "none";
+                            document.getElementById("ok1").style.display = 'block';
+                            document.getElementById("Login1").style.display="block";
+                            document.getElementById("login1").type = 'submit';
 
                         }
 
@@ -132,5 +132,4 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
         </div>
 
     </div>
-
 </div>
