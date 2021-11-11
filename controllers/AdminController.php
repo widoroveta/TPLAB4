@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Cassandra\FutureRows;
 use DAO\AppointmentDAO;
+use DAO\AppointmentOldDAO;
 use DAO\UserDAO;
 use Models\Company as Company;
 use Models\JobOffer as JobOffer;
@@ -50,9 +51,10 @@ class AdminController
         }
     }else{
         $email=$studentDAO->searchByEmail($email);
+        if(!empty($email)){
         $studentList=array();
             array_push($studentList,$email);//TODO
-
+            }
         }
         
     
@@ -113,11 +115,18 @@ class AdminController
 
     public function deleteCompany($id)
     {
-        $this->validateAdmin();
+
         $this->validateAdmin();;
         $companyDAO = CompanyDAO::getInstance();
         $companyDAO->delete($id);
         $this->showListCompany();
+    }
+    public function deleteJobOffer($id)
+    {
+        $this->validateAdmin();
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $jobOfferDAO->delete($id);
+        $this->showListJobOffer();
     }
 
     public function modifyName($id, $name)
@@ -247,5 +256,21 @@ class AdminController
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobOfferDAO->modifyJobPosition($id,$jobPosition);
         $this->showListJobOffer();
+    }
+    public function showTotalHistorial()
+    {
+        $this->validateAdmin();
+        $appointmentOldDAO=AppointmentOldDAO::getInstance();
+        $aol=$appointmentOldDAO->getAll();
+        $aol=$aol!=null?$aol:array();
+        require_once (VIEWS_PATH."Admin/total-history.php");
+    }
+    public function deleteAppointment($id)
+    {
+
+        $this->validateAdmin()();;
+        $appointmentDAO = AppointmentDAO::getInstance();
+        $appointmentDAO->delete($id);
+        $this->showListAppoinment();
     }
 }

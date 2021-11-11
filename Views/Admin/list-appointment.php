@@ -6,11 +6,9 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
 <div class="row">
     <?php
     foreach ($fileList as $file) {
+        $id=$file->getAppointmentId();
         ?>
-        <?php
 
-
-        ?>
         <div class=" purple darken-4 card col s3" style="min-height: 400px;">
             <div class=" light-green-text text-accent-3">
                 <span class="right align">    <?=$file->getDate();?></span>
@@ -26,11 +24,13 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
             </div>    <div class="    col s12 white-text ">
                 Carrera: <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription()?>
             </div>
+            <a href="<?=FRONT_ROOT."admin/deleteAppointment?varId=$id"?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+
             <div class=" card-panel  purple darken-1 col s12 ">
                 <h5 class="white-text">Curriculum Vitae</h5>
                 <a href="<?= $file->getCv() ?>>" download>
                     <img class="col s 4" src="<?= IMG_PATH ?>/PDF_file_icon.svg" alt="" width="35" height="35">
-                    <p class="white-text col s 8"><?= $file->getCv(); ?></p>
+                    <p class="white-text col s 8" ><?= $file->getCv(); ?></p>
                 </a>
             </div>
             <div class="  white-text ">
@@ -41,6 +41,9 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
             <div class="white-text  " style="margin-top: 20px">
                 Requerimiento: <?= $file->getJobOffer()->getRequirements()?>
             </div>
+
+        </div>
+        <div class="col s1">
 
         </div>
         <?php

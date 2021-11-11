@@ -3,6 +3,10 @@
 namespace DAO;
 
 use DAO\Connection as Connection;
+use Models\Appointment as Appointment;
+use Models\AppointmentOld;
+use Models\Company;
+use Models\JobOffer;
 use \PDOException as PDOException;
 
 class AppointmentOldDAO
@@ -44,5 +48,81 @@ class AppointmentOldDAO
 
         }
     }
+    public  function  getAll(){
+       $sqlQuery='select * from appointmentOld ao left join appointment a on ao.id != a.id ';
+        try {
+            $this->connection = Connection::getInstance();
 
+            $result = $this->connection->execute($sqlQuery);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+
+        if (!empty($result)) {
+            $result = $this->mapout($result);
+
+            $jobOfferList = array();
+
+            if (!is_array($result)) {
+                array_push($jobOfferList, $result);
+            }
+        } else {
+            $result = false;
+        }
+
+        if (!empty($jobOfferList)) {
+            $finalResult = $jobOfferList;
+        } else {
+            $finalResult = $result;
+        }
+
+        return $finalResult;
+
+    }
+    public  function  getAllByStudent($email){
+        $sqlQuery='select * from appointmentOld ao left join appointment a  on ao.id != a.id where ( ao.student = :email) ';
+        $parameters['email']=$email;
+        try {
+            $this->connection = Connection::getInstance();
+
+            $result = $this->connection->execute($sqlQuery,$parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+
+        if (!empty($result)) {
+            $result = $this->mapout($result);
+
+            $jobOfferList = array();
+
+            if (!is_array($result)) {
+                array_push($jobOfferList, $result);
+            }
+        } else {
+            $result = false;
+        }
+
+        if (!empty($jobOfferList)) {
+            $finalResult = $jobOfferList;
+        } else {
+            $finalResult = $result;
+        }
+
+        return $finalResult;
+
+    }
+    public
+    function mapout($value)
+    {
+
+
+        $value = is_array($value) ? $value : [];
+
+        $resp = array_map(function ($p) {
+
+            return new AppointmentOld($p['id'],$p['nameCompany'],$p['jobPosition'],$p['career'],$p['date']);
+        }, $value);
+
+        return count($resp) > 1 ? $resp : $resp['0'];
+    }
 }

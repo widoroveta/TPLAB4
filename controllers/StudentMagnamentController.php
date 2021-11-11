@@ -140,12 +140,27 @@ class StudentMagnamentController
     public function showListAppointment($message=''){
         $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
+        $appointmentOldDAO=AppointmentOldDAO::getInstance();
+        //$aol=$appointmentOldDAO->getAll();
         $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
         $fileList=$fileList!=null?$fileList:array();
         require_once (VIEWS_PATH."student/list-Appointment.php");
     }
+    public function deleteAppointment($id)
+    {
 
-
+        $this->validateSession();;
+        $appointmentDAO = AppointmentDAO::getInstance();
+        $appointmentDAO->delete($id);
+        $this->showListAppointment();
+    }
+    public function showHistorialAppointment()
+    {
+        $appointmentOldDAO=AppointmentOldDAO::getInstance();
+        $aol=$appointmentOldDAO->getAllByStudent($_SESSION['loggedUser']->getEmail());
+        $aol=$aol!=null?$aol:array();
+        require_once (VIEWS_PATH.'student/historial-appointment.php');
+    }
     public  function  addAppointment($jobOfferId,$studentId,$message){
         $this->validateSession();
         $appointmentDAO=AppointmentDAO::getInstance();
@@ -165,6 +180,7 @@ class StudentMagnamentController
            $appointment= $appointmentDAO->add($a);
 
            if($appointment) {
+
                $appointmentSelect=$appointmentDAO->maxId();
 
              $id=$appointmentSelect['0']->getAppointmentId();

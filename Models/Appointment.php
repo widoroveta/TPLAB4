@@ -46,31 +46,7 @@ class Appointment
         $this->date = $date;
     }
 
-    /**
-     * @return mixed|string
-     */
 
-
-    /**
-     * @param $student
-     * @param $jobOffer
-     * @param $cv
-     * @param $message
-     */
-
-
-    /**
-     * @param $apointmentId
-     * @param $jobOffer
-     * @param $cv
-     * @param $message
-     */
-    
-
-
-    /**
-     * @return mixed
-     */
     public function getAppointmentId()
     {
         return $this->appointmentId;

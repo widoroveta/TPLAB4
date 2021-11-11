@@ -4,10 +4,10 @@ require_once(VIEWS_PATH . "student/nav-student.php");
 
 if (!empty($message)) { ?>
     <script>
-        var toastHTML = '<span><i class="tiny material-icons"> check</i><?= $message ?></span>';
+        var toastHTML = '<span><?= $message ?></span>';
         M.toast({
             html: toastHTML,
-            classes: "green accent-3",
+            classes: "teal darken-1",
             displayLength: 5000
         });
     </script>
@@ -19,11 +19,10 @@ if (!empty($message)) { ?>
 <div class="row">
     <?php
     foreach ($fileList as $file) {
+        $id=$file->getAppointmentId();
+        var_dump($file);
         ?>
-        <?php
 
-
-        ?>
         <div class=" purple darken-4 card col s3" style="min-height: 400px;">
 
             <div class=" light-green-text text-accent-3">
@@ -37,6 +36,7 @@ if (!empty($message)) { ?>
             </div>    <div class="    col s12 white-text ">
                 Carrera: <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription()?>
             </div>
+            <a href="<?=FRONT_ROOT."studentMagnament/deleteAppointment?varId=$id"?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
             <div class=" card-panel  purple darken-1 col s12 ">
                 <h5 class="white-text">Curriculum Vitae</h5>
                 <a href="<?= $file->getCv() ?>>" download>

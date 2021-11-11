@@ -30,8 +30,8 @@ class AppointmentDAO
 
     public function add($appointment)
     {
-
-        // if(!$this->validationByStudent($appointment->getStudent())) {
+        $id = $appointment->getStudent();
+       if(!$this->validationOneAppointment($id)){
         ini_set("date.timezone", "America/Argentina/Buenos_Aires");
         date_default_timezone_set("America/Argentina/Buenos_Aires");
         $date = date("d-m-Y-(g:i)");
@@ -56,6 +56,9 @@ class AppointmentDAO
 
 
         }
+       }else{
+           return null;
+       }
     }
         public  function  maxId()
         {
@@ -87,6 +90,20 @@ class AppointmentDAO
             }
 
             return $finalResult;
+        }
+        public function validationOneAppointment($id)
+        {
+            $sqlQuery='SELECT id FROM appointment where (studentId = :id)';
+            $parameters['id']=$id;
+            try {
+                $this->connection = Connection::getInstance();
+
+               return $this->connection->execute($sqlQuery,$parameters);
+            }
+            catch (PDOException $ex)
+            {
+                throw $ex;
+            }
         }
         public  function searchById($id)
         {
@@ -176,7 +193,21 @@ class AppointmentDAO
 
             return $finalResult;
         }
+    public function delete($id)
+    {
+        $sqlquery = "DELETE FROM appointment WHERE (id = :id)";
+        $parameters["id"] = $id;
+        try {
 
+
+
+            $this->connection = Connection::GetInstance();
+
+            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+    }
 
         public
         function validationByStudent($id)
@@ -202,7 +233,7 @@ class AppointmentDAO
             $resp = array_map(function ($p) {
                 $studentDAO = StudentDAO::getInstance();
                 $jobPositionDAO = JobPositionDAO::getInstance();
-                return new Appointment($p['id'],$studentDAO->searchById($p['id'],$p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements']), $p['cv'], $p['message'], $p['dateAppointment']);
+                return new Appointment($p['id'],$studentDAO->searchById($p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements']), $p['cv'], $p['message'], $p['dateAppointment']);
             }, $value);
 
             return count($resp) > 1 ? $resp : $resp['0'];

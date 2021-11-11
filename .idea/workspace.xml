@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="9/11/2021">
-      <change afterPath="$PROJECT_DIR$/DAO/AppointmentOldDAO.php" afterDir="false" />
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="falta appointment validation y mostrar historial">
+      <change afterPath="$PROJECT_DIR$/Views/Admin/total-history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_11_2021_11_37__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/AppointmentOldDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentOldDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/nav-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/nav-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/add-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/add-appointment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/nav-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/nav-student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyMagnamentController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +182,8 @@
       <workItem from="1636492466359" duration="28000" />
       <workItem from="1636495744579" duration="1589000" />
       <workItem from="1636501971622" duration="3272000" />
-      <workItem from="1636621502092" duration="4832000" />
+      <workItem from="1636621502092" duration="5206000" />
+      <workItem from="1636658774900" duration="5980000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -329,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636213228965</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="falta appointment validation y mostrar historial">
+      <created>1636626654871</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1636626654872</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +383,8 @@
     <MESSAGE value="abm job offer" />
     <MESSAGE value="5/11/2021" />
     <MESSAGE value="6/11/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="6/11/2021" />
+    <MESSAGE value="falta appointment validation y mostrar historial" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta appointment validation y mostrar historial" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
