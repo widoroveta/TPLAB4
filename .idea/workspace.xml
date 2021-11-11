@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="casi entrega">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/AppointmentOldDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentOldDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +174,7 @@
       <workItem from="1636495744579" duration="1589000" />
       <workItem from="1636501971622" duration="3272000" />
       <workItem from="1636621502092" duration="5206000" />
-      <workItem from="1636658774900" duration="7571000" />
+      <workItem from="1636658774900" duration="8279000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>

@@ -49,7 +49,7 @@ class AppointmentOldDAO
         }
     }
     public  function  getAll(){
-       $sqlQuery='select * from appointmentOld ao left join appointment a on ao.id != a.apid ';
+       $sqlQuery='select * from appointmentOld ao left join appointment a on ao.id != a.apid  ';
         try {
             $this->connection = Connection::getInstance();
 

@@ -267,8 +267,7 @@ class AdminController
     }
     public function deleteAppointment($id)
     {
-
-        $this->validateAdmin()();;
+        $this->validateAdmin();
         $appointmentDAO = AppointmentDAO::getInstance();
         $appointmentDAO->delete($id);
         $this->showListAppoinment();
