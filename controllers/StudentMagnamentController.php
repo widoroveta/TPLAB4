@@ -3,13 +3,17 @@
 namespace Controllers;
 
 use DAO\AppointmentDAO;
+use DAO\AppointmentOldDAO;
 use DAO\CareerDAO as CareerDAO;
 use DAO\CompanyDAO;
 use DAO\JobOfferDAO;
+use DAO\JobPositionDAO;
 use DAO\StudentDAO as StudentDAO;
 use DAO\UserDAO;
 use Models\Appointment;
+use Models\AppointmentOld;
 use Models\Career as Career;
+use Models\JobPosition;
 use Models\Student as Student;
 use Models\User as User;
 
@@ -118,13 +122,18 @@ class StudentMagnamentController
     function showJobOfferList()
     {
         $this->validateSession();
+        $career=$_SESSION['loggedUser']->getCareer()->getCareerId();
         $jobOfferDAO=JobOfferDAO::getInstance();
-        $jobOfferList=$jobOfferDAO->getAll();
+        $jobPosition=JobPositionDAO::getInstance();
+        $jobPositionList=$jobPosition->getAllByCareer($career);
+        $jobOfferList=$jobOfferDAO->getAllByJobPositions($jobPositionList);
+
+
         $jobOfferList=$jobOfferList!=null?$jobOfferList:array();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
     public function showAddAppointment($id){
-$this->validateSession();
+        $this->validateSession();
         $studentId=$_SESSION['loggedUser']->getStudentId();
         require_once (VIEWS_PATH.'student/add-appointment.php');
     }
@@ -139,10 +148,12 @@ $this->validateSession();
 
     public  function  addAppointment($jobOfferId,$studentId,$message){
         $this->validateSession();
+        $appointmentDAO=AppointmentDAO::getInstance();
+        $appointmentOldDAO=AppointmentOldDAO::getInstance();
         $file=$_FILES['file'];
 
         try {
-            $appointmentDAO=AppointmentDAO::getInstance();
+
             
             $fileName = $file["name"];
             $tempFileName = $file["tmp_name"];
@@ -150,14 +161,26 @@ $this->validateSession();
             $filePath = UPLOADS_PATH.basename($fileName);
             $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             move_uploaded_file($tempFileName,$filePath);
-            $a=new Appointment($studentId,$jobOfferId,$filePath,$message);
+            $a=new Appointment(0,$studentId,$jobOfferId,$filePath,$message);
            $appointment= $appointmentDAO->add($a);
+
            if($appointment) {
+               $appointmentSelect=$appointmentDAO->maxId();
+
+             $id=$appointmentSelect['0']->getAppointmentId();
+               $company=$appointmentSelect['0']->getJobOffer()->getCompany()->getNameCompany();
+               $student=$appointmentSelect['0']->getStudent()->getEmail();
+               $jobPosition=$appointmentSelect['0']->getJobOffer()->getJobPosition()->getDescription();
+               $career=$appointmentSelect['0']->getJobOffer()->getJobPosition()->getCareer()->getDescription();
+               $date=$appointmentSelect['0']->getDate();
+              $appointmentOld=new AppointmentOld($id,$company,$student,$jobPosition,$career,$date);
+                $appointmentOldDAO->add($appointmentOld);
                $message = 'Postulacion realizada con exito.';
            }else{
                $message='Postulacion con error revise si ya tiene una postulacion';
            }
-            header('location:'.FRONT_ROOT."StudentMagnament/showListAppointment?varMessage=$message");
+          //  header('location:'.FRONT_ROOT."StudentMagnament/showListAppointment?varMessage=$message");
+           $this->showListAppointment($message);
         }
         catch (\Exception $ex)
         {

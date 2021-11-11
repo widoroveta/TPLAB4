@@ -11,7 +11,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
 
 
         ?>
-        <div class=" purple darken-4 card col s3" style="min-height: 350px;">
+        <div class=" purple darken-4 card col s3" style="min-height: 400px;">
             <div class=" light-green-text text-accent-3">
                 <span class="right align">    <?=$file->getDate();?></span>
             </div>
@@ -21,10 +21,11 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
             <div class=" white-text ">
                 Estudiante : <?= $file->getStudent()->getFirstName();?>  <?= $file->getStudent()->getLastName();?>
             </div>
-            <div class="     white-text ">
-                Carrera: <?= $file->getJobOffer()->getJobPosition()->getDescription()?>
+            <div class="    col s12 white-text ">
+                Posicion de trabajo: <?= $file->getJobOffer()->getJobPosition()->getDescription()?>
+            </div>    <div class="    col s12 white-text ">
+                Carrera: <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription()?>
             </div>
-
             <div class=" card-panel  purple darken-1 col s12 ">
                 <h5 class="white-text">Curriculum Vitae</h5>
                 <a href="<?= $file->getCv() ?>>" download>

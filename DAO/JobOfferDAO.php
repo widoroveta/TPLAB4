@@ -44,7 +44,22 @@ class JobOfferDAO
         }
         return null;
     }
+public function getAllByJobPositions($jobPositionList){
+       $jobOfferList= $this->getAll();
+       $array=array();
+       foreach ($jobPositionList as $jp)
+       {
+           foreach($jobOfferList as $jo)
+           {
+               if($jo->getJobPosition()==$jp)
+               {
+                   array_push($array,$jo);
+               }
+           }
 
+       }
+       return $array;
+}
     public function getAll()
     {
         $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId ;";

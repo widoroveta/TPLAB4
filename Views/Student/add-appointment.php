@@ -8,30 +8,41 @@ require_once(VIEWS_PATH . "nav.php");
 //var_dump($_FILES);
 
 ?>
-// TODO add style at the form
+
 <body class="grey darken-3">
 <div class="row">
+
+
     <form action="<?=FRONT_ROOT.'StudentMagnament/addAppointment'?>" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="jobOfferId" value="<?=$id?>">
         <input type="hidden" name="studentId" value="<?=$studentId?>">
         <div class="row">
-            <div class="col s4">
+
+            <div class=" card-panel  black col s4" style="padding: 20px;">
+                 <span class="card-panel pink white-text col s5 push-s1">
+                Mensaje de postulacion
+            </span>
                 <div class="input-field col s12">
                     <i class="material-icons prefix pink-text">mode_edit</i>
-                    <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
+                    <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
                     <label for="icon_prefix2">Enviar un mensaje</label>
                 </div>
+                <span class="card-panel pink white-text col s5 push-s1">
+                Agregar curriculum vitae
+                </span>
                 <div class="file-field input-field col s12 ">
                     <div class="btn pink">
                         <span>File</span>
                         <input name="file" class="form-control-file" type="file">
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
+                        <input class="file-path validate white-text" type="text">
                     </div>
                 </div>
+                <a href="<?=FRONT_ROOT.'studentMagnament/showJobOfferList'?>" class="left align btn waves-effect waves-light pink">Volver</a>
                 <button type="submit" class="right align btn waves-effect waves-light pink">Enviar</button>
             </div>
+
         </div>
 
     </form>

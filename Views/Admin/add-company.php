@@ -8,7 +8,7 @@ require_once(VIEWS_PATH . 'Admin/nav-admin.php');
 <body class="grey darken-3">
 <div class="row">
     <div class="card-panel z-depth-4 col s5  push-s1 white " style="padding: 25px">
-        <form action="<?= FRONT_ROOT . "CompanyMagnament/addCompany" ?>" class="">
+        <form action="<?= FRONT_ROOT . "admin/addCompany" ?>" class="">
             <label for="nameCompany">Nombre de compania</label>
             <input name="nameCompany" type="text" required>
             <div class="input-field">

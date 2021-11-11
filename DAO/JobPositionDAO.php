@@ -34,6 +34,19 @@ class JobPositionDAO {
         $this->retrieveData();
         return $this->jobPositionList;
     }
+    public function getAllByCareer($career)
+    {
+        $this->retrieveData();
+        $array=$this->jobPositionList;
+        foreach ($array as $jp) {
+            if ($jp->getCareer()->getCareerId() != $career) {
+                $key = array_search( $jp,$array);
+
+                unset($array[$key]);
+            }
+        }
+            return $array;
+    }
     public  static function getInstance(){
         if (self::$instance == null) {
             self::$instance = new JobPositionDAO();

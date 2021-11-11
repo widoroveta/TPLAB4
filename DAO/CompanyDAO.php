@@ -29,21 +29,34 @@ class CompanyDAO
     }
 
 
- // TODO add validation unique cuit
+
     public function add($company)
     {
-        $sqlQuery = "INSERT INTO company (companyId,nameCompany,city,address,size,email,phoneNumber,cuit) VALUES (:companyId,:nameCompany,:city,:address,:size,:email,:phoneNumber,:cuit)";
-        $parameters['companyId'] = $company->getCompanyId();
-        $parameters['nameCompany'] = $company->getNameCompany();
-        $parameters['city'] = $company->getCity();
-        $parameters['address'] = $company->getAddress();
-        $parameters['size'] = $company->getSize();
-        $parameters['email'] = $company->getEmail();
-        $parameters['phoneNumber'] =$company->getPhoneNumber();
-        $parameters['cuit'] =$company->getCuit();
+        if(!$this->validateCuit($company->getCuit())) {
+            $sqlQuery = "INSERT INTO company (companyId,nameCompany,city,address,size,email,phoneNumber,cuit) VALUES (:companyId,:nameCompany,:city,:address,:size,:email,:phoneNumber,:cuit)";
+            $parameters['companyId'] = $company->getCompanyId();
+            $parameters['nameCompany'] = $company->getNameCompany();
+            $parameters['city'] = $company->getCity();
+            $parameters['address'] = $company->getAddress();
+            $parameters['size'] = $company->getSize();
+            $parameters['email'] = $company->getEmail();
+            $parameters['phoneNumber'] = $company->getPhoneNumber();
+            $parameters['cuit'] = $company->getCuit();
+            try {
+                $this->conecction = Connection::GetInstance();
+                return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
+            } catch (PDOException $ex) {
+                throw $ex;
+            }
+        }
+        return null;
+    }
+    public function validateCuit($cuit){
+        $sqlQuery="select companyId from company where (cuit = :cuit)";
+        $parameters['cuit']=$cuit;
         try {
             $this->conecction = Connection::GetInstance();
-            return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
+            return $this->conecction->Execute($sqlQuery, $parameters, 0);
         } catch (PDOException $ex) {
             throw $ex;
         }

@@ -5,6 +5,7 @@ namespace Controllers;
 use Cassandra\FutureRows;
 use DAO\AppointmentDAO;
 use DAO\UserDAO;
+use Models\Company as Company;
 use Models\JobOffer as JobOffer;
 use DAO\CareerDAO;
 use DAO\CompanyDAO;
@@ -82,8 +83,21 @@ class AdminController
         $userDAO->add($user);
         $this->showValidateStudent();
     }
-
-    public function showAddCompany()
+    public function addCompany($nameCompany,$city,$address,$size,$email,$phoneNumber,$CUIT){
+        $companyDAO=CompanyDAO::getInstance();
+        header("location".FRONT_ROOT."Admin/validateAdmin");
+        $company =new Company();
+        $company->setNameCompany($nameCompany);
+        $company->setCity($city);
+        $company->setAddress($address);
+        $company->setSize($size);
+        $company->setEmail($email);
+        $company->setPhoneNumber($phoneNumber);
+        $company->setCuit($CUIT);
+        $var=$companyDAO->add($company);
+        $this->showAddCompany();
+    }
+    public function showAddCompany($message='')
     {
         $this->validateAdmin();
         require_once(VIEWS_PATH . "Admin/add-company.php");

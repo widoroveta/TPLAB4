@@ -10,7 +10,25 @@ class Appointment
     private $cv;
     private $message;
     private $date;
-    private $active;
+
+    /**
+     * @param $appointmentId
+     * @param $student
+     * @param $jobOffer
+     * @param $cv
+     * @param $message
+     * @param $date
+     */
+    public function __construct($appointmentId='', $student='', $jobOffer='', $cv='', $message='', $date='')
+    {
+        $this->appointmentId = $appointmentId;
+        $this->student = $student;
+        $this->jobOffer = $jobOffer;
+        $this->cv = $cv;
+        $this->message = $message;
+        $this->date = $date;
+    }
+
 
     /**
      * @return mixed|string
@@ -31,18 +49,7 @@ class Appointment
     /**
      * @return mixed|string
      */
-    public function getActive()
-    {
-        return $this->active;
-    }
 
-    /**
-     * @param mixed|string $active
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-    }
 
     /**
      * @param $student
@@ -50,15 +57,7 @@ class Appointment
      * @param $cv
      * @param $message
      */
-    public function __construct($student='', $jobOffer='', $cv='', $message='',$date='',$active='')
-    {
-        $this->student = $student;
-        $this->jobOffer = $jobOffer;
-        $this->cv = $cv;
-        $this->message = $message;
-        $this->date=$date;
-        $this->active=$active;
-    }
+
 
     /**
      * @param $apointmentId
@@ -74,15 +73,13 @@ class Appointment
      */
     public function getAppointmentId()
     {
-        return $this->apointmentId;
+        return $this->appointmentId;
     }
 
-    /**
-     * @param mixed $apointmentId
-     */
-    public function setAppointmentId($apointmentId)
+
+    public function setAppointmentId($appointmentId)
     {
-        $this->apointmentId = $apointmentId;
+        $this->appointmentId = $appointmentId;
     }
 
     /**
