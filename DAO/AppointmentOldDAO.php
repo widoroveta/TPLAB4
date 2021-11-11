@@ -120,7 +120,7 @@ class AppointmentOldDAO
 
         $resp = array_map(function ($p) {
 
-            return new AppointmentOld($p['id'],$p['nameCompany'],$p['jobPosition'],$p['career'],$p['date']);
+            return new AppointmentOld($p['id'],$p['nameCompany'],$p['student'],$p['jobPosition'],$p['career'],$p['date']);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];

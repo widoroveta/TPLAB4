@@ -27,6 +27,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php")
         <?php
         foreach ($aol as $apOld)
         {
+
             ?>
             <tr>
                 <td>
@@ -35,7 +36,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php")
                 <td>
                     <?=$apOld->getNameCompany();?>
                 </td>
-                <td> <?=$apOld->getStudent();?></td>
+
                 <td><?=$apOld->getJobPosition();?></td>
                 <td><?=$apOld->getCareer();?></td>
                 <td><?=$apOld->getDate();?></td>

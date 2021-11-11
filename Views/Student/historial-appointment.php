@@ -31,7 +31,7 @@ require_once (VIEWS_PATH."student/nav-student.php");
         <td>
         <?=$apOld->getNameCompany();?>
         </td>
-        <td> <?=$apOld->getStudent();?></td>
+
         <td><?=$apOld->getJobPosition();?></td>
         <td><?=$apOld->getCareer();?></td>
         <td><?=$apOld->getDate();?></td>
