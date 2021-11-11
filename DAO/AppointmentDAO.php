@@ -62,7 +62,7 @@ class AppointmentDAO
     }
         public  function  maxId()
         {
-            $sqlQuery="SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where a.id=(select max(id) from appointment)";
+            $sqlQuery="SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where a.apid=(select max(apid) from appointment)";
             try {
                 $this->connection = Connection::getInstance();
 
@@ -93,7 +93,7 @@ class AppointmentDAO
         }
         public function validationOneAppointment($id)
         {
-            $sqlQuery='SELECT id FROM appointment where (studentId = :id)';
+            $sqlQuery='SELECT apid FROM appointment where (studentId = :id)';
             $parameters['id']=$id;
             try {
                 $this->connection = Connection::getInstance();
@@ -107,7 +107,7 @@ class AppointmentDAO
         }
         public  function searchById($id)
         {
-            $sqlQuery='SELECT * FROM  appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where (a.id= :id)';
+            $sqlQuery='SELECT * FROM  appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where (a.apid= :id)';
             $parameters['id']=$id;
             try {
                 $this->conecction = Connection::GetInstance();
@@ -135,6 +135,7 @@ class AppointmentDAO
                 $this->connection = Connection::getInstance();
 
                 $result = $this->connection->execute($sqlQuery);
+
             } catch (PDOException $ex) {
                 throw $ex;
             }
@@ -155,6 +156,7 @@ class AppointmentDAO
                 $finalResult = $jobOfferList;
             } else {
                 $finalResult = $result;
+
             }
 
             return $finalResult;
@@ -195,7 +197,7 @@ class AppointmentDAO
         }
     public function delete($id)
     {
-        $sqlquery = "DELETE FROM appointment WHERE (id = :id)";
+        $sqlquery = "DELETE FROM appointment WHERE (apid = :id)";
         $parameters["id"] = $id;
         try {
 
@@ -212,7 +214,7 @@ class AppointmentDAO
         public
         function validationByStudent($id)
         {
-            $sqlQuery = "select id from appointment where (studentId = :studentId);";
+            $sqlQuery = "select apid from appointment where (studentId = :studentId);";
             $parameters['studentId'] = $id;
             try {
                 $conecction = Connection::getInstance();
@@ -233,7 +235,7 @@ class AppointmentDAO
             $resp = array_map(function ($p) {
                 $studentDAO = StudentDAO::getInstance();
                 $jobPositionDAO = JobPositionDAO::getInstance();
-                return new Appointment($p['id'],$studentDAO->searchById($p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements']), $p['cv'], $p['message'], $p['dateAppointment']);
+                return new Appointment($p['apId'],$studentDAO->searchById($p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements']), $p['cv'], $p['message'], $p['dateAppointment']);
             }, $value);
 
             return count($resp) > 1 ? $resp : $resp['0'];

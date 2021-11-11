@@ -99,7 +99,7 @@ create TABLE if not exists Users
     );
 create TABLE if not exists appointment
 (
-    id
+    apid
     int
     not
     null

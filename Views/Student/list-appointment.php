@@ -20,7 +20,7 @@ if (!empty($message)) { ?>
     <?php
     foreach ($fileList as $file) {
         $id=$file->getAppointmentId();
-        var_dump($file);
+
         ?>
 
         <div class=" purple darken-4 card col s3" style="min-height: 400px;">
