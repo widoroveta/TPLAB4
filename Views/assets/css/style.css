@@ -5,3 +5,6 @@
 .mostrar {
     display: block;
 }
+.borders-circle{
+    border-radius: 50px;
+}

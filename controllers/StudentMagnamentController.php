@@ -127,16 +127,23 @@ class StudentMagnamentController
     function showJobOfferList()
     {
         $this->validateSession();
-        $career=$_SESSION['loggedUser']->getCareer()->getCareerId();
-        $jobOfferDAO=JobOfferDAO::getInstance();
-        $jobPosition=JobPositionDAO::getInstance();
-        $jobPositionList=$jobPosition->getAllByCareer($career);
-        $jobOfferList=$jobOfferDAO->getAllByJobPositions($jobPositionList);
+        $appointment=AppointmentDAO::getInstance();
+        $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
+        if(empty($fileList)) {
+            $career = $_SESSION['loggedUser']->getCareer()->getCareerId();
+            $jobOfferDAO = JobOfferDAO::getInstance();
+            $jobPosition = JobPositionDAO::getInstance();
+            $jobPositionList = $jobPosition->getAllByCareer($career);
+            $jobOfferList = $jobOfferDAO->getAllByJobPositions($jobPositionList);
 
 
-        $jobOfferList=$jobOfferList?$jobOfferList:array();
-        require_once(VIEWS_PATH . "student/list-jobOffer.php");
-    }
+            $jobOfferList = $jobOfferList ? $jobOfferList : array();
+            // $jobOfferList=array();
+            require_once(VIEWS_PATH . "student/list-jobOffer.php");
+        }else{
+            $this->showListAppointment("Usted ya tiene una postulacion cargada");
+        }
+        }
     public function showAddAppointment($id){
         $this->validateSession();
         $studentId=$_SESSION['loggedUser']->getStudentId();
