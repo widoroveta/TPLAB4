@@ -124,18 +124,29 @@ class StudentMagnamentController
     }
 
     public
-    function showJobOfferList()
+    function showJobOfferList($name='')
     {
         $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
         $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
         if(empty($fileList)) {
-            $career = $_SESSION['loggedUser']->getCareer()->getCareerId();
-            $jobOfferDAO = JobOfferDAO::getInstance();
-            $jobPosition = JobPositionDAO::getInstance();
-            $jobPositionList = $jobPosition->getAllByCareer($career);
-            $jobOfferList = $jobOfferDAO->getAllByJobPositions($jobPositionList);
 
+                $career = $_SESSION['loggedUser']->getCareer()->getCareerId();
+                $jobOfferDAO = JobOfferDAO::getInstance();
+                $jobPosition = JobPositionDAO::getInstance();
+                $jobPositionList = $jobPosition->getAllByCareer($career);
+                $jobOfferList = $jobOfferDAO->getAllByJobPositions($jobPositionList);
+            if(!empty($name)) {
+                foreach ($jobOfferList as $value)
+                {
+                    if($value->getCompany()->getNameCompany() != $name)
+                    {
+                        $key=array_search($value,$jobOfferList);
+                        unset($jobOfferList[$key]);
+                    }
+
+                }
+            }
 
             $jobOfferList = $jobOfferList ? $jobOfferList : array();
             // $jobOfferList=array();

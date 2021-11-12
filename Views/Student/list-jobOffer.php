@@ -9,22 +9,26 @@ require_once(VIEWS_PATH . "student/nav-student.php");
 
     <?php
     if(!empty($jobOfferList)){
-     ?>    <form action="<?= FRONT_ROOT . "" ?>" method="post">
-        <div class=" col s12">
-            <div class="card-panel cols 5 push-s2">
-                <input type="text" name="name" class="col s12 m6 l3 " placeholder="Nombre a buscar">
+     ?>
+        <div class=" col s6">
+            <div class="card-panel col s8 ">
+                <form action="<?=FRONT_ROOT."StudentMagnament/showJobOfferList"?>" method="post">
+                <input type="text" name="name"  placeholder="Nombre a buscar">
                 <button type="submit" class="btn waves-effect waves-light black blue-text"><i
                             class="center material-icons">search</i>
+
                 </button>
+                </form>
             </div>
         </div>
-    </form>
+        <div class="col s12">
     <?php
     foreach ($jobOfferList as $jobOffer) {
         ?>
 
         <?php $id = $jobOffer->getJobOfferId(); ?>
-        <div class="col s3 ">
+
+        <div class="col s ">
             <div class="card " style="border-radius: 10px;">
                 <div class="card-content card-content  z-depth-4 black purple-text text-accent-2"
                      style="min-height: 250px;border-radius: 10px 10px 0 0;">
@@ -49,8 +53,12 @@ require_once(VIEWS_PATH . "student/nav-student.php");
 
         <?php
     }
+    ?>
+        </div>
+            <?php
     }else{
         ?>
+
             <div class="row ">
         <div class="card-Panel  amber lighten-1 col s6 push-s3" style="border-radius: 20px ">
               <h2 align="center"> <i class="Medium red-text material-icons">error</i>  Lo sentimos.</h2>

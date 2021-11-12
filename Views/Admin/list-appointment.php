@@ -5,6 +5,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
 <body class="grey darken-3">
 <div class="row">
     <?php
+    if(!empty($fileList)){
     foreach ($fileList as $file) {
         $id=$file->getAppointmentId();
         ?>
@@ -47,6 +48,19 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
 
         </div>
         <?php
+    }
+    }
+    else{
+        ?>
+        <div class="row ">
+            <div class="card-Panel cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
+                <h2 align="center"> <i class="Medium red-text material-icons">error</i>  Lo sentimos.</h2>
+                <p align="Center" style="margin: 20px ">En este momento no hay Postulaciones laborales disponible
+                </p>
+
+            </div>
+        </div>
+    <?php
     }
     ?>
 </div>
