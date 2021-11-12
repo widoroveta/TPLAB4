@@ -19,6 +19,7 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
 <div class="row">
 
     <?php
+    if(!empty($companyList) || !empty($companySelected)){
     if (!isset($companySelected))
         foreach ($companyList as $company) {
             $id = $company->getCompanyId()
@@ -68,7 +69,19 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
 
         <?php
     }
+    }else{
+    ?>
+        <div class="row ">
+            <div class="card-Panel  cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
+                <h2 align="center"> <i class="Medium red-text material-icons">error</i>  Lo sentimos.</h2>
+                <p align="Center" style="margin: 20px ">En este momento no hay compañias disponible.
+                </p>
+                <br> <p align="center">Muchas gracias.</p>
+            </div>
+        </div>
+    <?php
 
+    }
     ?>
     </body>
 

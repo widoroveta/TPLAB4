@@ -217,7 +217,7 @@ class AdminController
         $jobOffer->setJobPosition($jp);
         $jobOfferDAO->add($jobOffer);
 
-        $this->showAddJobOffer();
+        $this->showListJobOffer();
     }
     public function showListAppoinment()
     {

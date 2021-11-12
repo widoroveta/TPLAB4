@@ -164,7 +164,7 @@ class StudentMagnamentController
         $this->validateSession();
         $appointment=AppointmentDAO::getInstance();
         $appointmentOldDAO=AppointmentOldDAO::getInstance();
-        //$aol=$appointmentOldDAO->getAll();
+
         $fileList=$appointment-> getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
         $fileList=$fileList!=null?$fileList:array();
         require_once (VIEWS_PATH."student/list-Appointment.php");

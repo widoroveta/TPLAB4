@@ -60,9 +60,9 @@ require_once(VIEWS_PATH . "student/nav-student.php");
         ?>
 
             <div class="row ">
-        <div class="card-Panel  amber lighten-1 col s6 push-s3" style="border-radius: 20px ">
+        <div class="card-Panel  cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
               <h2 align="center"> <i class="Medium red-text material-icons">error</i>  Lo sentimos.</h2>
-            <p align="justify" style="margin: 20px ">En este momento no hay ofertas laborales disponible ya sea por tu carrera o por cualquier otra indole.Regrese por favor mas tarde.
+            <p align="Center" style="margin: 20px ">En este momento no hay ofertas laborales disponible ya sea por tu carrera o por cualquier otra indole.Regrese por favor mas tarde.
            </p>
             <br> <p align="center">Muchas gracias.</p>
         </div>

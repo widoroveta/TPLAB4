@@ -61,11 +61,11 @@ if (!empty($message)) { ?>
     }else{
         ?>
         <div class="row ">
-            <div class="card-Panel  amber lighten-1 col s6 push-s3" style="border-radius: 20px ">
+            <div class="card-Panel  cyan darken-4 green-text col s6 push-s3" style="border-radius: 20px ">
                 <h2 align="center"> <i class="Medium red-text material-icons">error</i>  Lo sentimos.</h2>
                 <p align="Center" style="margin: 20px ">En este momento no hay Postulaciones laborales disponible
                 </p>
-
+                <br> <p align="center">Muchas gracias.</p>
             </div>
         </div>
     <?php
