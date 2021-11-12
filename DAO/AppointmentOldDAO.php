@@ -49,7 +49,7 @@ class AppointmentOldDAO
         }
     }
     public  function  getAll(){
-       $sqlQuery='select * from appointmentOld ao left join appointment a on ao.id != a.apid  ';
+       $sqlQuery='SELECT * FROM appointmentold ao WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id); ';
         try {
             $this->connection = Connection::getInstance();
 
@@ -80,7 +80,7 @@ class AppointmentOldDAO
 
     }
     public  function  getAllByStudent($email){
-        $sqlQuery='select * from appointmentOld ao left join appointment a  on ao.id != a.apid where ( ao.student = :email) ';
+        $sqlQuery='SELECT * FROM appointmentold ao WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id) and ( ao.student = :email) ';
         $parameters['email']=$email;
         try {
             $this->connection = Connection::getInstance();

@@ -47,6 +47,7 @@ class JobOfferDAO
 public function getAllByJobPositions($jobPositionList){
        $jobOfferList= $this->getAll();
        $array=array();
+       if($jobOfferList != null){
        foreach ($jobPositionList as $jp)
        {
            foreach($jobOfferList as $jo)
@@ -56,7 +57,7 @@ public function getAllByJobPositions($jobPositionList){
                    array_push($array,$jo);
                }
            }
-
+           }
        }
        return $array;
 }

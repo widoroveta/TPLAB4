@@ -44,11 +44,16 @@ class StudentMagnamentController
 
 
                 if ($user != null) {
-
-                    $_SESSION["loggedUser"] = $std;
+                    if (strcasecmp($user->getPassword(), $password) == 0){
+                        $_SESSION["loggedUser"] = $std;
                     $message = "Usuario encontrado";
                     $this->showHomeStudent($message);
-                } else {
+                }
+                    else{
+                        $message = 'Contraseña incorrecta';
+                        header("location:" . FRONT_ROOT . "home/index?varMessage=$message");
+                    }
+                }else {
                     $message = 'Deberias registrarte';
                     header("location:" . FRONT_ROOT . "home/index?varMessage=$message");
                 }
@@ -129,7 +134,7 @@ class StudentMagnamentController
         $jobOfferList=$jobOfferDAO->getAllByJobPositions($jobPositionList);
 
 
-        $jobOfferList=$jobOfferList!=null?$jobOfferList:array();
+        $jobOfferList=$jobOfferList?$jobOfferList:array();
         require_once(VIEWS_PATH . "student/list-jobOffer.php");
     }
     public function showAddAppointment($id){

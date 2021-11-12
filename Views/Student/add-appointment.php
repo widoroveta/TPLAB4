@@ -24,7 +24,7 @@ require_once(VIEWS_PATH . "nav.php");
             </span>
                 <div class="input-field col s12">
                     <i class="material-icons prefix pink-text">mode_edit</i>
-                    <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                    <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text" required></textarea>
                     <label for="icon_prefix2">Enviar un mensaje</label>
                 </div>
                 <span class="card-panel pink white-text col s5 push-s1">
@@ -33,7 +33,7 @@ require_once(VIEWS_PATH . "nav.php");
                 <div class="file-field input-field col s12 ">
                     <div class="btn pink">
                         <span>File</span>
-                        <input name="file" class="form-control-file" type="file">
+                        <input name="file" class="form-control-file" type="file" required>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate white-text" type="text">
