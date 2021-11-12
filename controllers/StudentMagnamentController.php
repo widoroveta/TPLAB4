@@ -139,7 +139,7 @@ class StudentMagnamentController
             if(!empty($name)) {
                 foreach ($jobOfferList as $value)
                 {
-                    if($value->getCompany()->getNameCompany() != $name)
+                    if(strcasecmp($value->getCompany()->getNameCompany(),$name)!=0)
                     {
                         $key=array_search($value,$jobOfferList);
                         unset($jobOfferList[$key]);

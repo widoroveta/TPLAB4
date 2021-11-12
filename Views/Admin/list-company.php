@@ -8,6 +8,9 @@ require_once(VIEWS_PATH."Admin/nav-admin.php");
 <body class="grey darken-3" >
 <div class="row">
     <div class="col s12 m4 l8">
+        <?php
+        if(!empty($companyList)){
+        ?>
     <table class="highlight black cyan-text text-accent-4">
         <thead>
         <tr>
@@ -49,6 +52,20 @@ require_once(VIEWS_PATH."Admin/nav-admin.php");
         </tbody>
 
     </table>
+        <?php
+        }else{?>
+            <div class="row ">
+            <div class="card-Panel cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
+                <h2 align="center"><i class="Medium red-text material-icons">error</i> Lo sentimos.</h2>
+                <p align="center" style="margin: 20px ">En este momento no hay Postulaciones antiguas
+            </p>
+                <br>
+                <p align="center">Muchas gracias.</p>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 </body>

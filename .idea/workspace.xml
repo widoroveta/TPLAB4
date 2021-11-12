@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="fix search job offer">
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="add student alerts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/historial-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/historial-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/total-history.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/total-history.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +179,7 @@
       <workItem from="1636684201479" duration="2763000" />
       <workItem from="1636708718729" duration="3337000" />
       <workItem from="1636749298702" duration="1551000" />
-      <workItem from="1636751863931" duration="4208000" />
+      <workItem from="1636751863931" duration="6344000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -367,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636752773351</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add student alerts">
+      <created>1636756367924</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1636756367924</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +401,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="menu modify 2.0" />
     <MESSAGE value="admin abm finished" />
     <MESSAGE value="seach company student" />
     <MESSAGE value="home pretty" />
@@ -423,7 +425,8 @@
     <MESSAGE value="entrega final" />
     <MESSAGE value="fix historial" />
     <MESSAGE value="fix search job offer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix search job offer" />
+    <MESSAGE value="add student alerts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add student alerts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
