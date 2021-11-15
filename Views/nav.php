@@ -55,6 +55,7 @@ require_once(VIEWS_PATH . "header.php");
     ?>
 
         <div class='user-view '>
+
             <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
             <span class="name  grey-text text-lighten-5"><strong><h4><?= $userLogged->getFirstName(); ?> <?= $userLogged->getLastName(); ?></h4></strong></span>
             <span class="Email grey-text text-lighten-5"><strong><h6><?= $userLogged->getEmail(); ?></h6></strong></span>
@@ -90,7 +91,7 @@ require_once(VIEWS_PATH . "header.php");
 
 
 <div id="modal2" class="modal">
-    <form action="<?= FRONT_ROOT . "StudentMagnament/login" ?>" method="POST">
+    <form action="<?= FRONT_ROOT . "home/login" ?>" method="POST">
     <div class="modal-content ">
                     <div class="input-field col s6">
                 <input id="email" name="email" type="text" class="validate" required>

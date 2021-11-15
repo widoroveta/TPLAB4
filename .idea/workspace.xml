@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="add student alerts">
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="add student alerts 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/total-history.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/total-history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +75,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -179,7 +182,14 @@
       <workItem from="1636684201479" duration="2763000" />
       <workItem from="1636708718729" duration="3337000" />
       <workItem from="1636749298702" duration="1551000" />
-      <workItem from="1636751863931" duration="6344000" />
+      <workItem from="1636751863931" duration="6992000" />
+      <workItem from="1636826764940" duration="1896000" />
+      <workItem from="1636860440311" duration="671000" />
+      <workItem from="1636930731604" duration="2328000" />
+      <workItem from="1636968037649" duration="941000" />
+      <workItem from="1636969376355" duration="1840000" />
+      <workItem from="1637004275653" duration="1261000" />
+      <workItem from="1637005604130" duration="1819000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -370,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636756367924</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add student alerts 2">
+      <created>1636759116531</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1636759116531</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +418,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="admin abm finished" />
     <MESSAGE value="seach company student" />
     <MESSAGE value="home pretty" />
     <MESSAGE value="job offer problem" />
@@ -426,7 +442,8 @@
     <MESSAGE value="fix historial" />
     <MESSAGE value="fix search job offer" />
     <MESSAGE value="add student alerts" />
-    <option name="LAST_COMMIT_MESSAGE" value="add student alerts" />
+    <MESSAGE value="add student alerts 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add student alerts 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

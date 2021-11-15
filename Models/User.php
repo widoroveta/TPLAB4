@@ -7,9 +7,62 @@ class User
     private $userId;
     private $student;
     private $password;
-    private $admin;
-    private $email;
 
+    private $email;
+    private $role;
+    private $company;
+
+    /**
+     * @param $userId
+     * @param $student
+     * @param $password
+     * @param $admin
+     * @param $email
+     * @param $role
+     * @param $company
+     */
+    public function __construct($userId='', $student='', $password='', $email='', $role='', $company='')
+    {
+        $this->userId = $userId;
+        $this->student = $student;
+        $this->password = $password;
+
+        $this->email = $email;
+        $this->role = $role;
+        $this->company = $company;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * @param mixed $company
+     */
+    public function setCompany($company)
+    {
+        $this->company= $company;
+    }
     /**
      * @return mixed
      */
@@ -26,35 +79,8 @@ class User
         $this->email = $email;
     }
 
-    /**
-     * @param $userId
-     * @param $student
-     * @param $password
-     * @param $admin
-     */
-    public function __construct($userId='', $student='', $password='', $admin=false,$email='')
-    {
-        $this->userId = $userId;
-        $this->student = $student;
-        $this->password = $password;
-        $this->admin = $admin;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getAdmin()
-    {
-        return $this->admin;
-    }
 
-    /**
-     * @param mixed $admin
-     */
-    public function setAdmin($admin)
-    {
-        $this->admin = $admin;
-    }
 
 
     /**

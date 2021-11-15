@@ -28,11 +28,12 @@ class UserDAO
     public function add($user)
     {
        if(!$this->searchByStudentId($user->getStudent()->getStudentId())){
-        $sqlQuery = "INSERT INTO users (studentId,`password`,admin,email) VALUES(:studentId,:password,:admin,:email)";
+        $sqlQuery = "INSERT INTO users (studentId,`password`,role,email,companyId) VALUES(:studentId,:password,:role,:email,:companyId)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
-        $parameters['admin']=$user->getAdmin();
+        $parameters['role']=$user->getRole();
         $parameters['email']=$user->getEmail();
+        $parameters['companyId']=$user->getCompany();
         try {
             $this->conecction = Connection::GetInstance();
             return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters,0);
@@ -74,7 +75,7 @@ class UserDAO
         try {
             $this->conecction = Connection::GetInstance();
             $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
-
+     //       var_dump($resultSet);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -85,6 +86,7 @@ class UserDAO
         else
         {
             $user = false;
+
         }
 
         return $user;
@@ -98,7 +100,7 @@ class UserDAO
 
         $resp = array_map(function($p){
             $studentDAO=StudentDAO::getInstance();
-            return new User($p['id'], $studentDAO->searchById($p['studentId']), $p['password'],$p['admin'],$p['email']);
+            return new User($p['id'], $studentDAO->searchById($p['studentId']), $p['password'],$p['email'],$p['role'],$p['companyId']);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];

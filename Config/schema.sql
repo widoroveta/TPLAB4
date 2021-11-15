@@ -87,15 +87,22 @@ create TABLE if not exists Users
 (
     20
 ),
-    admin boolean,
+    role int not null,
     email varchar
 (
     30
-),
+),companyId int not null
     constraint pk_id primary key
 (
     id
-)
+), constraint fk_companyId FOREIGN KEY
+(
+    companyId
+) REFERENCES Company
+(
+    id
+) ON DELETE
+  ON CASCADE
     );
 create TABLE if not exists appointment
 (
