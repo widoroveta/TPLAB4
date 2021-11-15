@@ -4,7 +4,12 @@ require_once(VIEWS_PATH . "nav.php");
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
 ?>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+    });
+</script>
 <body class="grey darken-3">
 <?php
 if(!empty($jobOfferList)){
@@ -27,12 +32,28 @@ if(!empty($jobOfferList)){
                         <li><b>Carrera:</b> <?= $jobOffer->getJobPosition()->getCareer()->getDescription() ?></li>
                         <li><b>Requerimientos:</b><?= $jobOffer->getRequirements() ?></li>
 
-                    </ul>
+
+<!--                        <ul class="collapsible Accordion black"><li>-->
+<!--                                --><?php
+//                                foreach ($aol as $item) {
+//                                    if($item->getJobOffer()->getJobOfferId()==$id){
+//                                ?>
+<!--                                <div class="collapsible-header"><i class="material-icons">attach_file</i>Postulaciones</div>-->
+<!--                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>-->
+<!--                                    --><?php
+//                                }
+//                                }
+//                                ?>
+<!---->
+<!--                            </li></ul>-->
+<!--                    </ul>-->
+
                 </div>
 
-            </div>
-        </div>
 
+
+        </div>
+        </div>
         <?php
     }
 

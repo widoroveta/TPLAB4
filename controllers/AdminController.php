@@ -31,7 +31,10 @@ class AdminController
     {
         $this->validateAdmin();
         $jobOfferDAO = JobOfferDAO::getInstance();
+        $appointment=AppointmentDAO::getInstance();
+      $aol=$appointment->getAll();
         $jobOfferList = $jobOfferDAO->getAll();
+
         $jobOfferList = $jobOfferList != null ? $jobOfferList : array();
         require_once(VIEWS_PATH . "admin/list-jobOffer.php");
     }

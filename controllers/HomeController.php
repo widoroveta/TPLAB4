@@ -94,7 +94,7 @@ class HomeController
                 if (strcasecmp($user->getPassword(), $password) == 0) {
                     $_SESSION['loggedUser'] = $company;
                     $_SESSION['role'] = 3;
-                    header("location:" . FRONT_ROOT . "Admin/showListCompany");
+                    header("location:" . FRONT_ROOT . "companyPanel/showHomeCompany");
                 } else {
                     $message = "Contraseña incorrecta";
 

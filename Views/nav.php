@@ -40,8 +40,11 @@ require_once(VIEWS_PATH . "header.php");
         <!-- Botones sin session -->
         <ul class="center-align  ">
             <!-- Registrarse -->
-            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal1">Registrarse</i></a>
+        <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal-rcompany"><i class="material-icons pink-text text-accent-3">business</i>Registrar</i></a>
+        </li>
+            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal1"><i class="material-icons pink-text text-accent-3">person_add</i>Registrar</i></a>
             </li>
+
             <!-- Loguearse -->
             <li><a class="waves-effect waves-light btn  modal-trigger pink-text text-accent-3 black" href="#modal2" ?>Iniciar
                     sesion</i></a></li>
@@ -173,3 +176,53 @@ require_once(VIEWS_PATH . "header.php");
 
 
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>
+<div id="modal-rcompany" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s12">
+            <form action="" class="col s12">
+
+                <input name="nameCompany" placeholder="Nombre de la compania" class="col s5"  type="text" required>
+                <div class="col s1"></div>
+                <div class="input-field col s6">
+                    <select name="city"   id="" required>
+                        <option value="Mar Del Plata">Mar del Plata</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Salta">Salta</option>
+                        <option value="La Plata">La Plata</option>
+                    </select>
+                    <label for="city">Ciudad</label>
+                </div>
+
+                <input type="text" class="col s5" placeholder="direccion" name="address" required>
+                <div class="col s1"></div>
+                <div class="input-field col s6">
+                    <select name="size" id="" required>
+                        <option value="small">Pequeña</option>
+                        <option value="medium">Mediana</option>
+                        <option value="big">Grande</option>
+                    </select>
+                    <label for="">tamaño</label>
+                </div>
+                <input type="email" class="col s5" placeholder="Email" name="email" required>
+                <div class="col s2"></div>
+                <input type="text" class="col s5" placeholder="Numero de telefono" name="phoneNumber" required>
+
+                <input type="text" class="col s5" placeholder="Cuit" name="CUIT" required>
+                <div class="col s2"></div>
+                <input type="password" class="col s5" placeholder="Contraseña">
+                <button  class="right-align white col s12 " style="border:none;" type="submit"><a class="waves-effect waves-light btn "><i
+                                class="material-icons">add</i></a> </button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
