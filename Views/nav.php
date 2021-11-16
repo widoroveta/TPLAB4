@@ -184,13 +184,16 @@ require_once(VIEWS_PATH . "header.php");
 </script>
 <div id="modal-rcompany" class="modal">
     <div class="modal-content">
-        <div class="row">
+        <div class="card-panel black  pink-text text-accent-3" style="padding: 10px;border-radius: 25px;">
+        <h3 align="center">Registro de empresas</h3>
+        </div>
+            <div class="row">
             <div class="col s12">
-            <form action="" class="col s12">
+            <form action="<?=FRONT_ROOT."companyPanel/registerUserCompany"?>" class="col s12">
 
                 <input name="nameCompany" placeholder="Nombre de la compania" class="col s5"  type="text" required>
-                <div class="col s1"></div>
-                <div class="input-field col s6">
+                <div class="col s2"></div>
+                <div class="input-field col s5">
                     <select name="city"   id="" required>
                         <option value="Mar Del Plata">Mar del Plata</option>
                         <option value="Buenos Aires">Buenos Aires</option>
@@ -201,9 +204,9 @@ require_once(VIEWS_PATH . "header.php");
                     <label for="city">Ciudad</label>
                 </div>
 
-                <input type="text" class="col s5" placeholder="direccion" name="address" required>
-                <div class="col s1"></div>
-                <div class="input-field col s6">
+                <input type="text" class="col s5" placeholder="Direccion" name="address" required>
+                <div class="col s2"></div>
+                <div class="input-field col s5">
                     <select name="size" id="" required>
                         <option value="small">Pequeña</option>
                         <option value="medium">Mediana</option>
@@ -217,9 +220,9 @@ require_once(VIEWS_PATH . "header.php");
 
                 <input type="text" class="col s5" placeholder="Cuit" name="CUIT" required>
                 <div class="col s2"></div>
-                <input type="password" class="col s5" placeholder="Contraseña">
-                <button  class="right-align white col s12 " style="border:none;" type="submit"><a class="waves-effect waves-light btn "><i
-                                class="material-icons">add</i></a> </button>
+                <input type="password" name="password" class="col s5" placeholder="Contraseña">
+                <button  class="right-align white col s12 " style="border:none;" type="submit"><a class="waves-effect waves-light btn ">Enviar<i
+                                class="material-icons">send</i></a> </button>
             </form>
         </div>
         </div>

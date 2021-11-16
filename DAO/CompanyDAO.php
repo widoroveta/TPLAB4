@@ -51,6 +51,27 @@ class CompanyDAO
         }
         return null;
     }
+    public  function searchByCuit($cuit)
+    {  $sqlQuery="select * from company where (cuit = :cuit)";
+        $parameters['cuit']=$cuit;
+        try {
+            $this->conecction = Connection::GetInstance();
+            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
+
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+        if(!empty($resultSet))
+        {
+            $company = $this->mapout($resultSet);
+        }
+        else
+        {
+            $company = false;
+        }
+
+        return $company;
+    }
     public function validateCuit($cuit){
         $sqlQuery="select companyId from company where (cuit = :cuit)";
         $parameters['cuit']=$cuit;
@@ -66,9 +87,10 @@ class CompanyDAO
     public function Delete($id)
     {
         $sqlquery = "DELETE FROM company WHERE (companyId = :id)";
+        $parameters["id"] = $id;
         try {
 
-            $parameters["id"] = $id;
+
 
             $this->connection = Connection::GetInstance();
 

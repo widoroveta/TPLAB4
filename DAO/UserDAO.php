@@ -27,7 +27,8 @@ class UserDAO
     }
     public function add($user)
     {
-       if(!$this->searchByStudentId($user->getStudent()->getStudentId())){
+
+       if(!$this->searchByStudentId($user->getStudent()->getStudentId())|| !$user->getRole()!='1'){
         $sqlQuery = "INSERT INTO users (studentId,`password`,role,email,companyId) VALUES(:studentId,:password,:role,:email,:companyId)";
         $parameters['studentId'] = $user->getStudent()->getStudentId();
         $parameters['password'] = $user->getPassword();
@@ -45,6 +46,7 @@ class UserDAO
        }
 
     }
+
     public function searchByStudentId($id){
 
         $sqlQuery="select * from users where (studentId = :studentId)";

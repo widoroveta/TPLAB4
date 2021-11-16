@@ -92,7 +92,8 @@ class HomeController
                 $companyDAO=CompanyDAO::getInstance();
                 $company=$companyDAO->searchById($user->getCompany());
                 if (strcasecmp($user->getPassword(), $password) == 0) {
-                    $_SESSION['loggedUser'] = $company;
+                    $id=$company->getCompanyId();
+                    $_SESSION['loggedUser'] = $id;
                     $_SESSION['role'] = 3;
                     header("location:" . FRONT_ROOT . "companyPanel/showHomeCompany");
                 } else {
