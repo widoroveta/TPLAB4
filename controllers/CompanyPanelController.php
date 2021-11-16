@@ -29,4 +29,14 @@ class CompanyPanelController
 
        // header("location:".FRONT_ROOT."home/index");
     }
+    public function generatePdf($id = "")
+    {
+        $array = array("messi","tuvvieja","bala","gruyere");
+        require_once (VIEWS_PATH."Company/pfdDownload.php");
+    }
+    public function sendMail(){
+        
+        require_once (VIEWS_PATH.'sendMail.php');
+        
+    }
 }

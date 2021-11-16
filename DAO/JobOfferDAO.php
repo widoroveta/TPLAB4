@@ -44,22 +44,22 @@ class JobOfferDAO
         }
         return null;
     }
-public function getAllByJobPositions($jobPositionList){
-       $jobOfferList= $this->getAll();
-       $array=array();
-       if($jobOfferList != null){
-       foreach ($jobPositionList as $jp)
-       {
-           foreach($jobOfferList as $jo)
-           {
-               if($jo->getJobPosition()==$jp)
-               {
-                   array_push($array,$jo);
-               }
-           }
-           }
-       }
-       return $array;
+public function getAllByJobPositions($jobPositionList)
+{
+    $jobOfferList = $this->getAll();
+    $array = array();
+    if ($jobOfferList != null) {
+        if ($jobOfferList != null) {
+            foreach ($jobPositionList as $jp) {
+                foreach ($jobOfferList as $jo) {
+                    if ($jo->getJobPosition() == $jp) {
+                        array_push($array, $jo);
+                    }
+                }
+            }
+        }
+        return $array;
+    }
 }
     public function getAll()
     {

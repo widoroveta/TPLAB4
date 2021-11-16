@@ -4,3 +4,5 @@ echo $company;
 echo $id;
 ?>
 <body class="grey darken-3">
+<a href="<?= FRONT_ROOT.'companyPanel/sendMail'?>">enviar</a>
+</body>

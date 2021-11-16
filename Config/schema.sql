@@ -148,8 +148,7 @@ create TABLE if not exists appointmentOld
 (
     id
     int
-    not
-    null,
+    not null,
     nameCompany
     varchar
 (

@@ -2,10 +2,13 @@
 
 namespace Controllers;
 
+
+
 use Cassandra\FutureRows;
 use DAO\AppointmentDAO;
 use DAO\AppointmentOldDAO;
 use DAO\UserDAO;
+//use fpdf\FPDF;
 use Models\Company as Company;
 use Models\JobOffer as JobOffer;
 use DAO\CareerDAO;
@@ -275,4 +278,5 @@ class AdminController
         $appointmentDAO->delete($id);
         $this->showListAppoinment();
     }
+
 }
