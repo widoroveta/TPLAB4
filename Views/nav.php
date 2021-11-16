@@ -9,11 +9,6 @@ require_once(VIEWS_PATH . "header.php");
     $(document).ready(function () {
         $('#modal1').modal('toggle')
     });
-    // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-    // var collapsibleElem = document.querySelector('.collapsible');
-    // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-    // Or with jQuery
 
     $(document).ready(function () {
         $('.sidenav').sidenav();
@@ -54,6 +49,11 @@ require_once(VIEWS_PATH . "header.php");
 
     <?php
     } else {
+        if($userLogged=='14'){
+            ?>
+            cacho castaña
+        <?php
+        }
     if ($userLogged != 'admin'){
     ?>
 
@@ -78,7 +78,7 @@ require_once(VIEWS_PATH . "header.php");
     <br>
         <ul class="center-align">
             <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black"
-                   href="<?= FRONT_ROOT . "Home/logout" ?>">cerrar sesion</i></a></li>
+                   href="<?= FRONT_ROOT . "Home/logout" ?>">Cerrar sesion</i></a></li>
         </ul>
 
 

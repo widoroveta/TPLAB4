@@ -23,6 +23,9 @@ class HomeController
                 case 2:
                     header("location:" . FRONT_ROOT . "admin/showlistcompany");
                     break;
+                case 3:
+                    header("location:" . FRONT_ROOT . "companyPanel/showHomeCompany");
+                    break;
             }
         }
     }
@@ -92,8 +95,8 @@ class HomeController
                 $companyDAO=CompanyDAO::getInstance();
                 $company=$companyDAO->searchById($user->getCompany());
                 if (strcasecmp($user->getPassword(), $password) == 0) {
-                    $id=$company->getCompanyId();
-                    $_SESSION['loggedUser'] = $id;
+                    $id=strVal($company->getCompanyId());
+                  $_SESSION['loggedUser']= "14";
                     $_SESSION['role'] = 3;
                     header("location:" . FRONT_ROOT . "companyPanel/showHomeCompany");
                 } else {

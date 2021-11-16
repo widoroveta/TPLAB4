@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="Registro company falta">
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pantalla blanca por problemas con session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Company/home-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/home-company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyPanelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,8 @@
       <workItem from="1636969376355" duration="1840000" />
       <workItem from="1637004275653" duration="1261000" />
       <workItem from="1637005604130" duration="8874000" />
-      <workItem from="1637054675614" duration="2783000" />
+      <workItem from="1637054675614" duration="2985000" />
+      <workItem from="1637082711710" duration="1776000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -402,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637020426169</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="pantalla blanca por problemas con session">
+      <created>1637057655792</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1637057655792</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +438,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="job offer problem" />
     <MESSAGE value="gracias dylan" />
     <MESSAGE value="change framework" />
     <MESSAGE value="login-register" />
@@ -458,7 +462,8 @@
     <MESSAGE value="add student alerts 2" />
     <MESSAGE value="company login" />
     <MESSAGE value="Registro company falta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro company falta" />
+    <MESSAGE value="pantalla blanca por problemas con session" />
+    <option name="LAST_COMMIT_MESSAGE" value="pantalla blanca por problemas con session" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
