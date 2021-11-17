@@ -1,8 +1,6 @@
 <?php
 
 namespace Controllers;
-
-use DAO\AppointmentDAO;
 use Models\Student;
 use Models\User as User;
 use Models\Company as Company;
@@ -14,7 +12,7 @@ class CompanyPanelController
 {
     public function showHomeCompany()
     {
-        require_once(VIEWS_PATH . "company/home-company.php");
+        require_once (VIEWS_PATH."company/home-company.php");
     }
 
     public function registerUserCompany($nameCompany, $city, $address, $size, $email, $phoneNumber, $CUIT, $password)

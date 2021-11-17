@@ -162,8 +162,7 @@ class AppointmentDAO
         }
 
 
-        public
-        function getAll()
+        public function getAll()
         {
             $sqlQuery = "SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId";
             try {
@@ -235,11 +234,7 @@ class AppointmentDAO
         $sqlquery = "DELETE FROM appointment WHERE (apid = :id)";
         $parameters["id"] = $id;
         try {
-
-
-
             $this->connection = Connection::GetInstance();
-
             return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
@@ -259,21 +254,15 @@ class AppointmentDAO
             }
         }
 
-
         public
         function mapout($value)
         {
-
-
             $value = is_array($value) ? $value : [];
-
             $resp = array_map(function ($p) {
                 $studentDAO = StudentDAO::getInstance();
                 $jobPositionDAO = JobPositionDAO::getInstance();
                 return new Appointment($p['apId'],$studentDAO->searchById($p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements']), $p['cv'], $p['message'], $p['dateAppointment']);
             }, $value);
-
             return count($resp) > 1 ? $resp : $resp['0'];
         }
-
     }

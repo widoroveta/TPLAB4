@@ -151,16 +151,15 @@ public function getAllByJobPositions($jobPositionList)
         } catch (PDOException $ex) {
             throw $ex;
         }
-    } public function modifyJobPosition($id, $jobPositionId)
-{
+    }
+
+    public function modifyJobPosition($id, $jobPositionId)
+    {
     $sqlquery = "UPDATE jobOffer  SET jobPositionId = :jobPositionId WHERE (id = :id)";
     $parameters["jobPositionId"] = $jobPositionId;
     $parameters["id"] = $id;
     try {
-
-
         $this->connection = Connection::GetInstance();
-
         return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
     } catch (PDOException $ex) {
         throw $ex;
@@ -185,7 +184,6 @@ public  function  searchById($id)
     {
         $jobOffer = false;
     }
-
     return $jobOffer;
 
 }

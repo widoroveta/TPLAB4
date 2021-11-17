@@ -3,6 +3,7 @@ use DAO\CompanyDAO as CompanyDAO;
 use Models\Company as Company;
 
 require_once(VIEWS_PATH."Admin/nav-admin.php");
+var_dump($_SESSION);
 
 ?>
 <body class="grey darken-3" >

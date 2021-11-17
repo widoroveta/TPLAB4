@@ -7,37 +7,40 @@
 //    echo "SUCCESS";
 //} else {
 //    echo "ERROR";
+require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
-use PHPMailer\PHPMailer;
-use PHPMailer\SMTP;
+$mail = new PHPMailer;
 
-$mail = new PHPMailer();
-//indico a la clase que use SMTP
-$mail->IsSMTP();
-//permite modo debug para ver mensajes de las cosas que van ocurriendo
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-$mail->SMTPDebug = 2; //Alternative to above constant
-//Debo de hacer autenticación SMTP
-$mail->SMTPAuth = false;
-$mail->SMTPSecure = "ssl";
-$mail->SMTPAutoTLS = false;
-//indico el servidor de Gmail para SMTP
-$mail->Host = "smtp.live.com";
-//indico el puerto que usa Gmail
-$mail->Port = 465;
-//indico un usuario / clave de un usuario de gmail
-$mail->Username = "espert69@hotmail.com";
-$mail->Password = "quiero2tetas";
-$mail->SetFrom('espert69@hotmail.com', 'Nombre completo');
-//$mail->AddReplyTo("pabloemanuelmorales@gmail.com","Nombre completo");
-$mail->Subject = "Envío de email usando SMTP de Gmail";
-$mail->MsgHTML("Hola que tal, esto es el cuerpo del mensaje!");
-//indico destinatario
-$address = "pabloemanuelmorales@gmail.com";
-$mail->AddAddress($address, "Nombre completo");
-if(!$mail->Send()) {
-    echo "Error al enviar: " . $mail->ErrorInfo;
-} else {
-    echo "Mensaje enviado!";
-}
+//    $fname = $_POST['fname'];
+//    $toemail = $_POST['toemail'];
+//    $subject = $_POST['subject'];
+//    $message = $_POST['message'];
+    $mail->isSMTP();
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'espert69@hotmail.com';
+    $mail->Password = 'bala';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+    $mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
+    $mail->addReplyTo('pabloemanuelmorales@gmail.com', 'NOMBREDELQUEMANDA');
+    $mail->addAddress('pabloemanuelmorales@gmail.com');
+
+    $mail->isHTML(true);
+
+    $bodyContent = "hey";
+
+    $mail->Subject = "ke ase";
+    $bodyContent = 'Querido:';
+    $bodyContent .='<p>'."HOLA JUAN CARLOS".'</p>';
+    $mail->Body = $bodyContent;
+
+    if(!$mail->send())
+        echo 'Error: '.$mail->ErrorInfo;
+    else
+        echo 'Enviado!';
+
+?>
 

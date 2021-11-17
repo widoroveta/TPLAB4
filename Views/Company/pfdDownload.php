@@ -1,6 +1,7 @@
 <?php
 require('fpdf/fpdf.php');
 
+
 ob_start();
 $pdf = new FPDF();
 $pdf->AddPage();
