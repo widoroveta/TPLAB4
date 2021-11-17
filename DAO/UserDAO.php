@@ -2,6 +2,7 @@
 
 namespace DAO;
 
+use Models\Company;
 use Models\User as User;
 use DAO\Connection as Connection;
 use \PDOException as PDOException;
@@ -102,7 +103,11 @@ class UserDAO
 
         $resp = array_map(function($p){
             $studentDAO=StudentDAO::getInstance();
-            return new User($p['id'], $studentDAO->searchById($p['studentId']), $p['password'],$p['email'],$p['role'],$p['companyId']);
+            $companyDAO=CompanyDAO::getInstance();
+            $company=$companyDAO->searchById($p['companyId']);
+
+            $student=$studentDAO->searchById($p['studentId']);
+            return new User($p['id'],$student , $p['password'],$p['email'],$p['role'],$company?$company:0);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];

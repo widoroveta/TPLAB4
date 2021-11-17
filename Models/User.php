@@ -7,7 +7,6 @@ class User
     private $userId;
     private $student;
     private $password;
-
     private $email;
     private $role;
     private $company;
@@ -26,7 +25,6 @@ class User
         $this->userId = $userId;
         $this->student = $student;
         $this->password = $password;
-
         $this->email = $email;
         $this->role = $role;
         $this->company = $company;

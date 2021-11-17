@@ -64,10 +64,10 @@ class StudentMagnamentController
     {
         $this->validateSession();
         $appointment = AppointmentDAO::getInstance();
-        $fileList = $appointment->getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
+        $fileList = $appointment->getAppointmentsBy($_SESSION['loggedUser']->getStudent()->getStudentId());
         if (empty($fileList)) {
 
-            $career = $_SESSION['loggedUser']->getCareer()->getCareerId();
+            $career = $_SESSION['loggedUser']->getStudent()->getCareer()->getCareerId();
             $jobOfferDAO = JobOfferDAO::getInstance();
             $jobPosition = JobPositionDAO::getInstance();
             $jobPositionList = $jobPosition->getAllByCareer($career);
@@ -93,7 +93,7 @@ class StudentMagnamentController
     public function showAddAppointment($id)
     {
         $this->validateSession();
-        $studentId = $_SESSION['loggedUser']->getStudentId();
+        $studentId = $_SESSION['loggedUser']->getStudent()->getStudentId();
         require_once(VIEWS_PATH . 'student/add-appointment.php');
     }
 
@@ -103,7 +103,7 @@ class StudentMagnamentController
         $appointment = AppointmentDAO::getInstance();
         $appointmentOldDAO = AppointmentOldDAO::getInstance();
 
-        $fileList = $appointment->getAppointmentsBy($_SESSION['loggedUser']->getStudentId());
+        $fileList = $appointment->getAppointmentsBy($_SESSION['loggedUser']->getStudent()->getStudentId());
         $fileList = $fileList != null ? $fileList : array();
         require_once(VIEWS_PATH . "student/list-Appointment.php");
     }
@@ -120,7 +120,7 @@ class StudentMagnamentController
     public function showHistorialAppointment()
     {
         $appointmentOldDAO = AppointmentOldDAO::getInstance();
-        $aol = $appointmentOldDAO->getAllByStudent($_SESSION['loggedUser']->getEmail());
+        $aol = $appointmentOldDAO->getAllByStudent($_SESSION['loggedUser']->getStudent()->getEmail());
         $aol = $aol != null ? $aol : array();
         require_once(VIEWS_PATH . 'student/historial-appointment.php');
     }

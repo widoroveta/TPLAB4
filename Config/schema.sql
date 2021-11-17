@@ -92,7 +92,7 @@ create TABLE if not exists Users
 (
     30
 ),companyId int not null
-    constraint pk_id primary key
+  ,  constraint pk_id primary key
 (
     id
 ), constraint fk_companyId FOREIGN KEY

@@ -127,6 +127,41 @@ class AppointmentDAO
 
             return $appointment;
         }
+        public  function  getAllbyCompany($id){
+        $sqlQuery='SELECT * FROM appointment a inner join jobOffer j on a.jobOfferId = j.id where (j.companyId = :companyId)';
+        $parameters['companyId']=$id;
+            try {
+                $this->connection = Connection::getInstance();
+
+                $result = $this->connection->execute($sqlQuery);
+
+            } catch (PDOException $ex) {
+                throw $ex;
+            }
+
+            if (!empty($result)) {
+                $result = $this->mapout($result);
+
+                $jobOfferList = array();
+
+                if (!is_array($result)) {
+                    array_push($jobOfferList, $result);
+                }
+            } else {
+                $result = false;
+            }
+
+            if (!empty($jobOfferList)) {
+                $finalResult = $jobOfferList;
+            } else {
+                $finalResult = $result;
+
+            }
+
+            return $finalResult;
+        }
+
+
         public
         function getAll()
         {

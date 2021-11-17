@@ -24,7 +24,7 @@ if (!empty($message)) { ?>
 
 <div class=" col s6 push-s3">
     <div class="card-panel col s4">
-  <p >     Bievenido <?= $student->getFirstName();?> explota tus conocimiento postulandote a un trabajo hoy.
+  <p >     Bievenido <?= $student->getStudent()->getFirstName();?> explota tus conocimiento postulandote a un trabajo hoy.
   <br> Exitos en tu busqueda.
   </p>
     </div>

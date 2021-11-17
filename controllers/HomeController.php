@@ -16,7 +16,7 @@ class HomeController
         if (!isset($_SESSION['loggedUser'])) {
             require_once(VIEWS_PATH . 'home.php');
         } else {
-            switch ($_SESSION['role']) {
+            switch ($_SESSION['loggedUser']->getRole()==1) {
                 case 1:
                     header("location:" . FRONT_ROOT . "studentMagnament/showHomeStudent");
                     break;
@@ -54,7 +54,7 @@ class HomeController
 
         $std = $this->verifyEmail($email);
         if ($user != null) {
-            if ($user->getRole() == '1') {
+            if ($user->getRole() == 1) {
 
                 if ($std->getActive()) {
 
@@ -63,8 +63,8 @@ class HomeController
                     $user = $userDAO->searchByStudentId($std->getStudentId());
 
                     if (strcasecmp($user->getPassword(), $password) == 0) {
-                        $_SESSION["loggedUser"] = $std;
-                        $_SESSION["role"] = 1;
+                        $_SESSION["loggedUser"] = $user;
+                  ///      $_SESSION["role"] = 1;
                         $message = "Usuario encontrado";
 
                         header("location:" . FRONT_ROOT . "studentMagnament/showHomeStudent?varMessage=$message");
@@ -81,8 +81,8 @@ class HomeController
 
             } elseif ($user->getRole() == '2') {
                 if (strcasecmp($user->getPassword(), $password) == 0) {
-                    $_SESSION['loggedUser'] = 'admin';
-                    $_SESSION['role'] = 2;
+                    $_SESSION['loggedUser'] = $user;
+                 //   $_SESSION['role'] = 2;
                     header("location:" . FRONT_ROOT . "Admin/showListCompany");
                 } else {
                     $message = "Contraseña incorrecta";
@@ -96,8 +96,8 @@ class HomeController
                 $company=$companyDAO->searchById($user->getCompany());
                 if (strcasecmp($user->getPassword(), $password) == 0) {
                     $id=strVal($company->getCompanyId());
-                  $_SESSION['loggedUser']= "14";
-                    $_SESSION['role'] = 3;
+                  $_SESSION['loggedUser']= $user;
+
                     header("location:" . FRONT_ROOT . "companyPanel/showHomeCompany");
                 } else {
                     $message = "Contraseña incorrecta";
@@ -208,7 +208,7 @@ function register($email, $pass2)
             $user = new User();
             $user->setStudent($student);
             $user->setPassword($pass2);
-            $user->setAdmin(0);
+
             $user->setEmail($email);
             $user->setRole(1);
             $user->setCompany(0);
