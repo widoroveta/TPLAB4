@@ -24,7 +24,7 @@ class CompanyPanelController
         $company = new Company(0, $nameCompany, $city, $address, $size, $email, $phoneNumber, $CUIT);
         $companyDAO->add($company);
         $companyToUser = $companyDAO->searchByCuit($CUIT);
-        var_dump($companyToUser);
+       // var_dump($companyToUser);
         $student = new Student();
         $student->setStudentId(0);
         $user = new User(0, $student, $password, $email, 3, intval($companyToUser->getCompanyId()));

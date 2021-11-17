@@ -11,15 +11,7 @@ class User
     private $role;
     private $company;
 
-    /**
-     * @param $userId
-     * @param $student
-     * @param $password
-     * @param $admin
-     * @param $email
-     * @param $role
-     * @param $company
-     */
+
     public function __construct($userId='', $student='', $password='', $email='', $role='', $company='')
     {
         $this->userId = $userId;

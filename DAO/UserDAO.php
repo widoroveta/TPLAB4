@@ -109,7 +109,7 @@ class UserDAO
             $student=$studentDAO->searchById($p['studentId']);
             return new User($p['id'],$student , $p['password'],$p['email'],$p['role'],$company?$company:0);
         }, $value);
-
+var_dump($resp);
         return count($resp) > 1 ? $resp : $resp['0'];
     }
 }

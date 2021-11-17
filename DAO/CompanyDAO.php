@@ -210,15 +210,15 @@ class CompanyDAO
     }
 
 
-    function searchById($id)
+    function searchById($companyId)
     {
 
 
         $sqlQuery = "SELECT * FROM company WHERE (companyId = :companyId)";
-        $parameters["companyId"] = $id;
+        $parameters["companyId"] = $companyId;
         try {
             $this->conecction = Connection::GetInstance();
-            $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
+            $resultSet= $this->conecction->Execute($sqlQuery, $parameters,0);
 
         } catch (PDOException $ex) {
             throw $ex;

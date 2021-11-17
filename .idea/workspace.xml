@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="areglar nav">
-      <change afterPath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Config/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/CompanyDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CompanyDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/validate-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/validate-admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Company/home-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/home-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Company/nav-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/nav-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/Validate-Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/Validate-Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/home-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/home-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/CompanyPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/StudentMagnamentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +190,8 @@
       <workItem from="1637005604130" duration="8874000" />
       <workItem from="1637054675614" duration="2985000" />
       <workItem from="1637082711710" duration="1776000" />
-      <workItem from="1637141136102" duration="4438000" />
+      <workItem from="1637141136102" duration="4760000" />
+      <workItem from="1637179851461" duration="2034000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -419,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637057655792</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="areglar nav">
+      <created>1637146109295</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1637146109296</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gracias dylan" />
     <MESSAGE value="change framework" />
     <MESSAGE value="login-register" />
     <MESSAGE value="joboffer finished" />
@@ -475,7 +472,8 @@
     <MESSAGE value="company login" />
     <MESSAGE value="Registro company falta" />
     <MESSAGE value="pantalla blanca por problemas con session" />
-    <option name="LAST_COMMIT_MESSAGE" value="pantalla blanca por problemas con session" />
+    <MESSAGE value="areglar nav" />
+    <option name="LAST_COMMIT_MESSAGE" value="areglar nav" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
