@@ -32,10 +32,12 @@ class JobOfferDAO
 
     public function add($jobOffer)
     {
-        $sqlQuery = "INSERT INTO jobOffer (companyId,jobPositionId,requirements) VALUES (:companyId,:jobPositionId,:requirements)";
+        $sqlQuery = "INSERT INTO jobOffer (companyId,jobPositionId,requirements,flyer,dateExpiration) VALUES (:companyId,:jobPositionId,:requirements,:flyer,:dateExpiration )";
         $parameters['companyId'] = $jobOffer->getCompany()->getCompanyId();
         $parameters['jobPositionId'] = $jobOffer->getJobPosition()->getJobPositionId();
         $parameters['requirements'] = $jobOffer->getRequirements();
+        $parameters['flyer'] = $jobOffer->getFlyer();
+        $parameters['dateExpiration'] = $jobOffer->getDateExpiration();
         try {
             $this->conecction = Connection::GetInstance();
             return $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
@@ -44,23 +46,25 @@ class JobOfferDAO
         }
         return null;
     }
-public function getAllByJobPositions($jobPositionList)
-{
-    $jobOfferList = $this->getAll();
-    $array = array();
-    if ($jobOfferList != null) {
+
+    public function getAllByJobPositions($jobPositionList)
+    {
+        $jobOfferList = $this->getAll();
+        $array = array();
         if ($jobOfferList != null) {
-            foreach ($jobPositionList as $jp) {
-                foreach ($jobOfferList as $jo) {
-                    if ($jo->getJobPosition() == $jp) {
-                        array_push($array, $jo);
+            if ($jobOfferList != null) {
+                foreach ($jobPositionList as $jp) {
+                    foreach ($jobOfferList as $jo) {
+                        if ($jo->getJobPosition() == $jp) {
+                            array_push($array, $jo);
+                        }
                     }
                 }
             }
+            return $array;
         }
-        return $array;
     }
-}
+
     public function getAll()
     {
         $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId ;";
@@ -93,21 +97,7 @@ public function getAllByJobPositions($jobPositionList)
         return $finalResult;
     }
 
-    public function mapout($value)
-    {
-       
-        $jobPositionDAO = JobPositionDAO::getInstance();
 
-        $value = is_array($value) ? $value : [];
-
-        $resp = array_map(function ($p) {
-          
-            $jobPositionDAO = JobPositionDAO::getInstance();
-            return new JobOffer($p['id'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'],$p['nameCompany'],$p['city'],$p['address'],$p['size'],$p['email'],$p['phoneNumber'],$p['cuit']), $p['requirements']);
-        }, $value);
-
-        return count($resp) > 1 ? $resp : $resp['0'];
-    }
     public function delete($id)
     {
         $sqlquery = "DELETE FROM jobOffer WHERE (id = :id)";
@@ -122,6 +112,7 @@ public function getAllByJobPositions($jobPositionList)
             throw $ex;
         }
     }
+
     public function modifyRequirements($id, $requirements)
     {
         $sqlquery = "UPDATE jobOffer   SET requirements = :requirements WHERE (id = :id)";
@@ -137,6 +128,7 @@ public function getAllByJobPositions($jobPositionList)
             throw $ex;
         }
     }
+
     public function modifyCompany($id, $companyId)
     {
         $sqlquery = "UPDATE jobOffer  SET companyId = :companyId WHERE (id = :id)";
@@ -155,36 +147,50 @@ public function getAllByJobPositions($jobPositionList)
 
     public function modifyJobPosition($id, $jobPositionId)
     {
-    $sqlquery = "UPDATE jobOffer  SET jobPositionId = :jobPositionId WHERE (id = :id)";
-    $parameters["jobPositionId"] = $jobPositionId;
-    $parameters["id"] = $id;
-    try {
-        $this->connection = Connection::GetInstance();
-        return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
-    } catch (PDOException $ex) {
-        throw $ex;
+        $sqlquery = "UPDATE jobOffer  SET jobPositionId = :jobPositionId WHERE (id = :id)";
+        $parameters["jobPositionId"] = $jobPositionId;
+        $parameters["id"] = $id;
+        try {
+            $this->connection = Connection::GetInstance();
+            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
     }
-}
-public  function  searchById($id)
-{
-    $sqlQuery='select * from joboffer j left join company c on j.companyId =c.companyId  where (id= :id)';
-    $parameters['id']=$id;
-    try {
-        $this->conecction = Connection::GetInstance();
-        $resultSet= $this->conecction->Execute($sqlQuery, $parameters);
 
-    } catch (PDOException $ex) {
-        throw $ex;
-    }
-    if(!empty($resultSet))
+    public function searchById($id)
     {
-        $jobOffer = $this->mapout($resultSet);
-    }
-    else
-    {
-        $jobOffer = false;
-    }
-    return $jobOffer;
+        $sqlQuery = 'select * from joboffer j left join company c on j.companyId =c.companyId  where (id= :id)';
+        $parameters['id'] = $id;
+        try {
+            $this->conecction = Connection::GetInstance();
+            $resultSet = $this->conecction->Execute($sqlQuery, $parameters);
 
-}
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+        if (!empty($resultSet)) {
+            $jobOffer = $this->mapout($resultSet);
+        } else {
+            $jobOffer = false;
+        }
+        return $jobOffer;
+
+    }
+
+    public function mapout($value)
+    {
+
+        $jobPositionDAO = JobPositionDAO::getInstance();
+
+        $value = is_array($value) ? $value : [];
+
+        $resp = array_map(function ($p) {
+
+            $jobPositionDAO = JobPositionDAO::getInstance();
+            return new JobOffer($p['id'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements'],$p['flyer'],$p['dateExpiration']);
+        }, $value);
+
+        return count($resp) > 1 ? $resp : $resp['0'];
+    }
 }

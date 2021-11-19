@@ -38,39 +38,7 @@ CREATE TABLE IF NOT EXISTS Company
 )
     );
 drop table JobOffer;
-Create TABLE if not exists JobOffer
-(
-    id
-    int
-    not
-    null
-    auto_increment,
-    companyId
-    int
-    not
-    null,
-    jobPositionId
-    int
-    not
-    null,
-    requirements
-    varchar
-(
-    120
-),
-    constraint fk_companyId FOREIGN KEY
-(
-    companyId
-) REFERENCES Company
-(
-    id
-) ON DELETE
-  ON CASCADE,
-    constraint pk_id primary key
-(
-    id
-)
-    );
+CREATE TABLE IF NOT EXISTS JobOffer( id INT NOT NULL AUTO_INCREMENT, companyId INT NOT NULL, jobPositionId INT NOT NULL, requirements VARCHAR(120), flyer VARCHAR(100), dateExpiration VARCHAR(30), CONSTRAINT pk_id PRIMARY KEY(id), CONSTRAINT fk_companyId FOREIGN KEY(companyId) REFERENCES Company(companyId) ON DELETE CASCADE ON UPDATE CASCADE );
 create TABLE if not exists Users
 (
     id
@@ -92,7 +60,7 @@ create TABLE if not exists Users
 (
     30
 ),companyId int not null
-  ,  constraint pk_id primary key
+    , constraint pk_id primary key
 (
     id
 ), constraint fk_companyId FOREIGN KEY
@@ -148,7 +116,8 @@ create TABLE if not exists appointmentOld
 (
     id
     int
-    not null,
+    not
+    null,
     nameCompany
     varchar
 (

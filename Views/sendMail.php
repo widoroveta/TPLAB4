@@ -21,12 +21,12 @@ $mail = new PHPMailer;
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'espert69@hotmail.com';
-    $mail->Password = 'bala';
+    $mail->Password = '*****';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
     $mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
-    $mail->addReplyTo('pabloemanuelmorales@gmail.com', 'NOMBREDELQUEMANDA');
-    $mail->addAddress('pabloemanuelmorales@gmail.com');
+    $mail->addReplyTo('widoroveta@gmail.com', 'NOMBREDELQUEMANDA');
+    $mail->addAddress('widoroveta@gmail.com');
 
     $mail->isHTML(true);
 
@@ -34,7 +34,7 @@ $mail = new PHPMailer;
 
     $mail->Subject = "ke ase";
     $bodyContent = 'Querido:';
-    $bodyContent .='<p>'."HOLA JUAN CARLOS".'</p>';
+    $bodyContent .='<p>'."Ricardo".'</p>';
     $mail->Body = $bodyContent;
 
     if(!$mail->send())

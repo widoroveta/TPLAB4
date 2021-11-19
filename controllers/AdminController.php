@@ -9,6 +9,7 @@ use DAO\AppointmentDAO;
 use DAO\AppointmentOldDAO;
 use DAO\UserDAO;
 //use fpdf\FPDF;
+use http\Header;
 use Models\Company as Company;
 use Models\JobOffer as JobOffer;
 use DAO\CareerDAO;
@@ -18,10 +19,15 @@ use DAO\JobPositionDAO;
 use DAO\StudentDAO;
 use Models\JobPosition;
 use Models\User;
-
+Use DateTime;
 class AdminController
 {
 
+    public function testJobOffer($flyer,$requeriments,$date,$time){
+
+        //Header("location:".FRONT_ROOT."date/getDate?varDate=$date");
+    require_once (VIEWS_PATH."Actions/jobOfferTest.php");
+    }
     public function showListCompany()
     {
         $this->validateAdmin();
@@ -208,9 +214,18 @@ class AdminController
         $companyList = $companyDAO->getAll();
         require_once(VIEWS_PATH . "admin/add-jobOffer.php");
     }
-    public  function addJobOffer($company, $jobPosition, $requirements)
+    public  function addJobOffer($company, $jobPosition, $requirements,$date,$time)
     {
         $this->validateAdmin();
+        ini_set("date.timezone", "America/Argentina/Buenos_Aires");
+        date_default_timezone_set("America/Argentina/Buenos_Aires");
+        $fileName=$_FILES['flyer']['name'];
+        $tempFileName = $_FILES['flyer']["tmp_name"];
+        $filePath = UPLOADS_PATH . basename($fileName);
+        $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+        move_uploaded_file($tempFileName, $filePath);
+        $dateJO = new DateTime($date.$time);
+         $dateString= date_format($dateJO,("M-d-Y A H:i"));
         $jobOfferDAO = JobOfferDAO::getInstance();
         $jobPositionDAO = JobPositionDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();
@@ -221,6 +236,8 @@ class AdminController
         $jobOffer->setRequirements($requirements);
         $jobOffer->setCompany($cm);
         $jobOffer->setJobPosition($jp);
+        $jobOffer->setFlyer($filePath);
+        $jobOffer->setDateExpiration($dateString);
         $jobOfferDAO->add($jobOffer);
 
         $this->showListJobOffer();

@@ -10,6 +10,7 @@ use Models\JobOffer as JobOffer;
 require_once(VIEWS_PATH."Company/nav-company.php");
 
 ?>
+
 <body class="grey darken-3" >
 <div class="row">
     <div class="col s12 m4 l8">
