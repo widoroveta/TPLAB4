@@ -25,13 +25,21 @@ class StudentDAO
   }
   private function retrieveDataFromAPI()
   {
-    $url = curl_init();
-    curl_setopt($url, CURLOPT_URL, API_HOST . "/Student");
-    curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
-    curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($url);
-    $toJson = json_decode($response);
-    return $toJson;
+//    $url = curl_init();
+//    curl_setopt($url, CURLOPT_URL, API_HOST . "/Student");
+//    curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
+//    curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
+//    $response = curl_exec($url);
+//    $toJson = json_decode($response);
+//    return $toJson;
+      $arrayToDecode=array();
+      $jsonContent=file_get_contents("Data/student.json");
+      $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
+
+
+
+
+      return $arrayToDecode;
   }
   public function retrieveData()
   {
@@ -40,18 +48,30 @@ class StudentDAO
 
     foreach ($response as $std) {
       $student = new Student();
-      $student->setStudentId($std->studentId);
-      $student->setCareer($std->careerId);
+//      $student->setStudentId($std->studentId);
+//      $student->setCareer($std->careerId);
+//
+//      $student->setFirstName($std->firstName);
+//      $student->setLastName($std->lastName);
+//      $student->setDni($std->dni);
+//      $student->setFileNumber($std->fileNumber);
+//      $student->setPhoneNumber($std->phoneNumber);
+//      $student->setGender($std->gender);
+//      $student->setEmail($std->email);
+//      $student->setBirthDate($std->birthDate);
+//      $student->setActive($std->active);
+        $student->setStudentId($std['studentId']);
+        $student->setCareer($std['careerId']);
 
-      $student->setFirstName($std->firstName);
-      $student->setLastName($std->lastName);
-      $student->setDni($std->dni);
-      $student->setFileNumber($std->fileNumber);
-      $student->setPhoneNumber($std->phoneNumber);
-      $student->setGender($std->gender);
-      $student->setEmail($std->email);
-      $student->setBirthDate($std->birthDate);
-      $student->setActive($std->active);
+        $student->setFirstName($std['firstName']);
+        $student->setLastName($std['lastName']);
+        $student->setDni($std['dni']);
+        $student->setFileNumber($std['fileNumber']);
+        $student->setPhoneNumber($std['phoneNumber']);
+        $student->setGender($std['gender']);
+        $student->setEmail($std['email']);
+        $student->setBirthDate($std['birthDate']);
+        $student->setActive($std['active']);
       array_push($this->studentList, $student);
     }
   }

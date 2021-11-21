@@ -19,15 +19,16 @@ if (!empty($jobOfferList)) {
         foreach ($jobOfferList as $jobOffer) {
             ?>
 
-            <?php $id = $jobOffer->getJobOfferId(); ?>
-            <div class="col s3 " >
+            <?php $id = $jobOffer->getJobOfferId();
+                $img=FRONT_ROOT . $jobOffer->getFlyer();
+                ?>
+            <div class="col s3 ">
                 <div class="card ">
                     <div class="card-image">
-                        <img src="<?=/*($jobOffer->getFlyer())?$jobOffer->getFlyer():*/IMG_PATH."jobOffer.png"?>" alt="" height="200px">
-                        <a href="<?= FRONT_ROOT . "admin/showModifyJobOffer?varId=$id" ?>"
-                           class="btn-floating halfway-fab waves-effect waves-light deep-purple accent-4"><i
-                                    class="material-icons">mode_edit</i></a>
-<!--                       // <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>-->
+
+
+
+<!--                                               // <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>-->
                     </div>
 
 
@@ -37,6 +38,12 @@ if (!empty($jobOfferList)) {
                             <li><b>Description:</b> <?= $jobOffer->getJobPosition()->getDescription() ?></li>
                             <li><b>Carrera:</b> <?= $jobOffer->getJobPosition()->getCareer()->getDescription() ?></li>
                             <li><b>Requerimientos:</b><?= $jobOffer->getRequirements() ?></li>
+                    </div>
+                    <div class="black"><a href="<?= FRONT_ROOT . "admin/showModifyJobOffer?varId=$id" ?>"
+                                          class="btn-floating waves-effect waves-light deep-purple accent-4"><i
+                                    class="material-icons">mode_edit</i></a>
+                        <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">picture_as_pdf</i></a>
+                        <a  href="<?=FRONT_ROOT."image/showImage?varController=admin&varRoute=$img"?>" class="btn-floating  waves-effect waves-light green"><i class="material-icons">image</i></a>
                     </div>
                 </div>
             </div>

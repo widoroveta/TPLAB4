@@ -19,14 +19,20 @@ protected static  $instance=null;
     }
     public function retrieveDataFromAPI()
     {
-        $url = curl_init();
-        curl_setopt($url, CURLOPT_URL, API_HOST . "/Career");
-        curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
-        curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
-        $response = curl_exec($url);
-        $toJson = json_decode($response);
+//        $url = curl_init();
+//        curl_setopt($url, CURLOPT_URL, API_HOST . "/Career");
+//        curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
+//        curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
+//        $response = curl_exec($url);
+        //        $toJson = json_decode($response);
 
-        return $toJson;
+            $arrayToDecode=array();
+            $jsonContent=file_get_contents("Data/careers.json");
+            $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
+
+
+
+        return $arrayToDecode;
     }
     public function retrieveData()
     {
@@ -35,9 +41,12 @@ protected static  $instance=null;
         if ($cs != null) {
             foreach ($cs  as $c) {
                 $career = new Career();
-                $career->setCareerId($c->careerId);
-                $career->setDescription($c->description);
-                $career->setActive($c->active);
+//                $career->setCareerId($c->careerId);
+//                $career->setDescription($c->description);
+//                $career->setActive($c->active);
+                $career->setCareerId($c['careerId']);
+                $career->setDescription($c['description']);
+                $career->setActive($c['active']);
                 array_push($this->careerList, $career);
             }
         }
