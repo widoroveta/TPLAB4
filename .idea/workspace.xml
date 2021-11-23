@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="fecha y flyer job offer add">
-      <change afterPath="$PROJECT_DIR$/Views/Actions/img-viewer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ImageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/PDFController.php" afterDir="false" />
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pdf dowload in process">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CareerDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CareerDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/DateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PDFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +206,9 @@
       <workItem from="1637313815095" duration="6670000" />
       <workItem from="1637360452367" duration="3582000" />
       <workItem from="1637409639059" duration="1339000" />
-      <workItem from="1637500750830" duration="5750000" />
+      <workItem from="1637500750830" duration="5826000" />
+      <workItem from="1637602794453" duration="8532000" />
+      <workItem from="1637659153528" duration="2459000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -437,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637365420276</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="pdf dowload in process">
+      <created>1637507638913</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1637507638913</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +479,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="login-register" />
     <MESSAGE value="joboffer finished" />
     <MESSAGE value="company dao fix" />
     <MESSAGE value="company dao fix2" />
@@ -493,7 +503,8 @@
     <MESSAGE value="pantalla blanca por problemas con session" />
     <MESSAGE value="areglar nav" />
     <MESSAGE value="fecha y flyer job offer add" />
-    <option name="LAST_COMMIT_MESSAGE" value="fecha y flyer job offer add" />
+    <MESSAGE value="pdf dowload in process" />
+    <option name="LAST_COMMIT_MESSAGE" value="pdf dowload in process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

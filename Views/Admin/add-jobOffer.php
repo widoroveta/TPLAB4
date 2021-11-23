@@ -55,10 +55,10 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <div class="file-field input-field">
                 <div class="btn red darken-4 z-depth-4">
                     <span>File</span>
-                    <input  name='flyer' type="file">
+                    <input  name='flyer' accept="image/*"  type="file">
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+                    <input class="file-path validate"   type="text">
                 </div>
             </div>
 

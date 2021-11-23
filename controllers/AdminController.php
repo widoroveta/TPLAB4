@@ -219,13 +219,14 @@ class AdminController
         $this->validateAdmin();
         ini_set("date.timezone", "America/Argentina/Buenos_Aires");
         date_default_timezone_set("America/Argentina/Buenos_Aires");
+
         $fileName=$_FILES['flyer']['name'];
         $tempFileName = $_FILES['flyer']["tmp_name"];
         $filePath = UPLOADS_PATH . basename($fileName);
         $fileType = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
         move_uploaded_file($tempFileName, $filePath);
         $dateJO = new DateTime($date.$time);
-         $dateString= date_format($dateJO,("M-d-Y A H:i"));
+         $dateString= date_format($dateJO,("M-d-Y  H:i"));
         $jobOfferDAO = JobOfferDAO::getInstance();
         $jobPositionDAO = JobPositionDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();

@@ -161,12 +161,12 @@ class AppointmentDAO
             return $finalResult;
         }
     public  function  getAllbyJobOffer($id){
-        $sqlQuery='SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where (a.jobofferId = :jobOfferId)';
-        $parameters['jobOfferId']=$id;
+        $sqlQuery='SELECT * FROM appointment a left join jobOffer j on a.jobOfferId=j.id left join company c on c.companyId= j.companyId where (a.jobofferId = :id)';
+        $parameters['id']=$id;
         try {
             $this->connection = Connection::getInstance();
 
-            $result = $this->connection->execute($sqlQuery);
+            $result = $this->connection->execute($sqlQuery,$parameters);
 
         } catch (PDOException $ex) {
             throw $ex;

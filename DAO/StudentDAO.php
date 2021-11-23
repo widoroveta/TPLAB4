@@ -43,7 +43,7 @@ class StudentDAO
   }
   public function retrieveData()
   {
-
+    $careerDAO=new CareerDAO();
     $response = $this->retrieveDataFromAPI();
 
     foreach ($response as $std) {
@@ -61,7 +61,7 @@ class StudentDAO
 //      $student->setBirthDate($std->birthDate);
 //      $student->setActive($std->active);
         $student->setStudentId($std['studentId']);
-        $student->setCareer($std['careerId']);
+        $student->setCareer($careerDAO->searchById($std['careerId']));
 
         $student->setFirstName($std['firstName']);
         $student->setLastName($std['lastName']);

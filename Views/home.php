@@ -9,8 +9,9 @@ use DAO\JobPositionDAO as JobPositionDAO;
 use DAO\UserDAO as UserDAO;
 use Models\User as User;
 
-?>
 
+?>
+<a href="<?=FRONT_ROOT."date/verificationDates"?>"> fechas</a>
 
 <body class="grey darken-3">
 <div class="row">
