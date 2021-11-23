@@ -1,6 +1,6 @@
 <?php
 require('fpdf/fpdf.php');
-
+$careerDAO=\DAO\CareerDAO::getInstance();
 
 ob_start();
 $pdf = new FPDF();
@@ -24,7 +24,7 @@ $pdf->SetFont('Arial', '', 10);
 foreach ($appointmentList as $app) {
     $pdf->Cell(0, 8, "Nombre del postulante:" . $app->getStudent()->getFirstName() . " " . $app->getStudent()->getLastName());
     $pdf->ln();
-    $pdf->Cell(0, 8,  'Carrera:' . $app->getStudent()->getCareer()->getDescription());
+    $pdf->Cell(0, 8,  'Carrera:' . $careerDAO->searchById($app->getStudent()->getCareer())->getDescription());
     $pdf->ln();
     $pdf->Cell(0, 8,  'Email:' . $app->getStudent()->getEmail());
     $pdf->ln();

@@ -36,7 +36,7 @@ class AdminController
         $companyList = $companyList != null ? $companyList : array();
         require_once(VIEWS_PATH . "Admin/list-company.php");
     }
-    public  function showListJobOffer()
+    public  function showListJobOffer($message='')
     {
         $this->validateAdmin();
         $jobOfferDAO = JobOfferDAO::getInstance();
@@ -138,6 +138,7 @@ class AdminController
         $this->validateAdmin();
         $jobOfferDAO=JobOfferDAO::getInstance();
         $jobOfferDAO->delete($id);
+        header("location:".FRONT_ROOT."");
         $this->showListJobOffer();
     }
 

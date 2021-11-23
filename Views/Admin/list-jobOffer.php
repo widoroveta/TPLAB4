@@ -2,6 +2,19 @@
 require_once(VIEWS_PATH . "nav.php");
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
+
+if (!empty($message)) {
+
+?>
+<script>
+    var toastHTML = '<span> <?=$message?> </span>';
+    M.toast({html: toastHTML,
+        classes: " red accent-4",
+        displayLength: 5000
+    });
+</script>
+<?php
+}
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -42,7 +55,7 @@ if (!empty($jobOfferList)) {
                     <div class="black"><a href="<?= FRONT_ROOT . "admin/showModifyJobOffer?varId=$id" ?>"
                                           class="btn-floating waves-effect waves-light deep-purple accent-4"><i
                                     class="material-icons">mode_edit</i></a>
-                        <a href="<?=FRONT_ROOT."PDF/dowloadPDF?varId=$id"?>" class="btn-floating  waves-effect waves-light red"><i class="material-icons">picture_as_pdf</i></a>
+                        <a href="<?=FRONT_ROOT."PDF/dowloadPDF?varId=$id&varController=admin"?>" class="btn-floating  waves-effect waves-light red"><i class="material-icons">picture_as_pdf</i></a>
                         <a  href="<?=FRONT_ROOT."image/showImage?varController=admin&varRoute=$img"?>" class="btn-floating  waves-effect waves-light green"><i class="material-icons">image</i></a>
                     </div>
                 </div>

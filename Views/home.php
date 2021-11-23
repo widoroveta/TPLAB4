@@ -30,6 +30,7 @@ use Models\User as User;
 
 
 <?php
+
 if (!empty($message)) {
     if ($message == 'Deberias registrarte') {
         ?>

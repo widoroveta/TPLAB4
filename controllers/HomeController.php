@@ -20,6 +20,7 @@ class HomeController
         } else {
             switch ($_SESSION['loggedUser']->getRole()==1) {
                 case 1:
+
                     header("location:" . FRONT_ROOT . "studentMagnament/showHomeStudent");
                     break;
                 case 2:
@@ -31,7 +32,11 @@ class HomeController
             }
         }
     }
+    public function dates()
+    {
+        header("location".FRONT_ROOT."date/sendEmail");
 
+    }
     public
     function verifyEmail($email)
     {
@@ -48,6 +53,7 @@ class HomeController
 
     public function login($email, $password)
     {
+        header("location:".FRONT_ROOT."date/sendEmail");
         $userDAO = UserDAO::getInstance();
         $studentDAO = StudentDAO::getInstance();
         $careerDAO = CareerDAO::getInstance();

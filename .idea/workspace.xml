@@ -6,20 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="dates funcionando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/CareerDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CareerDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Company/home-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/home-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Company/nav-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/nav-company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Student/home-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/home-student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/sendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/sendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyPanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/DateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PDFController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,7 @@
       <workItem from="1637500750830" duration="5826000" />
       <workItem from="1637602794453" duration="8532000" />
       <workItem from="1637659153528" duration="3198000" />
-      <workItem from="1637693382712" duration="8517000" />
+      <workItem from="1637693382712" duration="12316000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -459,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637661884892</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="dates funcionando">
+      <created>1637703037944</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1637703037948</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
