@@ -8,39 +8,56 @@
 //} else {
 //    echo "ERROR";
 require 'vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
+//var_dump($arrayJobOffers);
+foreach ($arrayJobOffers
+
+as $jobOffer)
+{
+foreach ($jobOffer
+
+as $appointment)
+{
+var_dump($appointment);
 $mail = new PHPMailer;
 
-//    $fname = $_POST['fname'];
-//    $toemail = $_POST['toemail'];
-//    $subject = $_POST['subject'];
-//    $message = $_POST['message'];
-    $mail->isSMTP();
-    $mail->Host = 'smtp.office365.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'espert69@hotmail.com';
-    $mail->Password = '*****';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
-    $mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
-    $mail->addReplyTo('widoroveta@gmail.com', 'NOMBREDELQUEMANDA');
-    $mail->addAddress('widoroveta@gmail.com');
+$mail->isSMTP();
+$mail->Host = 'smtp.office365.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'espert69@hotmail.com';
+$mail->Password = 'quiero2tetas';
+$mail->SMTPSecure = 'tls';
+$mail->Port = 587;
+$mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
+$mail->addReplyTo($appointment->getStudent()->getEmail(), $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getFirstName());
+$mail->addAddress($appointment->getStudent()->getEmail());
 
-    $mail->isHTML(true);
+$mail->isHTML(true);
 
-    $bodyContent = "hey";
 
-    $mail->Subject = "ke ase";
-    $bodyContent = 'Querido:';
-    $bodyContent .='<p>'."Ricardo".'</p>';
-    $mail->Body = $bodyContent;
+$mail->Subject = "Oferta laboral expirada";
+$bodyContent = 'Querido:';
+$bodyContent .= '<p>' . $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getLastName() . " la oferta laboral de " . $appointment->getJobOffer()->getCompany()->getNameCompany() . ' de ' . $appointment->getJobOffer()->getJobPosition()->getDescription() . " ha expirado" .
+    '</p>';
+$mail->Body = $bodyContent;
 
-    if(!$mail->send())
-        echo 'Error: '.$mail->ErrorInfo;
-    else
-        echo 'Enviado!';
+if (!$mail->send()) { ?>
+    <script>alert('Error:');
 
+    </script>
+
+<?php sleep(3); } else {
+    ?>
+    <script>alert('Enviado');
+
+    </script>
+    <?php
+    sleep(3);
+}
+}
+}
 ?>
 

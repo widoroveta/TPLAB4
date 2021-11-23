@@ -13,8 +13,10 @@ class HomeController
 
     public function index($message = "")
     {
+
         if (!isset($_SESSION['loggedUser'])) {
             require_once(VIEWS_PATH . 'home.php');
+
         } else {
             switch ($_SESSION['loggedUser']->getRole()==1) {
                 case 1:

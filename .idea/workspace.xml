@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="pdf dowload in process">
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="dates funcionando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/AppointmentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/AppointmentDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/CareerDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/CareerDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/StudentDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/StudentDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/home-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/home-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/nav-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/nav-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/home-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/home-student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/sendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/sendMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyPanelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/DateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +211,8 @@
       <workItem from="1637409639059" duration="1339000" />
       <workItem from="1637500750830" duration="5826000" />
       <workItem from="1637602794453" duration="8532000" />
-      <workItem from="1637659153528" duration="2459000" />
+      <workItem from="1637659153528" duration="3198000" />
+      <workItem from="1637693382712" duration="8517000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -448,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637507638913</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="asociative array dates">
+      <created>1637661884892</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1637661884892</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,8 +490,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="joboffer finished" />
-    <MESSAGE value="company dao fix" />
     <MESSAGE value="company dao fix2" />
     <MESSAGE value="company dao fix3" />
     <MESSAGE value="alta de usuario func" />
@@ -504,20 +513,22 @@
     <MESSAGE value="areglar nav" />
     <MESSAGE value="fecha y flyer job offer add" />
     <MESSAGE value="pdf dowload in process" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf dowload in process" />
+    <MESSAGE value="asociative array dates" />
+    <MESSAGE value="dates funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="dates funcionando" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Views/Company/home-company.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/DAO/JobOfferDAO.php</url>
           <line>23</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Views/Actions/jobOfferTest.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

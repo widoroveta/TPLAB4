@@ -55,15 +55,15 @@ require_once(VIEWS_PATH . "header.php");
     } else {
 
     if ($userLogged->getRole() == 1){
-
+//    var_dump($userLogged);
     ?>
 
         <div class='user-view '>
-
+<!---->
             <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
             <span class="name  grey-text text-lighten-5"><strong><h4><?= $userLogged->getStudent()->getFirstName(); ?> <?= $userLogged->getStudent()->getLastName(); ?></h4></strong></span>
             <span class="Email grey-text text-lighten-5"><strong><h6><?= $userLogged->getStudent()->getEmail(); ?></h6></strong></span>
-
+<!---->
             <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $userLogged->getStudent()->getCareer()->getDescription(); ?></strong></span>
             <br>
             <span class="caree grey-text text-lighten-5"><strong>Genero: <?= $userLogged->getStudent()->getGender(); ?></strong></span>

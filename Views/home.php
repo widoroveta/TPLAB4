@@ -11,7 +11,7 @@ use Models\User as User;
 
 
 ?>
-<a href="<?=FRONT_ROOT."date/verificationDates"?>"> fechas</a>
+<a href="<?=FRONT_ROOT."date/sendEmail"?>"> fechas</a>
 
 <body class="grey darken-3">
 <div class="row">

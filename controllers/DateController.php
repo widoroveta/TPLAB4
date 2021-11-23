@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use DAO\AppointmentDAO;
 use DAO\JobOfferDAO;
 use DateTime;
 
@@ -15,46 +16,37 @@ class DateController
         foreach ($jobOfferList as $jobOffer) {
             array_push($arrayDates, $this->dateValidate($jobOffer->getDateExpiration(), $jobOffer->getJobOfferId()));
         }
-        unset($jobOfferList);
-        require_once(VIEWS_PATH . 'Actions/jobOfferTest.php');
+
+return $arrayDates;
     }
 
     public function getDate()
     {
-        $arrayTODelete = array();
+        $arrayToDelete = array();
         $array = $this->verificationDates();
         foreach ($array as $date) {
             if ($date['year'] < 0) {
-                array_push($array, $arrayTODelete);
-            } else {
-                if ($date['month'] < 0) {
-                    array_push($array, $arrayTODelete);
-                }
-                else{
-                    if ($date['day']<0)
+                array_push($arrayToDelete,$date);
+
+            } elseif ($date['year'] == 0) {
+                if ($date['month'] < 0)
+                {   array_push($arrayToDelete,$date);}
+                elseif ($date['month']==0){
+                    if($date['day']<0)
                     {
-                        array_push($array,$arrayTODelete);
+                        array_push($arrayToDelete,$date);
                     }
-                    else {
-                        if ($date['hour'] < 0)
-                        {
-                            array_push($array,$arrayTODelete);
+                    elseif ($date['day']==0){
+                        if($date['hour']<=0){
+                            array_push($arrayToDelete,$date);;
                         }
-                        else{
-                            if($date['minute']<0)
-                            {
-                                array_push($array,$arrayTODelete);
+                    }
 
-                            }
-                        }
-                    }
                 }
-
             }
-
         }
-        require_once(VIEWS_PATH . 'Actions/jobOfferTest.php');
-    }
+        return $arrayToDelete;
+ }
 
     public function getDiffYear($date, $now)
     {
@@ -113,6 +105,25 @@ class DateController
 
         return $array;
     }
+    public  function  sendEmail()
+    {
+        $jobOfferDAO=JobOfferDAO::getInstance();
+        $appointmentDAO=AppointmentDAO::getInstance();
+        $arrayJobOffers=array();
+        $array = $this->getDate();
+        foreach ($array as $value)
+        {
+            array_push(   $arrayJobOffers ,$appointmentDAO->getAllbyJobOffer($value['jobOfferId']));
 
+        }
+        $message='';
+        require_once (VIEWS_PATH.'sendMail.php');
+        foreach ($array as $value)
+        {
+            $jobOfferDAO->delete($value['jobOfferId']);
+        }
+       header("location:".FRONT_ROOT."home/index");
+
+    }
 
 }

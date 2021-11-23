@@ -12,6 +12,7 @@ class CompanyPanelController
 {
     public function showHomeCompany()
     {
+        $userLogged=$_SESSION['loggedUser'];
         require_once (VIEWS_PATH."company/home-company.php");
     }
 
@@ -37,15 +38,11 @@ class CompanyPanelController
         require_once(VIEWS_PATH . "Company/pfdDownload.php");
     }
 
-    public function sendMail()
+
+
+    public function showListJobOffer()
     {
-
-        require_once(VIEWS_PATH . 'sendMail.php');
-
-    }
-
-    public function showJobOffers()
-    {$appointmentDAO=AppointmentDAO::getInstance();
+//        $appointmentDAO=AppointmentDAO::getInstance();
 
         // $appointmentDAO->getAllbyCompany($_SESSION['loggedUser']->getCompany()->getComp);
         require_once (VIEWS_PATH."Company/viewJobOffer.php");
