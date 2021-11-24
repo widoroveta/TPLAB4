@@ -81,7 +81,18 @@ class AdminController
         $careerDAO->getAll();
         $userDAO = UserDAO::getInstance();
         $studentList = $studentDAO->searchByValidation();
+$hd=$userDAO->getIdStudents();
+        foreach ($userDAO->getIdStudents() as $idStudent) {
+                foreach ($studentList as $std)
+                {
+                    if($std->getStudentId()==intval($idStudent['studentId']))
+                    {
+                        $key=array_search($std,$studentList);
+                        unset($studentList[$key]);
+                    }
 
+                }
+        }
         require_once(VIEWS_PATH . "Admin/register-user.php");
     }
 
@@ -207,7 +218,7 @@ class AdminController
 
     public function showAddJobOffer()
     {
-        $this->validateAdmin();
+      //  $this->validateAdmin();
         $this->validateAdmin();
         $jobPositionDAO = JobPositionDAO::getInstance();
         $jobPositionList = $jobPositionDAO->getAll();
@@ -294,8 +305,13 @@ class AdminController
     {
         $this->validateAdmin();
         $appointmentDAO = AppointmentDAO::getInstance();
-        $appointmentDAO->delete($id);
+        $this->sendMail($appointmentDAO->searchById($id));
+       $appointmentDAO->delete($id);
+
         $this->showListAppoinment();
+    }
+    public function  sendMail($appointment){
+        require_once (VIEWS_PATH."actions/send-Mail.php");
     }
 
 }

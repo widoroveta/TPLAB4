@@ -16,6 +16,7 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
     </div>
 </form>
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <div class="row">
 
     <?php
@@ -83,5 +84,6 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
 
     }
     ?>
+</div>
     </body>
 

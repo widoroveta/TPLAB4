@@ -123,7 +123,7 @@ return $arrayDates;
             $jobOfferDAO->delete($value['jobOfferId']);
         }
         //sleep(10);
-    //   header("location:".FRONT_ROOT."home/index");
+      header("location:".FRONT_ROOT."admin/showListCompany");
 
     }
 

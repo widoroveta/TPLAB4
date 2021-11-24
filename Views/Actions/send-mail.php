@@ -1,26 +1,8 @@
 <?php
-//$to = 'pabloemanuelmorales@gmail.com';
-//$subject = 'Hello from XAMPP!';
-//$message = 'This is a test';
-//$headers = "From: pabloemanuelmorales@gmail.com\r\n";
-//if (mail($to, $subject, $message, $headers)) {
-//    echo "SUCCESS";
-//} else {
-//    echo "ERROR";
 require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-
-if(isset($arrayJobOffers)){
-foreach ($arrayJobOffers
-
-as $jobOffer)
-{
-foreach ($jobOffer
-
-as $appointment)
-{
 
 $mail = new PHPMailer;
 
@@ -49,7 +31,7 @@ if (!$mail->send()) { ?>
 
     </script>
 
-<?php sleep(3); } else {
+    <?php sleep(3); } else {
     ?>
     <script>alert('Enviado');
 
@@ -57,8 +39,3 @@ if (!$mail->send()) { ?>
     <?php
     sleep(3);
 }
-}
-}
-}
-?>
-

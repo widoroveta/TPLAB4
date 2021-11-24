@@ -1,86 +1,91 @@
 <?php
-require_once (VIEWS_PATH."company/nav-company.php");
+require_once(VIEWS_PATH . "company/nav-company.php");
 //$companyDAO=\DAO\CompanyDAO::getInstance();
 //var_dump($companyDAO->searchById($_SESSION['loggedUser']->getCompany()));
-?><body class="grey darken-3" >
-<table class="blue">
-    <thead>
-    <th>ID</th>
-    <th>Compania</th>
-    <th>Puesto Laboral</th>
-    <th></th>
-    </thead>
+?>
+
+<body class="grey darken-3">
+<section style="min-height: 100%">
+
+<?php
+if(!empty($jobOfferList)){
+foreach ($jobOfferList as $jo) {
+    $id = $jo->getJobOfferId();
+    $img=$jo->getFlyer();
+    ?>
+    <table class="blue">
+
+        <caption class="black white-text">JobOffer</caption>
         <tbody>
-<table class="orange">
-    <thead>
-    <th>id</th>
-    </thead>
-</table>
+        <tr>
+            <td>ID:<?= $jo->getJobOfferId(); ?></td>
+            <td>Compania:<?= $jo->getCompany()->getNameCompany(); ?></td>
+            <td>Puesto laboral:<?= $jo->getJobPosition()->getDescription(); ?></td>
+            <td>Carerra:<?= $jo->getJobPosition()->getCareer()->getDescription() ?></td>
+            <td>Requisito: <?= $jo->getRequirements(); ?></td>
+            <td>Fecha de Expiracion: <?=$jo->getDateExpiration();?></td>
+            <td><a href="<?= FRONT_ROOT . "image/showImage?varController=CompanyPanel&varRoute=$img" ?>"
+                   class="btn-floating green"><i class="material-icons">image</i></a>
+            </td>
+            <td><a href="<?= FRONT_ROOT . "CompanyPanel/showModifyJobOffer?varId=$id" ?>"
+                   class="btn-floating deep-purple accent-4"><i class="material-icons">mode_edit</i></a></td>
+            <td><a href="<?= FRONT_ROOT . "PDF/dowloadPDF?varId=$id&varController=CompanyPanel" ?>"
+                   class="btn-floating red"><i class="material-icons">picture_as_pdf</i></a></td>
 
+        </tr>
+        <?php
+        $appointmentList=$appointmentDAO->getAllbyJobOffer($id);
+        if(!empty($appointmentList)){
+            ?>
+        <table class="orange">
+            <caption class="black white-text">Appoinments</caption>
+            <thead>
+            <th>id</th>
+            <th>Estudiante</th>
+            <th>Email</th>
+            <th>Mensaje</th>
+            <th>Fecha</th>
+            <th>Cv</th>
+            <th></th>
+            </thead>
+            <tbody>
+           <?php
+            foreach ( $appointmentList  as $value)
+            {?>
+                <tr>
+                    <td><?=$value->getAppointmentId()?></td>
+                    <td><?=$value->getStudent()->getFirstName()." ".$value->getStudent()->getLastName()?></td>
+                    <td><?=$value->getStudent()->getEmail();?></td>
+                    <td><?=$value->getMessage();?></td>
+                    <td><?=$value->getDate();?></td>
+                    <td><a  class="btn-floating red"  href="<?= $value->getCv() ?>>" download><i class="material-icons">picture_as_pdf</i> </a></td>
+                </tr>
+            <?php
+            }
+            }
+            ?>
 
+            </tbody>
+        </table>
         </tbody>
-</table>
+    </table>
+
+    <?php
+
+}
+    }else{
+    ?>
+    <div class="row ">
+        <div class="card-Panel  cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
+            <h2 align="center"><i class="Medium red-text material-icons">error</i> Lo sentimos.</h2>
+            <p align="Center" style="margin: 20px ">En este momento no hay ofertas laborales disponible.
+            </p>
+            <br>
+            <p align="center">Muchas gracias.</p>
+        </div>
+    </div>
+<?php
+}
+?>
+</section>
 </body>
-<!---->
-<!--<body class="grey darken-3" >-->
-<!--<div class="row">-->
-<!--    <div class="col s12 m4 l8">-->
-<!--        --><?php
-//        if(!empty($jobOfferList)){
-//            ?>
-<!--            <table class="highlight black cyan-text text-accent-4">-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!---->
-<!--                    <th>ID Job Offer</th>-->
-<!--                    <th>Compania </th>-->
-<!--                    <th>Job Position </th>-->
-<!--                    <th>Requerimientos </th>-->
-<!--                    <th>Email</th>-->
-<!--                    <th>Telefono</th>-->
-<!--                    <th>CUIT</th>-->
-<!--                    <th>Modify</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                --><?php
-//
-//                foreach($jobOfferList as $jobOffer)
-//                {
-//                    $id=$jobOffer->getJobOfferId()
-//                    ?>
-<!--                    <tr>-->
-<!--                        <td>--><?//=$jobOffer->getJobOfferId()?><!--</td>-->
-<!--                        <td>--><?//=$jobOffer->getCompany()?><!--</td>-->
-<!--                        <td>--><?//=$jobOffer->getJobPosition()?><!--</td>-->
-<!--                        <td>--><?//=$jobOffer->getRequirements()?><!--</td>-->
-<!--                        <td>--><?//=$company->getEmail()?><!--</td>-->
-<!--                        <td>--><?//=$company->getPhoneNumber()?><!--</td>-->
-<!--                        <td>--><?//=$company->getCuit()?><!--</td>-->
-<!--                        <td>-->
-<!--                            <a href="--><?//=FRONT_ROOT."Admin/showPanelModifyCompany?varId=$id"?><!--" class="waves-effect waves-light btn black">Modificar</a>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                    --><?php
-//                }
-//                ?>
-<!--                </tbody>-->
-<!---->
-<!--            </table>-->
-<!--            --><?php
-//        }else{?>
-<!--            <div class="row ">-->
-<!--                <div class="card-Panel cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">-->
-<!--                    <h2 align="center"><i class="Medium red-text material-icons">error</i> Lo sentimos.</h2>-->
-<!--                    <p align="center" style="margin: 20px ">En este momento no hay Postulaciones antiguas-->
-<!--                    </p>-->
-<!--                    <br>-->
-<!--                    <p align="center">Muchas gracias.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            --><?php
-//        }
-//        ?>
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->

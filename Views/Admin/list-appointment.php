@@ -4,6 +4,7 @@ require_once (VIEWS_PATH."Admin/nav-admin.php");
 require('fpdf/fpdf.php');
 ?>
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <div class="row">
     <?php
     if(!empty($fileList)){
@@ -27,7 +28,7 @@ require('fpdf/fpdf.php');
                 Carrera: <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription()?>
             </div>
 <!--            <a href="--><?//=FRONT_ROOT."admin/deleteAppointment?varId=$id"?><!--" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>-->
-            <a href="<?=FRONT_ROOT."admin/generatePdf?varId=$id"?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
+            <a href="<?=FRONT_ROOT."admin/deleteAppointment?varId=$id"?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
 
             <div class=" card-panel  purple darken-1 col s12 ">
                 <h5 class="white-text">Curriculum Vitae</h5>
@@ -66,4 +67,5 @@ require('fpdf/fpdf.php');
     }
     ?>
 </div>
+</section>
 </body>

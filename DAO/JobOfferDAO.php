@@ -95,6 +95,37 @@ class JobOfferDAO
         }
 
         return $finalResult;
+    }public function getAllByCompany($id)
+    {
+        $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId where (j.companyId = :id );";
+        $parameters['id']=$id;
+        try {
+            $this->connection = Connection::getInstance();
+
+            $result = $this->connection->execute($sqlQuery,$parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+
+        if (!empty($result)) {
+            $result = $this->mapout($result);
+
+            $jobOfferList = array();
+
+            if (!is_array($result)) {
+                array_push($jobOfferList, $result);
+            }
+        } else {
+            $result = false;
+        }
+
+        if (!empty($jobOfferList)) {
+            $finalResult = $jobOfferList;
+        } else {
+            $finalResult = $result;
+        }
+
+        return $finalResult;
     }
 
 

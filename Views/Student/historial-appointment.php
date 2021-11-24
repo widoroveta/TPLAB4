@@ -4,6 +4,7 @@ require_once(VIEWS_PATH . "student/nav-student.php");
 
 ?>
     <body class="grey darken-3">
+    <section style="min-height: 100%">
 <div class="row">
 <?php if (!empty($aol)) { ?>
     <table class="highlight black orange-text text-accent-3">
@@ -42,7 +43,7 @@ require_once(VIEWS_PATH . "student/nav-student.php");
         </tbody>
     </table>
     </div>
-    </body>
+
     <?php
 }else{
         ?>
@@ -59,3 +60,5 @@ require_once(VIEWS_PATH . "student/nav-student.php");
         <?php
     }
     ?>
+    </section>
+    </body>

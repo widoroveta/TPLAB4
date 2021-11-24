@@ -1,5 +1,6 @@
 
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <?php
 require_once(VIEWS_PATH . "Admin/nav-admin.php");
 
@@ -72,4 +73,5 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
     ?>
     </tbody>
 </table>
+</section>
 </body>

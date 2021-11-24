@@ -16,6 +16,7 @@ if (!empty($message)) { ?>
 
 ?>
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <div class="row">
     <?php
     if(!empty($fileList)){
@@ -72,4 +73,5 @@ if (!empty($message)) { ?>
     }
     ?>
 </div>
+</section>
 </body>

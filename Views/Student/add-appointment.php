@@ -10,6 +10,7 @@ require_once(VIEWS_PATH . "nav.php");
 ?>
 
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <div class="row">
 
 
@@ -47,5 +48,6 @@ require_once(VIEWS_PATH . "nav.php");
 
     </form>
 </div>
+</section>
 
 </body>

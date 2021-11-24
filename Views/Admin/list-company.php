@@ -6,7 +6,10 @@ require_once(VIEWS_PATH."Admin/nav-admin.php");
 
 
 ?>
+<br>
 <body class="grey darken-3" >
+<section style="min-height: 100%">
+<a href="<?=FRONT_ROOT."date/sendEmail"?>" class="waves-effect waves-light btn-large red"><i class="material-icons right">refresh</i>Verificar Caducidad</a>
 <div class="row">
     <div class="col s12 m4 l8">
         <?php
@@ -69,5 +72,6 @@ require_once(VIEWS_PATH."Admin/nav-admin.php");
         ?>
     </div>
 </div>
+</section>
 </body>
 

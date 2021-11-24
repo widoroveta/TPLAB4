@@ -13,6 +13,7 @@ require_once(VIEWS_PATH . "nav.php");
     });</script>
 
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <div class="row grey darken-3 ">
     <div class="collection grey darken-3 col s6   ">
         <a href="#modal-name" class="collection-item btn modal-trigger"><?= $company->getNameCompany(); ?>  </a>
@@ -136,5 +137,5 @@ require_once(VIEWS_PATH . "nav.php");
     </div>
 </div>
 
-
+</section>
 </body>

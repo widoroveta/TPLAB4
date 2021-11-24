@@ -55,7 +55,6 @@ require_once(VIEWS_PATH . "header.php");
     } else {
 
     if ($userLogged->getRole() == 1){
-//    var_dump($userLogged);
     ?>
 
         <div class='user-view '>

@@ -11,9 +11,10 @@ use Models\User as User;
 
 
 ?>
-<a href="<?=FRONT_ROOT."date/sendEmail"?>"> fechas</a>
+
 
 <body class="grey darken-3">
+<section style="height: 100%">
 <div class="row">
     <div class="section col s12 brown lighten-4">
         <img src="https://mdp.utn.edu.ar/wp-content/uploads/2021/02/UTN_IsoLogoBcoNeg.png" alt="">
@@ -74,4 +75,5 @@ if (!empty($message)) {
 <?php
 
 ?>
+    </section>
 </body>

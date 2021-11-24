@@ -1,11 +1,12 @@
 
 
-<footer class="page-footer grey darken-4" style=" position: absolute;
-  bottom: 0;
+<footer class="page-footer grey darken-4" style=" clear: both;
+    position: relative;
+  bottom: -15;
   width: 100%;
   align-self: flex-end;
 ">
-        <div class="card-panel grey darken-4">
+        <div class="container grey darken-4">
             <h5 class="white-text center align">TP Final Lab4-Metodologia de Sistemas</h5>
 
             <a href="https://github.com/widoroveta" > <svg  xmlns="http://www.w3.org/2000/svg" class="center align icon icon-tabler icon-tabler-brand-github" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">

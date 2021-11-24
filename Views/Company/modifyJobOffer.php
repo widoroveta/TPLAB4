@@ -1,3 +1,4 @@
+
 <?php
 require_once(VIEWS_PATH . "nav.php");
 
@@ -17,44 +18,22 @@ require_once(VIEWS_PATH . "nav.php");
 <section style="min-height: 100%">
 <div class="row grey darken-3 ">
     <div class="collection grey darken-3 col s6   ">
-        <a href="#modal-Company" class="collection-item btn modal-trigger"><?= $jobOffer->getCompany()->getNameCompany(); ?>  </a>
+<!--        <a href="#modal-Company" class="collection-item btn modal-trigger">--><?//= $jobOffer->getCompany()->getNameCompany(); ?><!--  </a>-->
         <a href="#modal-Description" class="collection-item  btn modal-trigger "><?= $jobOffer->getJobPosition()->getDescription(); ?></a>
         <a href="#modal-requirements" class="collection-item  btn modal-trigger "><?= $jobOffer->getRequirements() ?></a>
 
-        <a href="<?= FRONT_ROOT . "Admin/showListjobOffer" ?>" class="left align waves-effect waves-light btn black">Volver</a>
-        <a href="<?= FRONT_ROOT . "Admin/deletejobOffer?varId=$id" ?>"
+        <a href="<?= FRONT_ROOT . "CompanyPanel/showListjobOffer" ?>" class="left align waves-effect waves-light btn black">Volver</a>
+        <a href="<?= FRONT_ROOT . "CompanyPanel/deletejobOffer?varId=$id" ?>"
            class="right align waves-effect waves-light btn black">Borrar</a>
     </div>
 </div>
-<div id="modal-Company" class="modal" >
-    <div class="modal-content" style="min-height: 200px;min-width: 400px;" >
+</section>
 
-        <form action="<?= FRONT_ROOT . "Admin/modifyCompany" ?>">
-            <input type="hidden" name='$id' value="<?= $id ?>">
-            <div class="input-field ">
-                <select name="company">
-                    <option value="" disabled selected>Seleccione una</option>
-                    <?php
-                    foreach ($companyList as $company) {
-                        ?>
-                        <option value="<?= $company->getCompanyId() ?>"><?= $company->getNameCompany() ?></option>
-                        <?php
-                    }
-                    ?>
-                </select>
-                <label>Empresas</label>
-            </div>
-
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat light-blue-text text-accent-3">Volver</a>
-            <button type="submit" class="waves-effect waves-green btn-flat light-blue-text text-accent-3">enviar
-            </button>
-        </form>
-    </div>
-</div>
+</body>
 <div id="modal-Description" class="modal">
     <div class="modal-content">
 
-        <form action="<?= FRONT_ROOT . "Admin/modifyJobPosition" ?>">
+        <form action="<?= FRONT_ROOT . "CompanyPanel/modifyJobPosition" ?>">
             <input type="hidden" name='$id' value="<?= $id ?>">
             <div class="input-field ">
                 <select name="jobPosition">
@@ -80,7 +59,7 @@ require_once(VIEWS_PATH . "nav.php");
 <div id="modal-requirements" class="modal">
     <div class="modal-content">
         <label for="">Nuevo requisito</label>
-        <form action="<?= FRONT_ROOT . "Admin/modifyRequirements" ?>">
+        <form action="<?= FRONT_ROOT . "CompanyPanel/modifyRequirements" ?>">
             <input type="hidden" name='$id' value="<?= $id ?>">
             <input type="text" name="requirements">
 
@@ -90,6 +69,3 @@ require_once(VIEWS_PATH . "nav.php");
         </form>
     </div>
 </div>
-
-</section>
-</body>

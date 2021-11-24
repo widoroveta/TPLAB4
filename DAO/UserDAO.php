@@ -47,7 +47,18 @@ class UserDAO
        }
 
     }
+    public  function getIdStudents()
+    {
+        $sqlQuery = "SELECT studentId FROM users where studentId >0";
+        try {
+            $this->conecction = Connection::GetInstance();
+            $resultSet = $this->conecction->Execute($sqlQuery);
 
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+        return $resultSet;
+        }
     public function searchByStudentId($id){
 
         $sqlQuery="select * from users where (studentId = :studentId)";

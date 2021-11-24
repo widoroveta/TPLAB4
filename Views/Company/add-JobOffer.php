@@ -1,44 +1,29 @@
-<?php
-require_once(VIEWS_PATH . "nav.php");
-require_once(VIEWS_PATH . "Admin/nav-admin.php");
-?>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
     });
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.datepicker');
         var instances = M.Datepicker.init(elems);
 
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.timepicker');
         var instances = M.Timepicker.init(elems);
     });
 </script>
 <?php
-
+require_once(VIEWS_PATH . "company/nav-company.php")
 ?>
 <body class="grey darken-3">
 <section style="min-height: 100%">
 <div class="row">
-    <form action="<?= FRONT_ROOT . "admin/addJobOffer" ?>" enctype="multipart/form-data" method="POST">
+    <form action="<?= FRONT_ROOT . "companyPanel/addJobOffer" ?>" enctype="multipart/form-data" method="POST">
         <div class="card-panel col s5 push-s4" style="padding: 50px; border-radius: 5px;">
-            <div class="input-field ">
-                <select name="company">
-                    <option value="" disabled selected>Seleccione una</option>
-                    <?php
-                    foreach ($companyList as $company) {
-                        ?>
-                        <option value="<?= $company->getCompanyId() ?>"><?= $company->getNameCompany() ?></option>
-                        <?php
-                    }
-                    ?>
-                </select>
-                <label>Empresas</label>
-            </div>
+
+            <input type="hidden" value="<?= $id ?>" name="company">
             <div class="input-field ">
                 <select name="jobPosition">
                     <option value="" disabled selected>Seleccione una</option>
@@ -56,10 +41,10 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             <div class="file-field input-field">
                 <div class="btn red darken-4 z-depth-4">
                     <span>File</span>
-                    <input  name='flyer' accept="image/*"  type="file">
+                    <input name='flyer' accept="image/*" type="file">
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate"   type="text">
+                    <input class="file-path validate" type="text">
                 </div>
             </div>
 
@@ -69,11 +54,11 @@ require_once(VIEWS_PATH . "Admin/nav-admin.php");
             </div>
             <input type="text" name="date" class="datepicker">
             <input type="text" name="time" class="timepicker">
-<!--            <script>-->
-<!--                if(document.getElementsByName('date')) {-->
-<!--                    alert(document.getElementsByName('date'));-->
-<!--                }-->
-<!--            </script>-->
+            <!--            <script>-->
+            <!--                if(document.getElementsByName('date')) {-->
+            <!--                    alert(document.getElementsByName('date'));-->
+            <!--                }-->
+            <!--            </script>-->
             <button class="right align btn waves-effect waves-light  offset-s8 red darken-4 z-depth-4" type="submit"
                     name="action">Enviar
                 <i class="material-icons right">send</i>

@@ -10,6 +10,7 @@ use Models\JobOffer as JobOffer;
 require_once(VIEWS_PATH."Company/nav-company.php");
 
 ?><body class="grey darken-3" >
+<section style="min-height: 100%">
 <div class="row">
     <div class="card col s8 push-s2">
         <div class="card-title">
@@ -24,4 +25,5 @@ require_once(VIEWS_PATH."Company/nav-company.php");
         </div>
     </div>
 </div>
+</section>
 </body>

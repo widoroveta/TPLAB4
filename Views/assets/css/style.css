@@ -1,10 +1,10 @@
-.ocultar {
-    display: none;
-}
+html, body{
+    height: 100%;
 
-.mostrar {
-    display: block;
 }
-.borders-circle{
-    border-radius: 50px;
+section{
+    height: 100%;
+}
+.all-page{
+    height: 100%;
 }

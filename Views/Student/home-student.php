@@ -6,6 +6,7 @@ require_once (VIEWS_PATH."Student/nav-student.php");
 ?>
 
 <body class="grey darken-3">
+<section style="min-height: 100%">
 <?php
 if (!empty($message)) { ?>
     <script>
@@ -32,5 +33,5 @@ if (!empty($message)) { ?>
     <div class="card-panel col s6"><p>Las funcionalidades de la pagina estaran dadas en la barra de navegacion que tienes en la parte superior. </p> </div>
 </div>
 </div>
-
+</section>
 </body>

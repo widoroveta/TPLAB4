@@ -4,15 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="dates funcionando">
+    <list default="true" id="7c5d23fb-c3b3-4585-af16-20b66ae5283b" name="Changes" comment="probrando fechas">
+      <change afterPath="$PROJECT_DIR$/Views/Actions/send-mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Company/add-JobOffer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Company/modifyJobOffer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Company/validate-company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/JobPositionDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobPositionDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/pfdDownload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/JobOfferDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/JobOfferDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/UserDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/UserDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Actions/img-viewer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Actions/img-viewer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Actions/jobOfferTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/add-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/list-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/list-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/modifyViewCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/modifyViewCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/modifyViewJobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/modifyViewJobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/register-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/register-user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/total-history.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/total-history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/home-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/home-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/nav-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/nav-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/pfdDownload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Company/viewJobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/add-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/add-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/home-student.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/home-student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/list-appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/list-company.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Student/list-jobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/sendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/sendMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyPanelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/DateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PDFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +236,9 @@
       <workItem from="1637500750830" duration="5826000" />
       <workItem from="1637602794453" duration="8532000" />
       <workItem from="1637659153528" duration="3198000" />
-      <workItem from="1637693382712" duration="12316000" />
+      <workItem from="1637693382712" duration="20000000" />
+      <workItem from="1637745066288" duration="6470000" />
+      <workItem from="1637779310382" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="delete finished">
       <created>1634862406373</created>
@@ -459,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637703037948</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="probrando fechas">
+      <created>1637707040737</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1637707040737</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +530,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="company dao fix2" />
     <MESSAGE value="company dao fix3" />
     <MESSAGE value="alta de usuario func" />
     <MESSAGE value="apointment list in student" />
@@ -515,7 +554,8 @@
     <MESSAGE value="pdf dowload in process" />
     <MESSAGE value="asociative array dates" />
     <MESSAGE value="dates funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="dates funcionando" />
+    <MESSAGE value="probrando fechas" />
+    <option name="LAST_COMMIT_MESSAGE" value="probrando fechas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -524,11 +564,6 @@
           <url>file://$PROJECT_DIR$/DAO/JobOfferDAO.php</url>
           <line>23</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Views/Actions/jobOfferTest.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
