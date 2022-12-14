@@ -2,13 +2,6 @@
 require_once(VIEWS_PATH . "header.php");
 require_once(VIEWS_PATH . 'nav.php');
 
-use DAO\StudentDAO as StudentDAO;
-use Models\Student as Student;
-use DAO\CareerDAO as CareerDAO;
-use DAO\JobPositionDAO as JobPositionDAO;
-use DAO\UserDAO as UserDAO;
-use Models\User as User;
-
 
 ?>
 
