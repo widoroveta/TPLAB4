@@ -17,23 +17,32 @@ protected static  $instance=null;
 
         return self::$instance;
     }
-    public function retrieveDataFromAPI()
-    {
-        $url = curl_init();
-        curl_setopt($url, CURLOPT_URL, API_HOST . "/Career");
-        curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
-        curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
-        $response = curl_exec($url);
-                $toJson = json_decode($response);
-return $toJson;
-//            $arrayToDecode=array();
-//            $jsonContent=file_get_contents("Data/careers.json");
-//            $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
-//
-//
-//
-//        return $arrayToDecode;
-    }
+//     public function retrieveDataFromAPI()
+//     {
+//         $url = curl_init();
+//         curl_setopt($url, CURLOPT_URL, API_HOST . "/Career");
+//         curl_setopt($url, CURLOPT_HTTPHEADER, array(HTTP_PROTOCOL));
+//         curl_setopt($url, CURLOPT_RETURNTRANSFER, 1);
+//         $response = curl_exec($url);
+//                 $toJson = json_decode($response);
+// return $toJson;
+// //            $arrayToDecode=array();
+// //            $jsonContent=file_get_contents("Data/careers.json");
+// //            $arrayToDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
+// //
+// //
+// //
+// //        return $arrayToDecode;
+//     }
+private function retrieveDataFromAPI()
+{
+  // Leemos el archivo JSON
+  $json = file_get_contents('json/Career.json');
+
+// Decodificamos el JSON en un array asociativo
+  $datos = json_decode($json, true);
+  return $datos;
+}
     public function retrieveData()
     {
         $this->careerList = array();
@@ -41,12 +50,12 @@ return $toJson;
         if ($cs != null) {
             foreach ($cs  as $c) {
                 $career = new Career();
-                $career->setCareerId($c->careerId);
-                $career->setDescription($c->description);
-                $career->setActive($c->active);
-//                $career->setCareerId($c['careerId']);
-//                $career->setDescription($c['description']);
-//                $career->setActive($c['active']);
+                // $career->setCareerId($c->careerId);
+                // $career->setDescription($c->description);
+                // $career->setActive($c->active);
+               $career->setCareerId($c['careerId']);
+               $career->setDescription($c['description']);
+               $career->setActive($c['active']);
                 array_push($this->careerList, $career);
             }
         }
@@ -73,7 +82,7 @@ return $toJson;
     {
         if ($this->careerList != null) {
             foreach ($this->careerList as $c) {
-
+                
                 if ($c->getCareerId() == $id) {
 
                     return $c;

@@ -7,13 +7,13 @@ use PHPMailer\PHPMailer\SMTP;
 $mail = new PHPMailer;
 
 $mail->isSMTP();
-$mail->Host = 'smtp.office365.com';
+$mail->Host = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
-$mail->Username = 'espert69@hotmail.com';
-$mail->Password = 'quiero2tetas';
+$mail->Username = 'utnmdptestmailtp@gmail.com';
+$mail->Password = 'UTN123456';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
-$mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
+$mail->setFrom('utnmdptestmailtp@gmail.com', 'Utn reg mardelplata');
 $mail->addReplyTo($appointment->getStudent()->getEmail(), $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getFirstName());
 $mail->addAddress($appointment->getStudent()->getEmail());
 

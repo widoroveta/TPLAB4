@@ -3,15 +3,15 @@ require_once(VIEWS_PATH . "header.php");
 
 ?>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
     });
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#modal1').modal('toggle')
     });
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.sidenav').sidenav();
     });
 </script>
@@ -24,24 +24,21 @@ require_once(VIEWS_PATH . "header.php");
         $userLogged = $_SESSION['loggedUser'];
     }
     if (!isset($userLogged)) {
-        ?>
+    ?>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function() {
                 var elems = document.querySelectorAll('.modal');
                 var instances = M.Modal.init(elems);
             });
-
         </script>
-    <br>
+        <br>
         <!-- Botones sin session -->
         <ul class="center-align  ">
             <!-- Registrarse -->
-            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black"
-                   href="#modal-rcompany"><i class="material-icons pink-text text-accent-3">business</i>Registrar
+            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal-rcompany"><i class="material-icons pink-text text-accent-3">business</i>Registrar
                 </a>
             </li>
-            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal1"><i
-                            class="material-icons pink-text text-accent-3">person_add</i>Registrar</a>
+            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="#modal1"><i class="material-icons pink-text text-accent-3">person_add</i>Registrar</a>
             </li>
 
             <!-- Loguearse -->
@@ -51,45 +48,47 @@ require_once(VIEWS_PATH . "header.php");
         </ul>
 
 
-    <?php
+        <?php
     } else {
 
-    if ($userLogged->getRole() == 1){
-    ?>
-
-        <div class='user-view '>
-<!---->
-            <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
-            <span class="name  grey-text text-lighten-5"><strong><h4><?= $userLogged->getStudent()->getFirstName(); ?> <?= $userLogged->getStudent()->getLastName(); ?></h4></strong></span>
-            <span class="Email grey-text text-lighten-5"><strong><h6><?= $userLogged->getStudent()->getEmail(); ?></h6></strong></span>
-<!---->
-            <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $userLogged->getStudent()->getCareer()->getDescription(); ?></strong></span>
-            <br>
-            <span class="caree grey-text text-lighten-5"><strong>Genero: <?= $userLogged->getStudent()->getGender(); ?></strong></span>
-            <br>
-            <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******" . substr($userLogged->getStudent()->getDni(), 7, 10) ?></strong></span>
-            <br>
-            <span class="Email grey-text text-lighten-5"><strong><?= $userLogged->getStudent()->getPhoneNumber(); ?></strong></span>
-
-        </div>
-        <?php
-    }
+        if ($userLogged->getRole() == 1) {
         ?>
-    <br>
+
+            <div class='user-view '>
+                <!---->
+                <span class="background "><img src="https://wallpapercave.com/wp/wp2607892.jpg" alt=""></span>
+                <span class="name  grey-text text-lighten-5"><strong>
+                        <h4><?= $userLogged->getStudent()->getFirstName(); ?> <?= $userLogged->getStudent()->getLastName(); ?></h4>
+                    </strong></span>
+                <span class="Email grey-text text-lighten-5"><strong>
+                        <h6><?= $userLogged->getStudent()->getEmail(); ?></h6>
+                    </strong></span>
+                <!---->
+                <span class="caree grey-text text-lighten-5"><strong>Carrera: <?= $userLogged->getStudent()->getCareer()->getDescription(); ?></strong></span>
+                <br>
+                <span class="caree grey-text text-lighten-5"><strong>Genero: <?= $userLogged->getStudent()->getGender(); ?></strong></span>
+                <br>
+                <span class="dn grey-text text-lighten-5"><strong>DNI: <?= "******" . substr($userLogged->getStudent()->getDni(), 7, 10) ?></strong></span>
+                <br>
+                <span class="Email grey-text text-lighten-5"><strong><?= $userLogged->getStudent()->getPhoneNumber(); ?></strong></span>
+
+            </div>
+        <?php
+        }
+        ?>
+        <br>
         <ul class="center-align">
-            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black"
-                   href="<?= FRONT_ROOT . "Home/logout" ?>">Cerrar sesion</i></a></li>
+            <li><a class="waves-effect waves-light btn modal-trigger pink-text text-accent-3 black" href="<?= FRONT_ROOT . "Home/logout" ?>">Cerrar sesion</i></a></li>
         </ul>
 
 
-        <?php
+    <?php
     }
 
     ?>
 </ul>
 <div class="left-align  grey darken-4 ">
-    <a href="#" data-target="slide-out" class="sidenav-trigger "><i
-                class="small  material-icons blue-grey-text text-lighten-5 ">menu</i></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger "><i class="small  material-icons blue-grey-text text-lighten-5 ">menu</i></a>
 </div>
 
 
@@ -130,20 +129,15 @@ require_once(VIEWS_PATH . "header.php");
             <form action="<?= FRONT_ROOT . "home/register" ?>" method="post" id="miformulario">
                 <div class="form-group">
                     <label for="usuario">Email</label>
-                    <input type="text" value="" placeholder="Example@gmail.com" name="email" class="form-control"
-                           id="Email">
+                    <input type="text" value="" placeholder="Example@gmail.com" name="email" class="form-control" id="Email">
                 </div>
                 <div class="form-group">
                     <label for="pass1">Contraseña</label>
-                    <input type="password" value="" placeholder="123456" onchange="verificarPasswords(); return false"
-                           class="form-control" id="pass1"
-                           required>
+                    <input type="password" value="" placeholder="123456" onchange="verificarPasswords(); return false" class="form-control" id="pass1" required>
                 </div>
                 <div class="form-group">
                     <label for="pass2">Vuelve a escribir la Contraseña</label>
-                    <input type="password" name="pass2" placeholder="123456" value=""
-                           onchange="verificarPasswords(); return false" class="form-control" id="pass2"
-                           required>
+                    <input type="password" name="pass2" placeholder="123456" value="" onchange="verificarPasswords(); return false" class="form-control" id="pass2" required>
                 </div>
 
                 <button type="submit" id="login" class="btn btn-primary">Registrarse</button>
@@ -172,7 +166,6 @@ require_once(VIEWS_PATH . "header.php");
 
                     }
                 }
-
             </script>
         </div>
     </div>
@@ -180,7 +173,7 @@ require_once(VIEWS_PATH . "header.php");
 
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
     });
@@ -215,7 +208,7 @@ require_once(VIEWS_PATH . "header.php");
                             <option value="medium">Mediana</option>
                             <option value="big">Grande</option>
                         </select>
-                        <label for="">tamaño</label>
+                        <label for="">Tamaño</label>
                     </div>
                     <input type="email" class="col s5" placeholder="Email" name="email" required>
                     <div class="col s2"></div>
@@ -224,12 +217,9 @@ require_once(VIEWS_PATH . "header.php");
                     <input type="text" class="col s5" placeholder="Cuit" name="CUIT" required>
                     <div class="col s2"></div>
                     <input type="password" name="password" class="col s5" placeholder="Contraseña">
-                    <button class="right-align white col s12 " style="border:none;" type="submit"><a
-                                class="waves-effect waves-light btn ">Enviar<i
-                                    class="material-icons">send</i></a></button>
+                    <button class="right-align white col s12 " style="border:none;" type="submit"><a class="waves-effect waves-light btn ">Enviar<i class="material-icons">send</i></a></button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-

@@ -27,6 +27,8 @@ $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->Host = 'smtp.office365.com';
 $mail->SMTPAuth = true;
+//TODO: cambiar de email y hacer una connection strings
+
 $mail->Username = 'espert69@hotmail.com';
 $mail->Password = 'quiero2tetas';
 $mail->SMTPSecure = 'tls';

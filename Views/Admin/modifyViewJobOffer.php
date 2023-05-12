@@ -26,7 +26,7 @@ require_once(VIEWS_PATH . "nav.php");
            class="right align waves-effect waves-light btn black">Borrar</a>
     </div>
 </div>
-<div id="modal-Company" class="modal" >
+<div id="modal-Company" class="modal bottom-sheet" >
     <div class="modal-content" style="min-height: 200px;min-width: 400px;" >
 
         <form action="<?= FRONT_ROOT . "Admin/modifyCompany" ?>">
@@ -51,7 +51,7 @@ require_once(VIEWS_PATH . "nav.php");
         </form>
     </div>
 </div>
-<div id="modal-Description" class="modal">
+<div id="modal-Description" class="modal bottom-sheet">
     <div class="modal-content">
 
         <form action="<?= FRONT_ROOT . "Admin/modifyJobPosition" ?>">
@@ -77,7 +77,7 @@ require_once(VIEWS_PATH . "nav.php");
         </form>
     </div>
 </div>
-<div id="modal-requirements" class="modal">
+<div id="modal-requirements" class="modal bottom-sheet">
     <div class="modal-content">
         <label for="">Nuevo requisito</label>
         <form action="<?= FRONT_ROOT . "Admin/modifyRequirements" ?>">

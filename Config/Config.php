@@ -3,7 +3,7 @@
 
     //ROOT
     define("ROOT", dirname(__DIR__) . "/");
-    define("FRONT_ROOT", "/TPFinal/");
+    define("FRONT_ROOT", "/TPLAB4/");
     
     //VIEWS
     define("VIEWS_PATH", "Views/");

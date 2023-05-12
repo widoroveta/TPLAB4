@@ -8,16 +8,19 @@ require_once(VIEWS_PATH . "company/nav-company.php");
 <section style="min-height: 100%">
 
 <?php
+$i=0;
 if(!empty($jobOfferList)){
+
 foreach ($jobOfferList as $jo) {
+    $i=$i+1;
     $id = $jo->getJobOfferId();
     $img=$jo->getFlyer();
     ?>
-    <table class="blue">
+    <table class="blue center-align" style="margin:20px;max-width:80%;">
 
-        <caption class="black white-text">JobOffer</caption>
+        <caption class="black white-text left-align" >#<?=$i?></caption>
         <tbody>
-        <tr>
+        <tr >
             <td>ID:<?= $jo->getJobOfferId(); ?></td>
             <td>Compania:<?= $jo->getCompany()->getNameCompany(); ?></td>
             <td>Puesto laboral:<?= $jo->getJobPosition()->getDescription(); ?></td>
@@ -37,7 +40,7 @@ foreach ($jobOfferList as $jo) {
         $appointmentList=$appointmentDAO->getAllbyJobOffer($id);
         if(!empty($appointmentList)){
             ?>
-        <table class="orange">
+        <table class="orange"style="margin:20px;max-width:80%;">
             <caption class="black white-text">Appoinments</caption>
             <thead>
             <th>id</th>
@@ -51,7 +54,9 @@ foreach ($jobOfferList as $jo) {
             <tbody>
            <?php
             foreach ( $appointmentList  as $value)
-            {?>
+            {
+                $ai=$ai+1;
+                ?>
                 <tr>
                     <td><?=$value->getAppointmentId()?></td>
                     <td><?=$value->getStudent()->getFirstName()." ".$value->getStudent()->getLastName()?></td>
@@ -75,7 +80,7 @@ foreach ($jobOfferList as $jo) {
 }
     }else{
     ?>
-    <div class="row ">
+    <div class="row " style="margin-left: 10px; margin-right:10px;">
         <div class="card-Panel  cyan darken-4 green-text  text-accent-2 col s6 push-s3" style="border-radius: 20px ">
             <h2 align="center"><i class="Medium red-text material-icons">error</i> Lo sentimos.</h2>
             <p align="Center" style="margin: 20px ">En este momento no hay ofertas laborales disponible.

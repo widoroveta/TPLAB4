@@ -30,9 +30,7 @@ class Appointment
     }
 
 
-    /**
-     * @return mixed|string
-     */
+    
     public function getDate()
     {
         return $this->date;

@@ -115,6 +115,7 @@ class CompanyPanelController
         $jobOfferDAO->modifyRequirements($id, $requirements);
         $this->showListJobOffer();
     }
+   
 
     public function modifyJobPosition($id, $jobPosition)
     {
@@ -124,6 +125,19 @@ class CompanyPanelController
         $jobOfferDAO->modifyJobPosition($id, $jobPosition);
         $this->showListJobOffer();
     }
+    public function modifyDateExpiracion($id, $date,$time)
+    {
+        $this->validateCompany();
+        ini_set("date.timezone", "America/Argentina/Buenos_Aires");
+        date_default_timezone_set("America/Argentina/Buenos_Aires");
+        //   $this->validateAdmin();
+        $dateJO = new DateTime($date . $time);
+        $dateString = date_format($dateJO, ("M-d-Y  H:i"));
+        $jobOfferDAO = JobOfferDAO::getInstance();
+        $jobOfferDAO->modifyDateExpiration($id,$dateString);
+        $this->showListJobOffer();
+    }
+    
 
     public function showModifyJobOffer($id)
     {

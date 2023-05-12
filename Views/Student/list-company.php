@@ -10,7 +10,7 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
 <form action="<?= FRONT_ROOT . "StudentMagnament/showListCompany" ?>" method="post">
     <div class="row">
 
-        <input type="text" name="name" class="col s12 m6 l3 " placeholder="Nombre a buscar">
+        <input type="text" name="name" class="col s12 m6 l3 " style="margin-left:20px;" placeholder="Nombre a buscar">
         <button type="submit" class="btn waves-effect waves-light black blue-text"><i class="center material-icons">search</i>
         </button>
     </div>

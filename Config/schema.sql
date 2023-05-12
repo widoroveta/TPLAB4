@@ -4,7 +4,7 @@ create database if not exists TPLab4;
 use TPLab4;
 
 CREATE TABLE IF NOT EXISTS Company (
-    companyId int not null auto_increment,
+    companyId int not null auto_increment unique,
     nameCompany varchar (30) unique,
     city varchar (30),
     address varchar (30),
@@ -33,7 +33,7 @@ create TABLE if not exists Users (
     email varchar (30),
     companyId int not null,
     constraint pk_Userid primary key (id),
-    constraint fk_companyId FOREIGN KEY (companyId) REFERENCES Company (companyId) ON DELETE  CASCADE
+    -- constraint fk_companyId FOREIGN KEY (companyId) REFERENCES Company (companyId) ON DELETE  CASCADE
 );
 create TABLE if not exists appointment (
     apid int not null auto_increment,
@@ -53,4 +53,12 @@ create TABLE if not exists appointmentOld (
     career varchar (45),
     date varchar (45)
 );
+create table if not exists career(
+	careerId int not null unique,
+	description varchar (45),
+	active boolean
+	constraint PK_CAREER primary key(careerId)
+)
+
+;
 #create TABLE if not exists Users (     id int not null auto_increment,     studentId int not null,     `password` varchar (20),     role int not null,     email varchar (30),     Idcompany int ,     constraint pk_id primary key (id),     constraint fk_companyId FOREIGN KEY (Idcompany) REFERENCES Company (companyId) ON DELETE  CASCADE )

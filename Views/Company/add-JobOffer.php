@@ -19,10 +19,10 @@ require_once(VIEWS_PATH . "company/nav-company.php")
 ?>
 <body class="grey darken-3">
 <section style="min-height: 100%">
-<div class="row">
+<div class="row" >
     <form action="<?= FRONT_ROOT . "companyPanel/addJobOffer" ?>" enctype="multipart/form-data" method="POST">
         <div class="card-panel col s5 push-s4" style="padding: 50px; border-radius: 5px;">
-
+            
             <input type="hidden" value="<?= $id ?>" name="company">
             <div class="input-field ">
                 <select name="jobPosition">
@@ -44,7 +44,7 @@ require_once(VIEWS_PATH . "company/nav-company.php")
                     <input name='flyer' accept="image/*" type="file">
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+                    <input class="file-path validate" placeholder="Adjuntar imagen" type="text">
                 </div>
             </div>
 
@@ -52,8 +52,8 @@ require_once(VIEWS_PATH . "company/nav-company.php")
                 <input type="text" id="requirements" name="requirements">
                 <label for="requirements">Requirimientos</label>
             </div>
-            <input type="text" name="date" class="datepicker">
-            <input type="text" name="time" class="timepicker">
+            <input type="text" placeholder="Fecha de vencimiento" name="date" class="datepicker">
+            <input type="text" placeholder="Horario" name="time" class="timepicker">
             <!--            <script>-->
             <!--                if(document.getElementsByName('date')) {-->
             <!--                    alert(document.getElementsByName('date'));-->

@@ -1,10 +1,29 @@
+<script>$(document).ready(function() {
+  var bodyHeight = $('body').height(); // obtener la altura actual del body
+  var windowHeight = $(window).height(); // obtener la altura de la ventana del navegador
+  if (bodyHeight < windowHeight) { // si la altura del body es menor que la altura de la ventana del navegador
+    $('footer').css({ // ajustar la posición del footer
+      position: 'absolute',
+      bottom: '0'
+    });
+  }
+});</script>
 
-
-<footer class="page-footer grey darken-4" style=" clear: both;
+<footer class="page-footer grey darken-4" style="
+  /* clear: both;
     position: relative;
   bottom: -15;
   width: 100%;
-  align-self: flex-end;
+  align-self: flex-end; 
+  bottom:0; */
+  position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
 ">
         <div class="container grey darken-4">
             <h5 class="white-text center align">TP Final Lab4-Metodologia de Sistemas</h5>

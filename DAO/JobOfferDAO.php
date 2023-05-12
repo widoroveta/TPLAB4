@@ -69,9 +69,9 @@ class JobOfferDAO
     {
         $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId ;";
         try {
-            $this->connection = Connection::getInstance();
+            $this->conecction = Connection::getInstance();
 
-            $result = $this->connection->execute($sqlQuery);
+            $result = $this->conecction->execute($sqlQuery);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -100,9 +100,9 @@ class JobOfferDAO
         $sqlQuery = "SELECT * FROM joboffer j left join company c on j.companyId =c.companyId where (j.companyId = :id );";
         $parameters['id']=$id;
         try {
-            $this->connection = Connection::getInstance();
+            $this->conecction = Connection::getInstance();
 
-            $result = $this->connection->execute($sqlQuery,$parameters);
+            $result = $this->conecction->execute($sqlQuery,$parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -136,9 +136,9 @@ class JobOfferDAO
 
             $parameters["id"] = $id;
 
-            $this->connection = Connection::GetInstance();
+            $this->conecction = Connection::GetInstance();
 
-            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+            return $this->conecction->ExecuteNonQuery($sqlquery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -152,9 +152,9 @@ class JobOfferDAO
         try {
 
 
-            $this->connection = Connection::GetInstance();
+            $this->conecction = Connection::GetInstance();
 
-            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+            return $this->conecction->ExecuteNonQuery($sqlquery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -168,22 +168,36 @@ class JobOfferDAO
         try {
 
 
-            $this->connection = Connection::GetInstance();
+            $this->conecction = Connection::GetInstance();
 
-            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+            return $this->conecction->ExecuteNonQuery($sqlquery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }
     }
+    public function modifyDateExpiration($id, $dateExpiration)
+    {
+        $sqlquery = "UPDATE jobOffer  SET dateExpiration = :dateExpiration WHERE (id = :id)";
+        $parameters["dateExpiration"] = $dateExpiration;
+        $parameters["id"] = $id;
+        try {
 
+
+            $this->conecction = Connection::GetInstance();
+
+            return $this->conecction->ExecuteNonQuery($sqlquery, $parameters);
+        } catch (PDOException $ex) {
+            throw $ex;
+        }
+    }
     public function modifyJobPosition($id, $jobPositionId)
     {
         $sqlquery = "UPDATE jobOffer  SET jobPositionId = :jobPositionId WHERE (id = :id)";
         $parameters["jobPositionId"] = $jobPositionId;
         $parameters["id"] = $id;
         try {
-            $this->connection = Connection::GetInstance();
-            return $this->connection->ExecuteNonQuery($sqlquery, $parameters);
+            $this->conecction = Connection::GetInstance();
+            return $this->conecction->ExecuteNonQuery($sqlquery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }

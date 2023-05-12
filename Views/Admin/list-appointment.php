@@ -12,7 +12,7 @@ require('fpdf/fpdf.php');
         $id=$file->getAppointmentId();
         ?>
 
-        <div class=" purple darken-4 card col s3" style="min-height: 400px;">
+        <div class=" purple darken-4 card col s2" style="min-height: 400px;margin:20px;">
             <div class=" light-green-text text-accent-3">
                 <span class="right align">    <?=$file->getDate();?></span>
             </div>
