@@ -13,13 +13,13 @@ require_once(VIEWS_PATH . "nav.php");
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
     });
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.datepicker');
         var instances = M.Datepicker.init(elems);
 
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.timepicker');
         var instances = M.Timepicker.init(elems);
     });
@@ -74,9 +74,9 @@ require_once(VIEWS_PATH . "nav.php");
             <input type="hidden" name='id' value="<?= $id ?>">
             <input type="text" name="requirements">
 
-            </b<a href="#!" class="modal-close waves-effect waves-green btn-flat light-blue-text text-accent-3">Volver</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat light-blue-text text-accent-3">Volver</a>
             <button type="submit" class="waves-effect waves-green btn-flat light-blue-text text-accent-3">enviar
-            utton>
+                </button>
         </form>
     </div>
 </div>
@@ -86,10 +86,10 @@ require_once(VIEWS_PATH . "nav.php");
         <form action="<?= FRONT_ROOT . "CompanyPanel/modifyDateExpiracion" ?>">
             <input type="hidden" name='id' value="<?= $id ?>">
             <input type="text" placeholder="Fecha de vencimiento" name="date" class="datepicker">
-            <input type="text" placeholder="Horario" name="time" class="timepicker">        
+            <input type="text" placeholder="Horario" name="time" class="timepicker">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat light-blue-text text-accent-3">Volver</a>
             <button type="submit" class="waves-effect waves-green btn-flat light-blue-text text-accent-3">enviar
-            
+
         </form>
     </div>
 </div>

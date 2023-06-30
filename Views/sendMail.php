@@ -29,11 +29,11 @@ $mail->Host = 'smtp.office365.com';
 $mail->SMTPAuth = true;
 //TODO: cambiar de email y hacer una connection strings
 
-$mail->Username = 'espert69@hotmail.com';
-$mail->Password = 'quiero2tetas';
+$mail->Username = '';
+$mail->Password = '';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
-$mail->setFrom('espert69@hotmail.com', 'NOMBREDELQUEMANDA');
+$mail->setFrom('', 'NOMBREDELQUEMANDA');
 $mail->addReplyTo($appointment->getStudent()->getEmail(), $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getFirstName());
 $mail->addAddress($appointment->getStudent()->getEmail());
 
