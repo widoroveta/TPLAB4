@@ -6,11 +6,7 @@ use Models\Career;
 use DAO\CareerDAO;
 
 $careerDao = new CareerDAO();
-// echo '<pre>';
-// //var_dump($careerDao->getAll());
-// var_dump($careerDao->getCareerById(3));
 
-// echo '</pre>';
 
 ?>
 

@@ -1,4 +1,4 @@
-<script>$(document).ready(function() {
+<!-- <script>$(document).ready(function() {
   var bodyHeight = $('body').height(); // obtener la altura actual del body
   var windowHeight = $(window).height(); // obtener la altura de la ventana del navegador
   if (bodyHeight < windowHeight) { // si la altura del body es menor que la altura de la ventana del navegador
@@ -15,7 +15,7 @@
   bottom: -15;
   width: 100%;
   align-self: flex-end; 
-  bottom:0; */
+  bottom:0; 
   position: fixed;
       bottom: 0;
       left: 0;
@@ -23,7 +23,12 @@
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 20px;*/
+
+      position: absolute;
+  bottom:-200;
+  width: 100%;
+  height: 50px; 
 ">
         <div class="container grey darken-4">
             <h5 class="white-text center align">TP Final Lab4-Metodologia de Sistemas</h5>
@@ -35,4 +40,4 @@
 
         </div>
 
-</footer>
+</footer> -->

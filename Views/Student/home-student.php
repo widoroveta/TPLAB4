@@ -23,7 +23,7 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
         ?> <br>
         <div class="row ">
 
-          
+
             <img class="col s3" style="height: 300px;" src="https://i.ytimg.com/vi/RtyvJokdUpM/maxresdefault.jpg" alt="">
             <img class="col s3" style="height: 300px;" src="https://weremote.net/wp-content/uploads/2022/08/programador-concentrado-ordenador-oficina.jpg" alt="">
             <img class="col s3" style="height: 300px;" src="https://www.lt9.com.ar/uploads/s_0c858569d498452ff7c80c.jpg" alt="">
@@ -31,7 +31,7 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
             <!-- </div> -->
         </div>
         <div class="row">
-            <div class="card push-s4 col s4"><?= 'Que tal '. $student->getStudent()->getFirstName().'!. ¡Bienvenidos a nuestra comunidad estudiantil en busca de empleo! Juntos, alcanzaremos nuevas metas y oportunidades profesionales. #EstudiantesEnBuscaDeEmpleo' ?></div>
+            <div class="card push-s4 col s4"><?= 'Que tal ' . $student->getStudent()->getFirstName() . '!. ¡Bienvenidos a nuestra comunidad estudiantil en busca de empleo! Juntos, alcanzaremos nuevas metas y oportunidades profesionales. #EstudiantesEnBuscaDeEmpleo' ?></div>
         </div>
         <div class="row ">
             <!-- $student->getStudent()->getFirstName(); ?> explota tus conocimiento postulandote a un trabajo hoy. -->

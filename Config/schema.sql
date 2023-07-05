@@ -1,4 +1,4 @@
-use TPLab4;
+
 
 create database if not exists TPLab4;
 use TPLab4;
@@ -25,14 +25,15 @@ CREATE TABLE IF NOT EXISTS JobOffer(
     ,CONSTRAINT pk_jobOfferid PRIMARY KEY(id),
     CONSTRAINT fk_company_jobId FOREIGN KEY(companyId) REFERENCES Company(companyId) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 create TABLE if not exists Users (
     id int not null auto_increment,
     studentId int not null,
     `password` varchar (20),
     role int not null,
-    email varchar (30),
+    email varchar (30) UNIQUE,
     companyId int not null,
-    constraint pk_Userid primary key (id),
+    constraint pk_Userid primary key (id)
     -- constraint fk_companyId FOREIGN KEY (companyId) REFERENCES Company (companyId) ON DELETE  CASCADE
 );
 create TABLE if not exists appointment (
@@ -56,9 +57,11 @@ create TABLE if not exists appointmentOld (
 create table if not exists career(
 	careerId int not null unique,
 	description varchar (45),
-	active boolean
+	active boolean,
 	constraint PK_CAREER primary key(careerId)
 )
-
-;
-#create TABLE if not exists Users (     id int not null auto_increment,     studentId int not null,     `password` varchar (20),     role int not null,     email varchar (30),     Idcompany int ,     constraint pk_id primary key (id),     constraint fk_companyId FOREIGN KEY (Idcompany) REFERENCES Company (companyId) ON DELETE  CASCADE )
+--"jobPositionId": 1,
+--    "careerId": 1,
+--    "description": "Jr naval engineer"
+INSERT INTO Users (studentId, `password`, role, email, companyId)
+VALUES (-1, 'adminpassword', 2, 'admin@mail.com', -1);
