@@ -38,22 +38,20 @@ class AppointmentOldDAO
             $response = $this->conecction->ExecuteNonQuery($sqlQuery, $parameters, 0);
             if ($response != null) {
                 return $response;
-
             } else {
                 return null;
             }
         } catch (PDOException $ex) {
             throw $ex;
-
-
         }
     }
-    public  function  getAll(){
-       $sqlQuery='SELECT * FROM appointmentold ao WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id); ';
+    public  function  getAll()
+    {
+        $sqlQuery = 'SELECT * FROM appointmentold ;-- WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id); ';
         try {
-            $this->connection = Connection::getInstance();
+            $this->conecction = Connection::getInstance();
 
-            $result = $this->connection->execute($sqlQuery);
+            $result = $this->conecction->execute($sqlQuery);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -77,15 +75,15 @@ class AppointmentOldDAO
         }
 
         return $finalResult;
-
     }
-    public  function  getAllByStudent($email){
-        $sqlQuery='SELECT * FROM appointmentold ao WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id) and ( ao.student = :email) ';
-        $parameters['email']=$email;
+    public  function  getAllByStudent($email)
+    {
+        $sqlQuery = 'SELECT * FROM appointmentold ao WHERE not EXISTS (SELECT ap.apid FROM appointment ap WHERE ap.apid = ao.id) and ( ao.student = :email) ';
+        $parameters['email'] = $email;
         try {
-            $this->connection = Connection::getInstance();
+            $this->conecction = Connection::getInstance();
 
-            $result = $this->connection->execute($sqlQuery,$parameters);
+            $result = $this->conecction->execute($sqlQuery, $parameters);
         } catch (PDOException $ex) {
             throw $ex;
         }
@@ -109,7 +107,6 @@ class AppointmentOldDAO
         }
 
         return $finalResult;
-
     }
     public
     function mapout($value)
@@ -120,7 +117,7 @@ class AppointmentOldDAO
 
         $resp = array_map(function ($p) {
 
-            return new AppointmentOld($p['id'],$p['nameCompany'],$p['student'],$p['jobPosition'],$p['career'],$p['date']);
+            return new AppointmentOld($p['id'], $p['nameCompany'], $p['student'], $p['jobPosition'], $p['career'], $p['date']);
         }, $value);
 
         return count($resp) > 1 ? $resp : $resp['0'];

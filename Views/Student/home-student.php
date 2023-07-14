@@ -4,7 +4,6 @@ require_once(VIEWS_PATH . "header.php");
 //require_once(VIEWS_PATH."nav.php");
 require_once(VIEWS_PATH . "Student/nav-student.php");
 ?>
-
 <body class="grey darken-3">
     <section style="min-height: 100%">
         <?php

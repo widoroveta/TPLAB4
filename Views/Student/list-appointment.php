@@ -43,7 +43,7 @@ if (!empty($message)) { ?>
                         <a href="<?= FRONT_ROOT . "studentMagnament/deleteAppointment?varId=$id" ?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
                         <div class=" card-panel  cyan darken-4 col s12 ">
                             <h5 class="white-text">Curriculum Vitae</h5>
-                            <a href="<?= $file->getCv() ?>>" download>
+                            <a href="<?= $file->getCv() ?>" download>
                                 <img class="col s 4" src="<?= IMG_PATH ?>/PDF_file_icon.svg" alt="" width="35" height="35">
                                 <p class="white-text col s 8"><?= $file->getCv(); ?></p>
                             </a>

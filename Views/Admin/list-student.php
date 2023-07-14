@@ -5,7 +5,7 @@
 
         ?>
 
-        <div class="row">
+        <div class="row" style="margin: 10px;">
             <div>
                 <div class="card-panel">
                     <form action="<?= FRONT_ROOT . "admin/showListStudent" ?>" name='form1' method="post" id='form-email' class="cols 6">
@@ -25,7 +25,8 @@
                 </div>
             </div>
         </div>
-        <table class="highlight white-text" style="margin:10px,20px,10px,20px;">
+        <div class="row" >
+        <table class="highlight white-text col s10 push-s1 " style="margin:10px,20px,10px,20px;">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -71,5 +72,6 @@
                 ?>
             </tbody>
         </table>
+        </div>
     </section>
 </body>

@@ -274,15 +274,15 @@ class AppointmentDAO
 
     public
     function mapout($value)
-    { 
+    {
         $value = is_array($value) ? $value : [];
-       
+
         $resp = array_map(function ($p) {
             $studentDAO = StudentDAO::getInstance();
             $jobPositionDAO = JobPositionDAO::getInstance();
             return new Appointment($p['apid'], $studentDAO->searchById($p['studentId']), new JobOffer($p['jobOfferId'], $jobPositionDAO->searchById($p['jobPositionId']), new Company($p['companyId'], $p['nameCompany'], $p['city'], $p['address'], $p['size'], $p['email'], $p['phoneNumber'], $p['cuit']), $p['requirements'], $p['flyer'], $p['dateExpiration']), $p['cv'], $p['message'], $p['dateAppointment']);
         }, $value);
-        
+
         return count($resp) > 1 ? $resp : $resp['0'];
     }
 }

@@ -1,3 +1,5 @@
 Uploads
 .vscode
 .idea
+testmail.py
+Views\Actions\config-mail.php

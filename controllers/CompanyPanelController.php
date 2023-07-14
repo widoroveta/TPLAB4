@@ -18,13 +18,13 @@ class CompanyPanelController
 {
     public function validateCompany()
     {
-        require_once(VIEWS_PATH.'Company/validate-company.php');
-}
+        require_once(VIEWS_PATH . 'Company/validate-company.php');
+    }
     public function showHomeCompany()
     {
         $this->validateCompany();
         $userLogged = $_SESSION['loggedUser'];
-        require_once(VIEWS_PATH."company/home-company.php");
+        require_once(VIEWS_PATH . "company/home-company.php");
     }
 
     public function registerUserCompany($nameCompany, $city, $address, $size, $email, $phoneNumber, $CUIT, $password)
@@ -42,7 +42,7 @@ class CompanyPanelController
         $user = new User(0, $student, $password, $email, 3, intval($companyToUser->getCompanyId()));
         $userDAO->add($user);
 
-        // header("location:".FRONT_ROOT."home/index");
+        header("location:" . FRONT_ROOT . "home/index");
     }
 
 
@@ -115,7 +115,7 @@ class CompanyPanelController
         $jobOfferDAO->modifyRequirements($id, $requirements);
         $this->showListJobOffer();
     }
-   
+
 
     public function modifyJobPosition($id, $jobPosition)
     {
@@ -125,7 +125,7 @@ class CompanyPanelController
         $jobOfferDAO->modifyJobPosition($id, $jobPosition);
         $this->showListJobOffer();
     }
-    public function modifyDateExpiracion($id, $date,$time)
+    public function modifyDateExpiracion($id, $date, $time)
     {
         $this->validateCompany();
         ini_set("date.timezone", "America/Argentina/Buenos_Aires");
@@ -134,10 +134,10 @@ class CompanyPanelController
         $dateJO = new DateTime($date . $time);
         $dateString = date_format($dateJO, ("M-d-Y  H:i"));
         $jobOfferDAO = JobOfferDAO::getInstance();
-        $jobOfferDAO->modifyDateExpiration($id,$dateString);
+        $jobOfferDAO->modifyDateExpiration($id, $dateString);
         $this->showListJobOffer();
     }
-    
+
 
     public function showModifyJobOffer($id)
     {
@@ -149,5 +149,4 @@ class CompanyPanelController
         $jobOffer = $jobOfferDAO->searchById($id);
         require_once(VIEWS_PATH . "Company/modifyJobOffer.php");
     }
-
 }

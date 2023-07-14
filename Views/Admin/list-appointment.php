@@ -13,24 +13,23 @@ require('fpdf/fpdf.php');
                     $id = $file->getAppointmentId();
             ?>
 
-                    <div class=" purple darken-4 card col s2" style="min-height: 400px;margin:20px;">
-                        <div class=" light-green-text text-accent-3">
-                            <span class="right align"> <?= $file->getDate(); ?></span>
+                    <div class="  light-blue darken-4 card col s3" style="min-height: 400px;margin:10px;border-radius: 5px;">
+                        <div class=" indigo-darken-4-text text-accent-3">
+                            <span class="right align"><b> Fecha: </b><?= $file->getDate(); ?></span>
                         </div>
                         <div class=" white-text  ">
-                            <h4> Compania: <?= $file->getJobOffer()->getCompany()->getNameCompany() ?></h4>
+                            <h4> <b>Compania:</b> <?= $file->getJobOffer()->getCompany()->getNameCompany() ?></h4>
                         </div>
                         <div class=" white-text ">
-                            Estudiante : <?= $file->getStudent()->getFirstName(); ?> <?= $file->getStudent()->getLastName(); ?>
+                            <b> Estudiante :</b> <?= $file->getStudent()->getFirstName(); ?> <?= $file->getStudent()->getLastName(); ?>
                         </div>
                         <div class="    col s12 white-text ">
-                            Posicion de trabajo: <?= $file->getJobOffer()->getJobPosition()->getDescription() ?>
+                            <b> Posicion de trabajo:</b> <?= $file->getJobOffer()->getJobPosition()->getDescription() ?>
                         </div>
-                        <div class="    col s12 white-text ">
-                            Carrera: <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription() ?>
+                        <div class="    col s12 white-text " style="margin-bottom:10px ;">
+                            <b> Carrera:</b> <?= $file->getJobOffer()->getJobPosition()->getCareer()->getDescription() ?>
                         </div>
-                        <!--            <a href="--><? //=FRONT_ROOT."admin/deleteAppointment?varId=$id"
-                                                    ?><!--" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>-->
+
                         <a href="<?= FRONT_ROOT . "admin/deleteAppointment?varId=$id" ?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete_forever</i></a>
 
                         <div class=" card-panel  purple darken-1 col s12 ">
@@ -41,18 +40,18 @@ require('fpdf/fpdf.php');
                             </a>
                         </div>
                         <div class="  white-text ">
-                            Mensaje:
+                        <b>Mensaje:</b>
                             <?= $file->getMessage() ?>
                         </div>
 
                         <div class="white-text  " style="margin-top: 20px">
-                            Requerimiento: <?= $file->getJobOffer()->getRequirements() ?>
+                        <b>Requerimiento:</b> <?= $file->getJobOffer()->getRequirements() ?>
                         </div>
 
                     </div>
-                    <div class="col s1">
+                    <!-- <div class="col s1">
 
-                    </div>
+                    </div> -->
                 <?php
                 }
             } else {

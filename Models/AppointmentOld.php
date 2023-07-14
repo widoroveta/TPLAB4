@@ -106,7 +106,7 @@ class AppointmentOld
      */
     public function setCareer($career)
     {
-        $this->carrera = $carrera;
+        $this->career = $career;
     }
 
     /**

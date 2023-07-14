@@ -17,7 +17,7 @@ class DateController
             array_push($arrayDates, $this->dateValidate($jobOffer->getDateExpiration(), $jobOffer->getJobOfferId()));
         }
 
-return $arrayDates;
+        return $arrayDates;
     }
 
     public function getDate()
@@ -26,27 +26,23 @@ return $arrayDates;
         $array = $this->verificationDates();
         foreach ($array as $date) {
             if ($date['year'] < 0) {
-                array_push($arrayToDelete,$date);
-
+                array_push($arrayToDelete, $date);
             } elseif ($date['year'] == 0) {
-                if ($date['month'] < 0)
-                {   array_push($arrayToDelete,$date);}
-                elseif ($date['month']==0){
-                    if($date['day']<0)
-                    {
-                        array_push($arrayToDelete,$date);
-                    }
-                    elseif ($date['day']==0){
-                        if($date['hour']<=0){
-                            array_push($arrayToDelete,$date);;
+                if ($date['month'] < 0) {
+                    array_push($arrayToDelete, $date);
+                } elseif ($date['month'] == 0) {
+                    if ($date['day'] < 0) {
+                        array_push($arrayToDelete, $date);
+                    } elseif ($date['day'] == 0) {
+                        if ($date['hour'] <= 0) {
+                            array_push($arrayToDelete, $date);;
                         }
                     }
-
                 }
             }
         }
         return $arrayToDelete;
- }
+    }
 
     public function getDiffYear($date, $now)
     {
@@ -107,24 +103,34 @@ return $arrayDates;
     }
     public  function  sendEmail()
     {
-        $jobOfferDAO=JobOfferDAO::getInstance();
-        $appointmentDAO=AppointmentDAO::getInstance();
-        $arrayJobOffers=array();
+        $jobOfferDAO = JobOfferDAO::getInstance();
+        $appointmentDAO = AppointmentDAO::getInstance();
+        $arrayJobOffers = array();
         $array = $this->getDate();
-        foreach ($array as $value)
-        {
-            array_push(   $arrayJobOffers ,$appointmentDAO->getAllbyJobOffer($value['jobOfferId']));
 
+
+        foreach ($array as $value) {
+            array_push($arrayJobOffers, $appointmentDAO->getAllbyJobOffer($value['jobOfferId']));
         }
-        $message='';
-        require_once (VIEWS_PATH.'sendMail.php');
-        foreach ($array as $value)
-        {
-            $jobOfferDAO->delete($value['jobOfferId']);
-        }
+
+
+
+        $message =gettype($arrayJobOffers);
+        require_once(VIEWS_PATH . 'Actions/send-mail.php'); 
+        // foreach ($arrayJobOffers as $jobOffer){
+        //  $message =gettype($jobOffer[0]) ;
+         
+        // //foreach($jobOffer.get)
+        // ;
+        // }
+        // foreach ($array as $value) {
+        // //    $jobOfferDAO->delete($value['jobOfferId']);
+        // }
         //sleep(10);
-      header("location:".FRONT_ROOT."admin/showListCompany");
-
+        //header("location:" . FRONT_ROOT . "admin/showListCompany");
     }
-
+    public  function  testEmail()
+    {
+        require_once(VIEWS_PATH . 'Actions/mail-expiration.php');
+    }
 }

@@ -36,7 +36,7 @@ if (!empty($message)) {
                 ?>
 
                     <?php $id = $jobOffer->getJobOfferId();
-                    $img = FRONT_ROOT . $jobOffer->getFlyer();
+                    $img =  $jobOffer->getFlyer();
                     ?>
                     <div class="col s2 ">
                         <div class="card ">

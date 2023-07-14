@@ -10,72 +10,75 @@
                 var instances = M.Modal.init(elems);
             });
         </script>
-        <table class="highlight white-text" style="margin:10px,20px,10px,20px;">
-            <thead>
-                <tr>
-
-                    <th>Nombre</th>
-                    <th>ID</th>
-                    <th>Apellido</th>
-                    <th>DNI</th>
-                    <th>Genero</th>
-                    <th>Carrera</th>
-                    <th>Email</th>
-                    <th>Cumpleaño</th>
-                    <th>Numero de telefono</th>
-                    <th>Activo</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <?php
-                function activateColor($activate)
-                {
-                    if ($activate) {
-                        return '<i class="material-icons green-text">check</i>';
-                    } else {
-                        return '<i class="material-icons red-text">cancel</i>';
-                    }
-                }
-
-
-                foreach ($studentList as $std) {
-                    $std->setCareer($careerDAO->getCareerById($std->getCareer()));
-                    $id = $std->getStudentId();
-                ?>
+        <div class="row">
+            <table class="highlight blue-grey darken-4 white-text col s10 push-s1 " style="margin:10px,20px,10px,20px; border-radius:5px;">
+                <!-- <table class="highlight white-text" style="margin:10px,20px,10px,20px;"> -->
+                <thead>
                     <tr>
-                        <td><?= $std->getFirstName() ?></td>
-                        <td><input name="id" type="text" value="<?= $id ?>"></td>
-                        <td><?= $std->getLastName() ?></td>
-                        <td><?= $std->getDni() ?></td>
-                        <td><?= $std->getGender() ?></td>
-                        <td><?= $std->getCareer()->getDescription() ?></td>
-                        <td><?= $std->getEmail() ?></td>
-                        <td><?= $std->getBirthDate() ?></td>
-                        <td><?= $std->getPhoneNumber() ?></td>
-                        <td><?= activateColor($std->getActive()) ?></td>
-                        <td>
-                            <button data-target="modal-register" value="<?= $id ?>" name="button" onclick="getVar(<?= $id ?>)" class="btn modal-trigger">Registrar</button>
-                        </td>
-                        <script>
-                            var jsvar;
 
-                            function getVar(id) {
-                                jsvar = id;
-                                //alert(jsvar);
-                                document.getElementById("idModal").value = jsvar;
-                            }
-                        </script>
-                        <?php
-                        $php = "<script> document.writeln(jsvar); </script>"; // igualar el valor de la variable JavaScript a PHP
-                        ?>
+                        <th>Nombre</th>
+                        <th>ID</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>Genero</th>
+                        <th>Carrera</th>
+                        <th>Email</th>
+                        <th>Cumpleaño</th>
+                        <th>Numero de telefono</th>
+                        <th>Activo</th>
                     </tr>
+                </thead>
+                <tbody>
 
-                <?php
-                }
-                ?>
-            </tbody>
-        </table>
+                    <?php
+                    function activateColor($activate)
+                    {
+                        if ($activate) {
+                            return '<i class="material-icons green-text">check</i>';
+                        } else {
+                            return '<i class="material-icons red-text">cancel</i>';
+                        }
+                    }
+
+
+                    foreach ($studentList as $std) {
+                        $std->setCareer($careerDAO->getCareerById($std->getCareer()));
+                        $id = $std->getStudentId();
+                    ?>
+                        <tr>
+                            <td><?= $std->getFirstName() ?></td>
+                            <td><input name="id" class='white-text' type="text" value="<?= $id ?>"></td>
+                            <td><?= $std->getLastName() ?></td>
+                            <td><?= $std->getDni() ?></td>
+                            <td><?= $std->getGender() ?></td>
+                            <td><?= $std->getCareer()->getDescription() ?></td>
+                            <td><?= $std->getEmail() ?></td>
+                            <td><?= $std->getBirthDate() ?></td>
+                            <td><?= $std->getPhoneNumber() ?></td>
+                            <td><?= activateColor($std->getActive()) ?></td>
+                            <td>
+                                <button data-target="modal-register" value="<?= $id ?>" name="button" onclick="getVar(<?= $id ?>)" class="btn modal-trigger">Registrar</button>
+                            </td>
+                            <script>
+                                var jsvar;
+
+                                function getVar(id) {
+                                    jsvar = id;
+                                    //alert(jsvar);
+                                    document.getElementById("idModal").value = jsvar;
+                                }
+                            </script>
+                            <?php
+                            $php = "<script> document.writeln(jsvar); </script>"; // igualar el valor de la variable JavaScript a PHP
+                            ?>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </section>
 </body>
 <div id="modal-register" class="modal">

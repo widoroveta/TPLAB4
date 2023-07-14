@@ -51,7 +51,7 @@ require_once(VIEWS_PATH . "company/nav-company.php");
                                 <tbody>
                                     <?php
                                     foreach ($appointmentList  as $value) {
-                                       // $ai = $ai + 1;
+                                        // $ai = $ai + 1;
                                     ?>
                                         <tr>
                                             <td><?= $value->getAppointmentId() ?></td>
@@ -59,7 +59,7 @@ require_once(VIEWS_PATH . "company/nav-company.php");
                                             <td><?= $value->getStudent()->getEmail(); ?></td>
                                             <td><?= $value->getMessage(); ?></td>
                                             <td><?= $value->getDate(); ?></td>
-                                            <td><a class="btn-floating red" href="<?= $value->getCv() ?>>" download><i class="material-icons">picture_as_pdf</i> </a></td>
+                                            <td><a class="btn-floating red" href="<?= $value->getCv() ?>" download><i class="material-icons">picture_as_pdf</i> </a></td>
                                         </tr>
                                 <?php
                                     }

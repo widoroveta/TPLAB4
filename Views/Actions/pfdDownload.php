@@ -1,6 +1,6 @@
 <?php
 require('fpdf/fpdf.php');
-$careerDAO=\DAO\CareerDAO::getInstance();
+$careerDAO = \DAO\CareerDAO::getInstance();
 
 ob_start();
 $pdf = new FPDF();
@@ -31,11 +31,9 @@ foreach ($appointmentList as $app) {
     $pdf->Cell(0, 8,  'DNI:' . $app->getStudent()->getDni());
     $pdf->ln();
     $pdf->Cell(0, 8,  'Genero:' . $app->getStudent()->getGender());
-$pdf->ln();
+    $pdf->ln();
     $pdf->Cell(0, 8,  'Numero de telefono:' . $app->getStudent()->getPhoneNumber());
     $pdf->ln();
-
-
 }
 
 
