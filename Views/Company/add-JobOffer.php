@@ -22,7 +22,7 @@ require_once(VIEWS_PATH . "company/nav-company.php")
 <div class="row" >
     <form action="<?= FRONT_ROOT . "companyPanel/addJobOffer" ?>" enctype="multipart/form-data" method="POST">
         <div class="card-panel col s5 push-s4" style="padding: 50px; border-radius: 5px;">
-            <h1>Nuevo Puesto</h1>
+            <h3>Nuevo Puesto</h3>
             <input type="hidden" value="<?= $id ?>" name="company">
             <div class="input-field ">
                 <select name="jobPosition">

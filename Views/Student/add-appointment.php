@@ -1,19 +1,21 @@
 <?php
 require_once(VIEWS_PATH . "nav.php");
+require_once(VIEWS_PATH . "student/nav-student.php");
 ?>
 
 <body class="grey darken-3">
     <section style="min-height: 100%">
         <div class="row" style="margin-left: 10px;">
-
-
             <form action="<?= FRONT_ROOT . 'StudentMagnament/addAppointment' ?>" enctype="multipart/form-data" method="POST">
+
                 <input type="hidden" name="jobOfferId" value="<?= $id ?>">
                 <input type="hidden" name="studentId" value="<?= $studentId ?>">
                 <div class="row">
 
                     <div class=" card-panel  black col s4" style="padding: 20px;">
+                        <h3 class="pink-text">Postularse</h3>
                         <span class="card-panel pink darken-4 white-text col s6 push-s1">
+
                             Mensaje de postulacion
                         </span>
                         <div class="input-field col s12">

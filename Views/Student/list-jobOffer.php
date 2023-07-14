@@ -33,7 +33,7 @@ require_once(VIEWS_PATH . "student/nav-student.php");
             <div class="card " style="border-radius: 10px;">
                 <div class="card-content card-content  z-depth-4 black purple-text text-accent-2"
                      style="min-height: 250px;border-radius: 10px 10px 0 0;">
-                    <span class="card-title"><b><?= "#" . $jobOffer->getJobOfferId() . $jobOffer->getCompany()->getNameCompany() ?></b></span>
+                    <span class="card-title"><b><?= "# " . $jobOffer->getJobOfferId() ?><b><p style="text-transform: uppercase;"><?=  $jobOffer->getCompany()->getNameCompany()  ?></p></b></b></span>
                     <ul>
                         <li><b>Description:</b> <?= $jobOffer->getJobPosition()->getDescription() ?></li>
                         <li><b>Careera:</b> <?= $jobOffer->getJobPosition()->getCareer()->getDescription() ?></li>
