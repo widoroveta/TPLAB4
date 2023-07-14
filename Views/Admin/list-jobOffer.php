@@ -47,7 +47,7 @@ if (!empty($message)) {
                             </div>
 
 
-                            <div class="card-content  z-depth-4 black purple-text text-accent-2" style="min-height: 200px">
+                            <div class="card-content  z-depth-4 black purple-text text-accent-2" style="min-height: 400px">
                                 <span class="card-title"><b><?= "#" . $jobOffer->getJobOfferId() . $jobOffer->getCompany()->getNameCompany() ?></b></span>
                                 <ul>
                                     <li><b>Description:</b> <?= $jobOffer->getJobPosition()->getDescription() ?></li>

@@ -5,11 +5,11 @@ require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-if (isset($arrayJobOffers)) {
-    foreach ($arrayJobOffers as $jobOffer) {
-        foreach ($jobOffer
+// if (isset($arrayJobOffers)) {
+//     foreach ($arrayJobOffers as $jobOffer) {
+//         foreach ($jobOffer
 
-            as $appointment) {
+//             as $appointment) {
 
             $mail = new PHPMailer;
             
@@ -33,7 +33,7 @@ if (isset($arrayJobOffers)) {
 
             $mail->Subject = "Oferta laboral expirada";
             $bodyContent = 'Querido:';
-            $bodyContent .= '<p>' . $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getLastName() . " la oferta laboral de " . $appointment->getJobOffer()->getCompany()->getNameCompany() . ' de ' . $appointment->getJobOffer()->getJobPosition()->getDescription() . " ha expirado" .
+            $bodyContent .= '<p>' . $appointment->getStudent()->getFirstName() . " " . $appointment->getStudent()->getLastName() . " la oferta laboral de " . $appointment->getJobOffer()->getCompany()->getNameCompany() . ' de ' . $appointment->getJobOffer()->getJobPosition()->getDescription() . " ha sido denegada" .
                 '</p>';
             $mail->Body = $bodyContent;
 
@@ -51,7 +51,7 @@ if (isset($arrayJobOffers)) {
 <?php
                 sleep(3);
             }
-        }
-    }
-}
+//         }
+//     }
+// }
 ?>

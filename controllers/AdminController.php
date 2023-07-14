@@ -325,6 +325,6 @@ class AdminController
     }
     public function  sendMail($appointment)
     {
-        require_once(VIEWS_PATH . "actions/send-Mail.php");
+        require_once( "Views/sendMail.php");
     }
 }

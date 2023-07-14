@@ -25,10 +25,10 @@ require_once(VIEWS_PATH . "Student/nav-student.php");
         foreach ($companyList as $company) {
             $id = $company->getCompanyId()
             ?>
-            <div class="col s3 ">
+            <div class="col s2 ">
                 <div class="card transparent ">
                     <div class="card-content card-content  z-depth-4 black purple-text text-accent-2" style="border-radius: 10px;">
-                        <span class="card-title"><b><?= $company->getNameCompany() ?></b></span>
+                        <span class="card-title pink-text" ><b><p style="text-transform: uppercase;"><?= $company->getNameCompany() ?></p></b></span>
                         <ul style="margin-top: 10px;">
                             <li class="Margin-li" style="margin-left: 5px;"><b>Ciudad:</b> <?= $company->getCity() ?></li>
                             <li class="Margin-li" style="margin-left: 5px;"><b>Direccion:</b> <?= $company->getAddress() ?></li>

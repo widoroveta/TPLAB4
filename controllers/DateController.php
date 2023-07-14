@@ -107,27 +107,18 @@ class DateController
         $appointmentDAO = AppointmentDAO::getInstance();
         $arrayJobOffers = array();
         $array = $this->getDate();
-
-
         foreach ($array as $value) {
             array_push($arrayJobOffers, $appointmentDAO->getAllbyJobOffer($value['jobOfferId']));
+            //  var_dump($arrayJobOffers);
         }
-
-
-
-        $message =gettype($arrayJobOffers);
-        require_once(VIEWS_PATH . 'Actions/send-mail.php'); 
-        // foreach ($arrayJobOffers as $jobOffer){
-        //  $message =gettype($jobOffer[0]) ;
-         
-        // //foreach($jobOffer.get)
-        // ;
-        // }
-        // foreach ($array as $value) {
-        // //    $jobOfferDAO->delete($value['jobOfferId']);
-        // }
+        //var_dump($arrayJobOffers);
+        $message = '';
+        require_once(VIEWS_PATH . 'Actions/send-mail.php');
+        foreach ($array as $value) {
+            $jobOfferDAO->delete($value['jobOfferId']);
+        }
         //sleep(10);
-        //header("location:" . FRONT_ROOT . "admin/showListCompany");
+        header("location:" . FRONT_ROOT . "admin/showListCompany");
     }
     public  function  testEmail()
     {

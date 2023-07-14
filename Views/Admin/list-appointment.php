@@ -13,12 +13,12 @@ require('fpdf/fpdf.php');
                     $id = $file->getAppointmentId();
             ?>
 
-                    <div class="  light-blue darken-4 card col s3" style="min-height: 400px;margin:10px;border-radius: 5px;">
+                    <div class="  light-blue darken-4 card col s2" style="min-height: 400px;margin:10px;border-radius: 5px;">
                         <div class=" indigo-darken-4-text text-accent-3">
                             <span class="right align"><b> Fecha: </b><?= $file->getDate(); ?></span>
                         </div>
                         <div class=" white-text  ">
-                            <h4> <b>Compania:</b> <?= $file->getJobOffer()->getCompany()->getNameCompany() ?></h4>
+                            <h4> <b>Compania:</b> <br> <?= $file->getJobOffer()->getCompany()->getNameCompany() ?></h4>
                         </div>
                         <div class=" white-text ">
                             <b> Estudiante :</b> <?= $file->getStudent()->getFirstName(); ?> <?= $file->getStudent()->getLastName(); ?>
